@@ -22,5 +22,12 @@
       <guid>https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</guid>
       <description>A full walkthrough for manual deployment.</description>
     </item>
+    <item>
+      <title>Why &#39;Screw Optimization&#39; Is My New Mantra</title>
+      <link>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</guid>
+      <description>Done is better than perfect.</description>
+    </item>
   </channel>
 </rss>
