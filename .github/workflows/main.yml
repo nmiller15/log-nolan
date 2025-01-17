@@ -1,0 +1,24 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          echo "$EC2_SSH_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          # Replace with your EC2 instance's public IP address and the path to your app directory on the instance
+          ssh -i "private_key.pem" ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
+            cd /srv/log-nolan
+            sudo git pull  # Pull latest changes
+            sudo systemctl restart caddy
+          EOF
