@@ -11,6 +11,7 @@ tags: ["productivity", "programming", "learning", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
+devto: true
 ---
 Before the LeetCoders jump in, let me clarify: I’m not advocating for sloppy algorithms. Instead, I’m challenging the obsession with finding the perfect solution before taking any action.
 
