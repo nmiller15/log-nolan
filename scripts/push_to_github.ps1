@@ -17,7 +17,7 @@ hugo
 git add -A
 
 # Commit changes with a message including the current date
-$commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd')"
+$commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m $commitMessage
 
 # Push changes to GitHub
