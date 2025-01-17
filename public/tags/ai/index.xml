@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Log(&#34;Nolan&#34;);</title>
-    <link>https://nolanmiller.me/posts/</link>
-    <description>Recent content in Posts on Log(&#34;Nolan&#34;);</description>
+    <title>Ai on Log(&#34;Nolan&#34;);</title>
+    <link>https://nolanmiller.me/tags/ai/</link>
+    <description>Recent content in Ai on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nolanmiller.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self-Taught is Still Possible In 2025</title>
       <link>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</link>
