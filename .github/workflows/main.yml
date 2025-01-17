@@ -14,13 +14,23 @@ jobs:
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
+          # Output the SSH key to check it is being read correctly
+          echo "Saving SSH private key..."
           echo "$EC2_SSH_KEY" > private_key.pem
+          
+          # Check if the key is correctly saved
+          cat private_key.pem
+
+          # Set the correct permissions for the private key
           chmod 600 private_key.pem
-          ssh-keygen -p -m PEM -f private_key.pem
-          # Replace with your EC2 instance's public IP address and the path to your app directory on the instance
-          ssh -i "private_key.pem" -o StrictHostKeyChecking=no -T ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
+
+          # Run the SSH command, use verbose mode for debugging
+          echo "Connecting to EC2 instance..."
+          ssh -i "private_key.pem" -o StrictHostKeyChecking=no -v ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
             cd /srv/log-nolan
             sudo git pull  # Pull latest changes
             sudo systemctl restart caddy
           EOF
+
+      
 
