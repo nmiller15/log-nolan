@@ -16,6 +16,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > private_key.pem
           chmod 600 private_key.pem
+          ssh-keygen -p -m PEM -f private_key.pem
           # Replace with your EC2 instance's public IP address and the path to your app directory on the instance
           ssh -i "private_key.pem" -o StrictHostKeyChecking=no -T ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
             cd /srv/log-nolan
