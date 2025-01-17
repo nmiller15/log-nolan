@@ -7,7 +7,7 @@ toc: false
 readTime: true
 autonumber: false
 math: true
-tags: ["database", "java"]
+tags: ["beginners", "codenewbie", "ai", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
