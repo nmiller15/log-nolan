@@ -1,6 +1,6 @@
 baseURL = 'https://nolanmiller.me/'
 languageCode = 'en-us'
-title = 'Blog("Nolan");'
+title = 'Log("Nolan");'
 theme = 'typo'
 
 [taxonomies]
