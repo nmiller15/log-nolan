@@ -13,6 +13,8 @@ Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
 Write-Host "Running Hugo build..."
 hugo
 
+git pull
+
 # Add all files to Git
 git add -A
 
