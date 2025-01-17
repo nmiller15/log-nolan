@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://nolanmiller.me//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nolanmiller.me//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nolanmiller.me//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
+
+<meta name="description" content="A full walkthrough for manual deployment."/>
+
+<title>
+    
+    Deploying a Full-Stack PERN App to AWS EC2 | Log(&#34;Nolan&#34;);
+    
+</title>
+
+<link rel="canonical" href="https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/"/>
+
+<meta property="og:url" content="https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/">
+  <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
+  <meta property="og:title" content="Deploying a Full-Stack PERN App to AWS EC2">
+  <meta property="og:description" content="A full walkthrough for manual deployment.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-16T00:00:00+00:00">
+    <meta property="article:tag" content="Postgres">
+    <meta property="article:tag" content="React">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Node">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.186794b3399a702d3092949042cdc215dea303c17e71e7c0254768448de11db8.css" media="all">
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://nolanmiller.me/">Log(&#34;Nolan&#34;);</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/deploying-a-full-stack-pern-app-to-aws-ec2/">Deploying a Full-Stack PERN App to AWS EC2</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Deploying a Full-Stack PERN App to AWS EC2</h1>
+    
+    <p class="single-summary">A full walkthrough for manual deployment.</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-08-16T00:00:00&#43;00:00">August 16, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      10 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  
+
+  <div class="single-tags">
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/postgres/">#Postgres</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/react/">#React</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/aws/">#Aws</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/node/">#Node</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>Roast is officially live! And you can visit it at the following link!</p>
+<p><a href="https://roast.nolanmiller.me/">Roast: Know Your Home Roasts</a></p>
+<p>In this post, I’m going to go over, broadly how I deployed my full stack application on an AWS EC2 Instance.</p>
+<h2 class="heading" id="deploying-a-full-stack-pern-app-to-ec2">
+  Deploying a Full-Stack PERN App to EC2
+  <a href="#deploying-a-full-stack-pern-app-to-ec2">#</a>
+</h2>
+<p>So, the code for my project was ready to ship, and I had to decide on a hosting solution. II like EC2, becuase its just a virtual Linux machine in one of AWS’s datacenters! You have complete customization ability, but that also means the configuration can be a bit of a bear if you’re not used to working with the command line.</p>
+<p>If you have a project that you’re looking to host, grab your code and follow along!</p>
+<h3 class="heading" id="1-spin-up-an-ec2-instance">
+  1. Spin Up an EC2 Instance
+  <a href="#1-spin-up-an-ec2-instance">#</a>
+</h3>
+<ul>
+<li>If you don’t already have an AWS account, create one now, and navigate to the EC2 product.</li>
+<li>From the dashboard, hit <strong>“Launch Instance.”</strong> Provide a name for your server and then select an image. I went with Ubuntu for this because its easy to work with and its still free teir eligible.</li>
+<li>Create a key pair, and save the key pair to somewhere on your computer. You’ll need this to SSH into your EC2 instance later.</li>
+<li>In the Network settings tab, create a new security group that allows SSH traffic from your IP and allows HTTP and HTTPS traffic from the internet! (If you click Edit, you can name this security group whatever you’d like. The “launch-wizard” name can get a little confusing.)</li>
+<li>The rest of the settings can be left at default and then you can launch your instance!</li>
+</ul>
+<h3 class="heading" id="2-install-your-dependencies-and-code">
+  2. Install Your Dependencies and Code
+  <a href="#2-install-your-dependencies-and-code">#</a>
+</h3>
+<p>To host your project here, you’ll have to find a way to get your project onto the EC2 instance. But, first that means you’ll have to connect via SSH.</p>
+<ul>
+<li>Using your preferred shell on your local computer, navigate to the directory that you saved your key pair to from earlier. Then, in your browser, on AWS’s EC2 instances page, click on “Connect” in the upper right. From here, you can click on “SSH client” and it will give you a list of instructions on how to connect to your EC2 Instance. It involves running the following commands</li>
+</ul>
+<pre tabindex="0"><code>chmod 400 &#34;&lt;yourkey&gt;.pem&#34;
+ssh -i &#34;&lt;yourkey&gt;.pem&#34; ubuntu@&lt;your-instance&gt;.compute.amazonaws.com
+</code></pre><ul>
+<li>Once you’re in, you&rsquo;ll want to update and upgrade the built-in package manager apt</li>
+</ul>
+<pre tabindex="0"><code>sudo apt update
+sudo apt upgrade
+</code></pre><ul>
+<li>My project runs on node, so I needed to install node and npm as dependencies for my project</li>
+</ul>
+<pre tabindex="0"><code>sudo apt install nodejs
+sudo apt install npm
+</code></pre><ul>
+<li>Then, make sure that node, npm and git are installed. If they are, these commands will give a version number</li>
+</ul>
+<pre tabindex="0"><code>node -v
+npm -v
+git -v
+</code></pre><ul>
+<li>Now, to get code onto this machine, perform a git clone on your github repo. This snipped is my repo, you’ll get the URL by just copy and pasting it from your browser. I like to use git for this rather than other command line tools, because with a personal-access token I can push any changes back to github (because trust me, you’ll make changes).</li>
+</ul>
+<pre tabindex="0"><code>git clone https://github.com/nmiller15/roast.git
+</code></pre><ul>
+<li>Install your dependencies with an install command, and build your application if needed. I have a React application stored in a directory called frontend, and an api stored in a directory called backend.</li>
+</ul>
+<pre tabindex="0"><code>cd roast/frontend     # get to my React app
+sudo npm i            # install dependencies
+npm run build         # create the production build
+cd ../backend         # navigate to my api directory
+sudo npm i            # install dependencies
+</code></pre><ul>
+<li>At this point, it&rsquo;s a good thing to check to see if your application(s) are running as expected. You can run the start command in the terminal. To see if it&rsquo;s working, go to your Security Group settings in AWS and create a custom inbound rule that allows traffic on the port your app runs on. Then you should be able to access the IP in this format from your web browser 19.168.1.0:3000. The IP address of your server is located on the dashboard for your instance!</li>
+<li>If everything is working normally, go ahead and shut it down. If it’s not then debug until it is! It feels good to have your application accessible over the internet, but we still need to daemonize the application, give it a domain name and serve it securely.</li>
+<li>Don’t forget to close the security rule you opened up for testing!</li>
+</ul>
+<h3 class="heading" id="3-set-up-your-database">
+  3. Set Up Your Database
+  <a href="#3-set-up-your-database">#</a>
+</h3>
+<p>I chose Postgres for my database for this application. But, the same general steps would apply for MySQL or SQLite. Essentially, you have to walk through everything that you did to create your database on your local machine in the cloud. If you set your database up on a third party service, then go ahead and skip this step!</p>
+<ul>
+<li>Install postgress, start it and enable it so that it will launch on an instance reboot.</li>
+</ul>
+<pre tabindex="0"><code>sudo apt install postgresql postgresql-contrib
+
+sudo systemctl start postgresql@16-main
+sudo systemctl enable postgresql@16-main
+</code></pre><ul>
+<li>You may have to access the database configuration files to ensure that you can access it locally.</li>
+<li>Figure out where your conf file is using the command:</li>
+</ul>
+<pre tabindex="0"><code>sudo -u postgres psql -c &#39;SHOW config_file&#39;
+</code></pre><ul>
+<li>Then, using that command, open up your configuration file with the command</li>
+</ul>
+<pre tabindex="0"><code>sudo nano /etc/postgresql/16/main/postgresql.conf
+# Replace my path with the path to your conf file
+</code></pre><p>In this file, we’re just checking a couple of things:</p>
+<ul>
+<li>See where your hba_file is located, it should be in the same directory as this file. You&rsquo;ll find this under FILE LOCATIONS</li>
+<li>Then under CONNECTIONS AND AUTHENTCATION, ensure that you have ‘localhost’ listed as a value for <code>listen_addresses</code></li>
+<li>You should also set the port that you would like the database to listen on from here.</li>
+<li>To exit, hit ctrl+X. You will be propted to hit Y and Enter if you’ve made any changes to save them.</li>
+</ul>
+<p>Then let’s make sure the hba file is set up properly:</p>
+<pre tabindex="0"><code>sudo nano /etc/postgresql/16/main/pg_hba.conf
+</code></pre><p>If you’re planning to access your database from this EC2 instance only (an api calling it), then make sure that you have the following listed:</p>
+<pre tabindex="0"><code>local all all trust
+</code></pre><p>Do a little bit of Googling on the permissions you’ll need to set if you’re planning on exposing the database to the Internet.</p>
+<p>Now, it’s time to start creating your database, so we’ll do that from psql, the postgresql CLI.</p>
+<pre tabindex="0"><code>psql -U postgres
+
+# You&#39;ll know you have it when you see
+postgres=#
+</code></pre><p>I’m not going to walk through how to create a database here, that’s for another blog post. But, make sure that you go through all these things:</p>
+<ul>
+<li>Create a database</li>
+<li>Create your tables with the same columns and keys</li>
+<li>Create any sequences that you will need on those tables</li>
+<li>Create any users that you’re planning on using with the database</li>
+<li>Grant all of the needed permissions to those users</li>
+<li>Test the users by quitting psql (<code>\q</code>) and connecting as the role you created, is there any action that you cannot perform that you need to?</li>
+</ul>
+<p>Just as a note here, I would not allow your app to connect to the database as <code>postgres</code> . This is a superuser, and its not a great idea to have your application accessing your database as a superuser in production. You&rsquo;ll miss some permissions when you&rsquo;re testing, sure, but its better than having your database dropped!</p>
+<h3 class="heading" id="4-create-your-environment-variables">
+  4. Create Your Environment Variables
+  <a href="#4-create-your-environment-variables">#</a>
+</h3>
+<p>To connect to the database, or to access an api with a key, you’ll be using environment variables. You can create them in a file that you put in the /etc/ directory</p>
+<pre tabindex="0"><code>touch /etc/app.env
+sudo nano /etc/app.env
+</code></pre><p>Inside this file, create the variables that you need in the following format:</p>
+<pre tabindex="0"><code>KEY=value
+SOME_OTHER_KEY=thismuchlongervalue
+</code></pre><p>Once you’ve saved these, we will lock down the file, so that its only accessible to the ubuntu user, who will be runninng our services.</p>
+<pre tabindex="0"><code>sudo chmod 600 /etc/app.env
+sudo chown ubuntu:ubuntu /etc/roast.env  # Name this file whatever you&#39;d like
+</code></pre><h3 class="heading" id="5-daemonize-your-application">
+  5. Daemonize Your Application
+  <a href="#5-daemonize-your-application">#</a>
+</h3>
+<p>We’re going to now run the application as a service, so that it runs in the background of our computer. I had to do this twice, once for my api and a second time for my react application.</p>
+<pre tabindex="0"><code>sudo nano /etc/systemd/system/roast-api.service  # You can name the service file anything you&#39;d like
+</code></pre><pre tabindex="0"><code>[Unit]
+Description=Roast API                        # Replace with your app name
+After=network.target multi-user.target
+
+[Service]
+User=ubuntu                                  # The user running the service
+WorkingDirectory=/home/ubuntu/roast/backend  # The root of your app
+ExecStart=/usr/bin/npm start                 # Execute command for app
+Restart=always                               # Service restarts after crash 
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/roast.env               # The name of your env file
+StandardOutput=syslog                        # Console logs
+SyslogIdentifier=roast-api                   # An identifier for the logs
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>I had to do this a second time for my React application</p>
+<pre tabindex="0"><code>sudo nano /etc/systemd/system/roast-ui.service
+</code></pre><pre tabindex="0"><code>[Unit]
+Description=Roast UI App
+After=network.target multi-user.target
+
+[User]
+User=ubuntu                                  
+WorkingDirectory=/home/ubuntu/roast/frontend/
+ExecStart=/usr/bin/serve -s build    # React is served from build
+Restart=always                       # in production
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/roast.env
+StandardOutput=syslog
+SyslogIdentifier=roast-ui
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>Then to make sure that systemd has the proper configurations for these services, and to start the service and make sure they run on boot:</p>
+<pre tabindex="0"><code>sudo systemctl daemon-reload
+
+sudo systemctl start roast-api.service
+sudo systemctl start roast-ui.service
+
+sudo systemctl enable roast-api.service
+sudo systemctl enable roast-ui.service
+</code></pre><p>To check to see that a service is running, you can use the following commands:</p>
+<pre tabindex="0"><code># Check current status of service
+sudo systemctl status roast-api               # Use SyslogIdentifier
+
+# Check logs of the service
+sudo journalctl -u roast-api
+
+# Live logs
+sudo journalctl -f -u roast-api
+</code></pre><p>Once you reach this point, if everything is working properly, you’ll be able to open up the security rules on the appropriate ports in AWS, and check that your app is accessible using the IP address and port number.</p>
+<p>If you’re running into a 404 error, double check that you’re serving from the correct directory. Remeber that WorkingDirectory in your service file should be the directory that you must be in to run your start command.</p>
+<h3 class="heading" id="6-point-a-domain-name-to-your-ec2-instance">
+  6. Point a Domain Name to Your EC2 Instance
+  <a href="#6-point-a-domain-name-to-your-ec2-instance">#</a>
+</h3>
+<p>I used AWS Route 53 to do this, but you can use just about any DNS provider with a domain name that you own. The general steps are:</p>
+<ol>
+<li>Provision a subdomain (if you&rsquo;re using one)</li>
+<li>Connect your DNS provider to your domain provider (all the major services have walkthroughs for this).</li>
+<li>Point the subdomain to the IP address of your EC2 instance using an A record.</li>
+<li>Wait anwhere from 2 minutes to 48 hours for DNS to propogate. (Mine actually took in about five minutes, but this is not typical)</li>
+</ol>
+<h3 class="heading" id="7-set-up-caddy-as-a-reverse-proxy-to-serve-the-app-over-https">
+  7. Set up Caddy as a Reverse Proxy to Serve the App over HTTPS
+  <a href="#7-set-up-caddy-as-a-reverse-proxy-to-serve-the-app-over-https">#</a>
+</h3>
+<p>I’ve used NGINX for this before, but the amount of configuration and managing SSLs on your own can be kind of a pain. Caddy is <strong>way</strong> better if you don&rsquo;t need a ton of configuration.</p>
+<p>I did have to go back in and add some extra bits to my configuration to make sure that cookies were allowed to be sent over the proxy. But, 10/10, would caddy again.</p>
+<ul>
+<li>Install Caddy</li>
+</ul>
+<pre tabindex="0"><code>sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
+curl -1sLf &#39;https://dl.cloudsmith.io/public/caddy/stable/gpg.key&#39; | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf &#39;https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt&#39; | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+</code></pre><ul>
+<li>Edit the configurations in the Caddyfile</li>
+</ul>
+<pre tabindex="0"><code>sudo nano /etc/caddy/Caddyfile
+</code></pre><pre tabindex="0"><code>:80 {
+  reverse_proxy localhost:3000
+}
+</code></pre><pre tabindex="0"><code>sudo systemctl restart caddy
+</code></pre><p>So, this will serve my React application over port 80, but I’d still have to go to the IP address directly. Plus, I have an api that I need to expose as well.</p>
+<p>Here’s the best part about caddy, all I have to do to serve both of these applications over HTTPS on my subdomains is edit the Caddyfile again to the following:</p>
+<pre tabindex="0"><code>roast-api.nolanmiller.me {
+   reverse_proxy localhost:8080
+}
+
+roast.nolanmiller.me {
+    reverse_proxy localhost:3000
+}
+</code></pre><pre tabindex="0"><code>sudo systemctl restart caddy
+</code></pre><p>Done!</p>
+<p>My SSL certs will be manually updated, and I didn’t even have to worry about installing them. It’s a 7 line config file! (Like I said, mine did get a <em>tiny</em> bit longer when I was troubleshooting cookies).</p>
+<h2 class="heading" id="deployed">
+  Deployed!
+  <a href="#deployed">#</a>
+</h2>
+<p>That’s it! Now, don’t let me fool you, this process took me a while, and it was not as smooth as this blog post made it look. I got stuck in so many places: permissions with my database users, misnaming environment files, figuring out the execute command for my react application, debugging random fetch request and cors issues that I wasn’t having on my localhost.</p>
+<p>But, this is the basic process!</p>
+<p>And to prove that it’s done! Head on over to <a href="https://roast.nolanmiller.me/">roast.nolanmiller.me</a> and make an account, roast a some coffee beans and let me know what you think!</p>
+<p>(FYI, Add the site to your mobile home screen to see the app how it was intended!)</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/self-taught-is-still-possible-in-2025/">
+                        Self-Taught is Still Possible In 2025
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+    
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
