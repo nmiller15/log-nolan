@@ -19,9 +19,6 @@ jobs:
           # Output the SSH key to check it is being read correctly
           echo "Saving SSH private key..."
           echo "$EC2_SSH_KEY" > private_key.pem
-          
-          # Check if the key is correctly saved
-          cat private_key.pem
 
           # Set the correct permissions for the private key
           chmod 600 private_key.pem
