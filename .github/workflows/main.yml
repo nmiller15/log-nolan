@@ -1,0 +1,35 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Deploy to EC2
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH }}
+        run: |
+          # Output the SSH key to check it is being read correctly
+          echo "Saving SSH private key..."
+          echo "$EC2_SSH_KEY" > private_key.pem
+
+          # Set the correct permissions for the private key
+          chmod 600 private_key.pem
+
+          # Run the SSH command, use verbose mode for debugging
+          echo "Connecting to EC2 instance..."
+          ssh -i "private_key.pem" -o StrictHostKeyChecking=no -v ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
+            cd /srv/log-nolan
+            sudo git pull  # Pull latest changes
+            sudo systemctl restart caddy
+          EOF
+
+      
+
