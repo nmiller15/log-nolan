@@ -22,7 +22,7 @@ In this post, I’m going to go over, broadly how I deployed my full stack appli
 
 ## Deploying a Full-Stack PERN App to EC2
 
-So, the code for my project was ready to ship, and I had to decide on a hosting solution. II like EC2, becuase its just a virtual Linux machine in one of AWS’s datacenters! You have complete customization ability, but that also means the configuration can be a bit of a bear if you’re not used to working with the command line.
+So, the code for my project was ready to ship, and I had to decide on a hosting solution. II like EC2, because it's just a virtual Linux machine in one of AWS’s datacenters! You have complete customization ability, but that also means the configuration can be a bit of a bear if you’re not used to working with the command line.
 
 If you have a project that you’re looking to host, grab your code and follow along!
 
