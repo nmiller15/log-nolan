@@ -54,9 +54,13 @@ url = "/"
 name = "posts"
 url = "/posts"
 
-[[params.menu]]
-name = "about"
-url = "/about"
+#[[params.menu]]
+#name = "about"
+#url = "/about"
+
+[[params.author]]
+email = 'mail@nolanmiller.me'
+name = 'Nolan Miller'
 
 # Syntax highlight on code blocks
 [markup]
@@ -72,3 +76,13 @@ category = "General"
 categoryid = "categoryId"
 mapping = "pathname"
 theme = "preferred_color_scheme"
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
+[services]
+  [services.rss]
+    limit = -1
