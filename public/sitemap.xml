@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nolanmiller.me/tags/cd/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/testing/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/this-is-a-test-post/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/ai/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -32,7 +14,16 @@
     <loc>https://nolanmiller.me/tags/codenewbie/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/aws/</loc>
