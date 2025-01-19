@@ -65,7 +65,7 @@ name = 'Nolan Miller'
 # Syntax highlight on code blocks
 [markup]
 [markup.highlight]
-style = 'algol'
+style = 'catppuccin-frappe'
 
 # Giscus comments
 [params.giscus]
