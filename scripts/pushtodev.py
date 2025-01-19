@@ -80,7 +80,7 @@ def process_folder(folder_path):
 
                     # Check if 'dev' field exists and is False
                     if "dev: false" in front_matter_str:
-
+                        print('Building article for DEV.to...')
                         front_matter, body = read_front_matter(file_path)
                         article_data = {
                             "title": front_matter.get("title", "Untitled"),
@@ -91,9 +91,9 @@ def process_folder(folder_path):
                             "description": front_matter.get("description"),
                             "tags": front_matter.get("tags")
                         }
-
+                        print('Calling Dev.to API...')
                         post_to_dev(article_data)
-                        
+
                         # Replace the 'dev' field value to 'true'
                         updated_front_matter_str = front_matter_str.replace("dev: false", "dev: true")
 
