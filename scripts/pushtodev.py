@@ -94,7 +94,7 @@ def process_folder(folder_path):
                         print('Calling Dev.to API...')
                         post_to_dev(article_data)
 
-                        # Replace the 'dev' field value to 'true'
+                        # Replace the 'dev' field value to 'true'fl
                         updated_front_matter_str = front_matter_str.replace("dev: false", "dev: true")
 
                         # Replace the old front matter with the updated one
