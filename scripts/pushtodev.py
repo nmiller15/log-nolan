@@ -79,7 +79,7 @@ def process_folder(folder_path):
                     front_matter_str = front_matter_match.group(1)
 
                     # Check if 'dev' field exists and is False
-                    if "dev: false" in front_matter_str:
+                    if "dev: false" in front_matter_str and "draft: false" in front_matter_str:
                         print('Building article for DEV.to...')
                         front_matter, body = read_front_matter(file_path)
                         article_data = {
