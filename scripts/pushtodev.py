@@ -64,35 +64,36 @@ def generate_canonical_url(title):
     return canonical_url
 
 def process_folder(folder_path):
-    """Processes all files in the folder."""
+    """Processes all files in the folder and updates the 'dev' field in the front matter."""
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
-            front_matter, body = read_front_matter(file_path)
-            if front_matter and front_matter.get('dev') == False and front_matter.get('draft') == False:
-                article_data = {
-                    "title": front_matter.get("title", "Untitled"),
-                    "body_markdown": body,
-                    "published": True,
-                    "series": front_matter.get("series", None),
-                    "canonical_url": generate_canonical_url(front_matter.get('title', 'Untitled')),
-                    "description": front_matter.get("description"),
-                    "tags": front_matter.get("tags", [])
-                }
-                print("articleData")
-                post_to_dev(article_data)
+            try:
+                # Read the file content
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    content = file.read()
 
-                front_matter['dev'] = True
+                # Extract the front matter between '---'
+                front_matter_match = re.match(r"---\s*(.*?)\s*---", content, re.DOTALL)
+                if front_matter_match:
+                    front_matter_str = front_matter_match.group(1)
 
-                new_front_matter = yaml.dump(front_matter, default_flow_style=False)
-                new_content = f"---\n{new_front_matter}---\n{body}"
+                    # Check if 'dev' field exists and is False
+                    if "dev: false" in front_matter_str:
+                        # Replace the 'dev' field value to 'true'
+                        updated_front_matter_str = front_matter_str.replace("dev: false", "dev: true")
 
-                try:
-                    with open(file_path, 'w', encoding='utf-8') as file:
-                        file.write(new_content)
-                    print(f"Updated 'dev' field to True for {file_name}.")
-                except Exception as e:
-                    print(f"Error writing updated front matter to {file_path}: {e}")
+                        # Replace the old front matter with the updated one
+                        updated_content = content.replace(front_matter_str, updated_front_matter_str)
+
+                        # Write the updated content back to the file
+                        with open(file_path, 'w', encoding='utf-8') as file:
+                            file.write(updated_content)
+
+                        print(f"Updated 'dev' field to True for {file_name}.")
+
+            except Exception as e:
+                print(f"Error processing {file_path}: {e}")
 
 process_folder(FOLDER_PATH)
 print("Pushes to DEV.to finished successfully.")

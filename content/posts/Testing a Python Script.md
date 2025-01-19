@@ -1,19 +1,21 @@
 ---
-title: Testing a Python Script
-date: 2025-01-18
-summary: "This is a test"
-description: "This is a test of a python script"
-toc: false
-readTime: true
 autonumber: false
-math: true
-tags: ["ai", "python", "scripting"]
-showTags: true
-hideBackToTop: false
+date: 2025-01-18
+description: This is a test of a python script
+dev: true
 draft: false
-dev: false
+hideBackToTop: false
+math: true
+readTime: true
+showTags: true
+summary: This is a test
+tags:
+- ai
+- python
+- scripting
+title: Testing a Python Script
+toc: false
 ---
-
 This is just some test content so that I can see how it works. 
 
 ## Does it read the markdown right?
