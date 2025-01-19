@@ -69,7 +69,7 @@ def process_folder(folder_path):
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
             front_matter, body = read_front_matter(file_path)
-            if front_matter and front_matter.get('dev') == False:
+            if front_matter and front_matter.get('dev') == False and front_matter.get('draft') == False:
                 article_data = {
                     "title": front_matter.get("title", "Untitled"),
                     "body_markdown": body,
@@ -81,6 +81,18 @@ def process_folder(folder_path):
                 }
                 print("articleData")
                 post_to_dev(article_data)
+
+                front_matter['dev'] = True
+
+                new_front_matter = yaml.dump(front_matter, default_flow_style=False)
+                new_content = f"---\n{new_front_matter}---\n{body}"
+
+                try:
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        file.write(new_content)
+                    print(f"Updated 'dev' field to True for {file_name}.")
+                except Exception as e:
+                    print(f"Error writing updated front matter to {file_path}: {e}")
 
 process_folder(FOLDER_PATH)
 print("Pushes to DEV.to finished successfully.")
