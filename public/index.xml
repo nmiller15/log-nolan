@@ -9,6 +9,13 @@
     <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>And another</title>
+      <link>https://nolanmiller.me/posts/and-another/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/and-another/</guid>
+      <description>&lt;p&gt;Test content for the body.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Testing a Python Script</title>
       <link>https://nolanmiller.me/posts/testing-a-python-script/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
