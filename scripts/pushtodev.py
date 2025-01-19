@@ -80,6 +80,20 @@ def process_folder(folder_path):
 
                     # Check if 'dev' field exists and is False
                     if "dev: false" in front_matter_str:
+
+                        front_matter, body = read_front_matter(file_path)
+                        article_data = {
+                            "title": front_matter.get("title", "Untitled"),
+                            "body_markdown": body,
+                            "published": True,
+                            "series": front_matter.get("series"),
+                            "canonical_url": generate_canonical_url(front_matter.get('title')),
+                            "description": front_matter.get("description"),
+                            "tags": front_matter.get("tags")
+                        }
+
+                        post_to_dev(article_data)
+                        
                         # Replace the 'dev' field value to 'true'
                         updated_front_matter_str = front_matter_str.replace("dev: false", "dev: true")
 
@@ -91,6 +105,8 @@ def process_folder(folder_path):
                             file.write(updated_content)
 
                         print(f"Updated 'dev' field to True for {file_name}.")
+
+                        
 
             except Exception as e:
                 print(f"Error processing {file_path}: {e}")
