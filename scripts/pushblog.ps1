@@ -23,7 +23,7 @@ $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m $commitMessage
 
 Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\scripts"
-pushtodev.py
+python3 pushtodev.py
 
 Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
 
