@@ -22,6 +22,11 @@ git add -A
 $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m $commitMessage
 
+Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\scripts"
+pushtodev.py
+
+Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
+
 # Push changes to GitHub
 Write-Host "Pushing changes to GitHub..."
 git push

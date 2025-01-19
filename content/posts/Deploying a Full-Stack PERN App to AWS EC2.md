@@ -10,7 +10,7 @@ math: true
 tags: ["postgres", "react", "aws", "node"]
 showTags: true
 hideBackToTop: false
-draft: false
+draft: true
 devto: true
 ---
 

@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nolanmiller.me/tags/ai/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/python/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/scripting/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/testing-a-python-script/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/beginners/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
@@ -14,32 +32,8 @@
     <loc>https://nolanmiller.me/tags/codenewbie/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/aws/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/node/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/postgres/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/react/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/learning/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
