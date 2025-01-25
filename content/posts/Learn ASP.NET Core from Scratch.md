@@ -22,7 +22,9 @@ FYI: This learning path assumes that you have a basic knowledge of C# syntax and
 
 ## The ASP.NET Core Learning Path
 
+
 ### Introduction to ASP.NET
+
 
 #### 1. dotnet cli
 
@@ -34,6 +36,7 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ Reference - 2
 	+ 2.2 Creating your first ASP.NET Core application - p. 32
+
 
 #### 2. ASP.NET Web Application Starting Template
 
@@ -48,6 +51,7 @@ __Resources:__
 	+ 2.6 The Program class - p. 41
 	+ 2.7 The Startup class - p. 44
 
+
 #### 3. Dependency Injection
 
 __Module Goal:__ Describe the purpose of Dependency Injection and be capable of configuring dependencies within ASP.NET's Dependency Injection framework.
@@ -59,6 +63,7 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 10 Service configuration with dependency injection - p. 267
 
+
 #### 4. Application Configuration using CreateDefaultBuilder
 
 __Module Goal:__ Explain CreateDefaultBuilder's purpose and uses. Identify common configuration patterns in ASP.NET Core.
@@ -67,7 +72,10 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 11 Configuring an ASP.NET Core application - 303
 
+
 ### Creating APIs with ASP.NET Core
+
+
 #### 5. Minimal API
 
 __Module Goal:__ Create an API that responds to requests with at least 4 different endpoints. Create an endpoint that returns multiple status codes based on a condition.
@@ -80,6 +88,7 @@ __Resources:__
 	+ 9.1 What is a Web API and when should you use one? - 235
 	+ 9.6 Generating a response from a model - 258
 
+
 #### 6. Connecting Your API to PostgreSQL using Entity Framework
 
 __Module Goal:__ Connect the fifth module's API to a PostgreSQL database using Entity Framework and create API endpoints to handle CRUD operations.
@@ -91,6 +100,7 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 12.4 Querying data from and saving data to the database - 355
 
+
 #### 6a. Connect to PostgreSQL with ADO.NET
 
 __Module Goal:__ Branch the previous module's project and access the PostgreSQL database without using EF. Perform data calls directly on ADO.NET.
@@ -99,6 +109,7 @@ __Resources:__
 + [Microsoft: ADO.NET Overview](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)
 + [Microsft Q&A: ASP.NET Core Web App with SQL (No Entity Framework)](https://learn.microsoft.com/en-us/answers/questions/1123214/asp-net-core-web-app-with-sql-(no-entity-framework)
 + [Devart: How to connect to PostgreSQL in .NET with C#](https://www.devart.com/dotconnect/postgresql/connect-postgresql-in-net.html)
+
 
 #### 7. Controller-Based API
 
@@ -112,6 +123,7 @@ __Resources:__
 	+ 9.2 Applying the MVC design pattern to a Web API
 	+ 9.4 Attribute routing: taking fine-grained control of your URLs - 246
 
+
 #### 8. Adding Built-In and Custom Middleware
 
 __Module Goal:__ Identify most common ASP.NET middleware and be able to explain what it is used for. Create your own middleware function and mount it to the application.
@@ -123,7 +135,9 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 3 Handling requests with the middleware pipeline
 
+
 ### The Model-View-Controller Design Pattern
+
 
 #### 9. ASP.NET MVC Starting Templates & Basic Routing
 
@@ -138,6 +152,7 @@ __Resources:__
 	+ 4.2 MVC controllers and action methods 113
 	+ 5 Mapping URLs to methods using conventional routing - 120
 
+
 #### 10. Binding Models to your Views in Razor Syntax
 
 __Module Goal:__ Create a Razor view from scratch. Create a model to attach to that view. Enable CRUD operations on the page model from scratch. 
@@ -148,6 +163,7 @@ __Resources:__
 + [Microsoft: Create reusable UI using the Razor class library project in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-9.0&tabs=visual-studio)
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 7 Rendering HTML using Razor views - 175
+
 
 #### 11. Using Tag Helpers for User Input other Useful Things
 
@@ -160,6 +176,7 @@ __Resources:__
 	+ 8 Building Forms with Tag Helpers
 	+ 19.4 Creating a custom Razor Tag Helper 591
 
+
 #### 12. Using DataAnnotations to Validate Your Models
 
 __Module Goal:__ Identify and explain the most common ASP.NET DataAnnotations. Add validation to your model. 
@@ -169,6 +186,7 @@ __Resources:__
 + [Microsoft: System.ComponentModel.DataAnnotations Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-9.0)
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 6.3 Handling user input with model validation
+
 
 #### 13. Styling your view models
 
@@ -180,6 +198,7 @@ __Resources:__
 + [Bootstrap: Get started with Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 + [Bootstrapdash: How to Use ASP.NET with Core Bootstrap](https://www.bootstrapdash.com/blog/asp-net-core-with-bootstrap-4)
 + [Infragistics: Styling Your Application](https://www.infragistics.com/help/aspnet/web-styling-your-application2)
+
 
 #### 14. ASP.NET Core Identity, and Adding Authentication & Authorization
 
@@ -193,7 +212,9 @@ __Resources:__
 	+ 14.5 Managing users: adding new claims to users - 428
 	+ 15 Authorization: securing your application 432
 
+
 ### Polish and Deploy Your Application
+
 
 #### 15. Add unit tests for your action methods using NUnit
 
@@ -206,6 +227,7 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 20.4 Unit testing MVC controllers
 
+
 #### 16. Publish your application with IIS Express
 
 __Module Goal:__ Describe the use of IIS Express and the term "publish". Explain the hosting model of ASP.NET Core. Publish your MVC application to IIS Express.
@@ -217,6 +239,7 @@ __Resources:__
 	- 16.1 Understanding the ASP.NET Core hosting model - 463
 	- 16.2 Publishing your app to IIS - 470
 
+
 #### 16a. Deploy your application to Linux with Nginx
 
 __Module Goal:__ Provision an EC2 instance of Ubuntu. Configure Nginx to serve the application on a domain and point a DNS provider to the address. Bonus points for setting up CI/CD with Github Actions.
@@ -227,6 +250,7 @@ __Resources:__
 + [nginx: Docs](https://nginx.org/en/docs/)
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ 16.3 Hosting an application on Linux
+
 
 #### 17. Configure Logging to Monitor your application
 
