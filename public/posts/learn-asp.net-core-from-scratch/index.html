@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://nolanmiller.me//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nolanmiller.me//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nolanmiller.me//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
+
+<meta name="description" content="A learning roadmap for ASP.NET Core"/>
+
+<title>
+    
+    Learn ASP.NET from Scratch | Log(&#34;Nolan&#34;);
+    
+</title>
+
+<link rel="canonical" href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/"/>
+
+<meta property="og:url" content="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/">
+  <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
+  <meta property="og:title" content="Learn ASP.NET from Scratch">
+  <meta property="og:description" content="A learning roadmap for ASP.NET Core">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:tag" content=".Net">
+    <meta property="article:tag" content="Csharp">
+    <meta property="article:tag" content="Learning">
+    <meta property="article:tag" content="Microsoft">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.186794b3399a702d3092949042cdc215dea303c17e71e7c0254768448de11db8.css" media="all">
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://nolanmiller.me/">Log(&#34;Nolan&#34;);</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/learn-asp.net-core-from-scratch/">Learn ASP.NET from Scratch</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Learn ASP.NET from Scratch</h1>
+    
+    <p class="single-summary">A learning roadmap for ASP.NET Core</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-24T00:00:00&#43;00:00">January 24, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      7 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  
+
+  <div class="single-tags">
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/.net/">#.Net</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/csharp/">#Csharp</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/learning/">#Learning</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/microsoft/">#Microsoft</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>If you read my <a href="https://nolanmiller.me/posts/what-id-like-to-learn-in-2025">last post</a>, you read all of the things that I&rsquo;d like to learn this year, starting with ASP.NET Core. I&rsquo;ve spent the past week gathering resources from Microsoft&rsquo;s documentation, blogs, forums and internet searches to create myself a 17 module learning plan.</p>
+<p>If you&rsquo;re looking to get your feet wet on Microsoft&rsquo;s full stack web framework, then I hope these resources are helpful for you too.</p>
+<p>FYI: This learning path assumes that you have a basic knowledge of C# syntax and a general knowledge of the available libraries. If you don&rsquo;t, Codecademy has a <a href="https://www.codecademy.com/enrolled/courses/learn-c-sharp">free course</a>!</p>
+<h2 class="heading" id="the-aspnet-core-learning-path">
+  The ASP.NET Core Learning Path
+  <a href="#the-aspnet-core-learning-path">#</a>
+</h2>
+<h3 class="heading" id="introduction-to-aspnet">
+  Introduction to ASP.NET
+  <a href="#introduction-to-aspnet">#</a>
+</h3>
+<h4 class="heading" id="1-dotnet-cli">
+  1. dotnet cli
+  <a href="#1-dotnet-cli">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Be able to explain the most common commands with their options and use them throughout the development process.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/tools/">Microsoft: .NET CLI overview</a></li>
+<li><a href="https://www.tutorialsteacher.com/core/net-core-command-line-interface">Tutorials Teacher: .NET Core Command-Line Interface</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>Reference - 2</li>
+<li>2.2 Creating your first ASP.NET Core application - p. 32</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="2-aspnet-web-application-starting-template">
+  2. ASP.NET Web Application Starting Template
+  <a href="#2-aspnet-web-application-starting-template">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Be able to explain the purpose and use of each of the files and folders that are generated by the starting template of an ASP.NET application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.tutorialsteacher.com/core/first-aspnet-core-application">Tutorials Teacher: Create ASP.NET Core MVC Application</a></li>
+<li><a href="https://www.tutorialsteacher.com/core/aspnet-core-wwwroot">Tutorials Teacher: wwwroot Folder</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-9.0&amp;tabs=windows">Microsoft: ASP.NET Core fundamentals overview</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>2.5 The csproj project file - p. 38</li>
+<li>2.6 The Program class - p. 41</li>
+<li>2.7 The Startup class - p. 44</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="3-dependency-injection">
+  3. Dependency Injection
+  <a href="#3-dependency-injection">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Describe the purpose of Dependency Injection and be capable of configuring dependencies within ASP.NET&rsquo;s Dependency Injection framework.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-9.0">Microsoft: Dependency injection in ASP.NET Core</a></li>
+<li><a href="https://www.codeproject.com/Articles/5339241/Exploring-the-Microsoft-Extensions-DependencyInjec">CodeProject: Exploring the Microsoft.Extensions.DependencyInjection Machinery</a></li>
+<li><a href="https://stackoverflow.com/questions/53825155/how-can-i-use-microsoft-extensions-dependencyinjection-in-an-net-core-console-a">StackOverflow: How can I use Microsoft.Extensions.DependencyInjection</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>10 Service configuration with dependency injection - p. 267</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="4-application-configuration-using-createdefaultbuilder">
+  4. Application Configuration using CreateDefaultBuilder
+  <a href="#4-application-configuration-using-createdefaultbuilder">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Explain CreateDefaultBuilder&rsquo;s purpose and uses. Identify common configuration patterns in ASP.NET Core.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>11 Configuring an ASP.NET Core application - 303</li>
+</ul>
+</li>
+</ul>
+<h3 class="heading" id="creating-apis-with-aspnet-core">
+  Creating APIs with ASP.NET Core
+  <a href="#creating-apis-with-aspnet-core">#</a>
+</h3>
+<h4 class="heading" id="5-minimal-api">
+  5. Minimal API
+  <a href="#5-minimal-api">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Create an API that responds to requests with at least 4 different endpoints. Create an endpoint that returns multiple status codes based on a condition.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/overview?view=aspnetcore-9.0">Microsoft: Minimal APIs overview</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-9.0">Microsoft: Minimal APIs quick reference</a></li>
+<li><a href="https://www.c-sharpcorner.com/UploadFile/4b0136/restful-api-in-Asp-Net-introduction-of-rest-web-api/">C# Corner: Restful API In ASP.NET</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>9.1 What is a Web API and when should you use one? - 235</li>
+<li>9.6 Generating a response from a model - 258</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="6-connecting-your-api-to-postgresql-using-entity-framework">
+  6. Connecting Your API to PostgreSQL using Entity Framework
+  <a href="#6-connecting-your-api-to-postgresql-using-entity-framework">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Connect the fifth module&rsquo;s API to a PostgreSQL database using Entity Framework and create API endpoints to handle CRUD operations.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.c-sharpcorner.com/article/building-a-powerful-asp-net-core-web-api-with-postgresql/">C# Corner: Building a Robust ASP.NET Core Web API with PostreSQL</a></li>
+<li><a href="https://aspnetboilerplate.com/Pages/Documents/EF-Core-PostgreSql-Integration">ASP.NET Boilerplate: EF Core PostreSQL Integration</a></li>
+<li><a href="https://www.syncfusion.com/blogs/post/asp-dotnet-core-crud-web-api-dapper-postgresql">SuncFusion: Creating an ASP.NET Core CRUD Web API with Dapper and PostgreSQL</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>12.4 Querying data from and saving data to the database - 355</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="6a-connect-to-postgresql-with-adonet">
+  6a. Connect to PostgreSQL with ADO.NET
+  <a href="#6a-connect-to-postgresql-with-adonet">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Branch the previous module&rsquo;s project and access the PostgreSQL database without using EF. Perform data calls directly on ADO.NET.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview">Microsoft: ADO.NET Overview</a></li>
+<li>[Microsft Q&amp;A: ASP.NET Core Web App with SQL (No Entity Framework)](<a href="https://learn.microsoft.com/en-us/answers/questions/1123214/asp-net-core-web-app-with-sql-(no-entity-framework)">https://learn.microsoft.com/en-us/answers/questions/1123214/asp-net-core-web-app-with-sql-(no-entity-framework)</a></li>
+<li><a href="https://www.devart.com/dotconnect/postgresql/connect-postgresql-in-net.html">Devart: How to connect to PostgreSQL in .NET with C#</a></li>
+</ul>
+<h4 class="heading" id="7-controller-based-api">
+  7. Controller-Based API
+  <a href="#7-controller-based-api">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-9.0">Microsoft: Choose between controller-based APIs and minimal APIs</a></li>
+<li>[Microsoft: Create web APIs with ASP.NET Core](# Create web APIs with ASP.NET Core)</li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>9.1 Creating your first Web API Controller 238</li>
+<li>9.2 Applying the MVC design pattern to a Web API</li>
+<li>9.4 Attribute routing: taking fine-grained control of your URLs - 246</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="8-adding-built-in-and-custom-middleware">
+  8. Adding Built-In and Custom Middleware
+  <a href="#8-adding-built-in-and-custom-middleware">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Identify most common ASP.NET middleware and be able to explain what it is used for. Create your own middleware function and mount it to the application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0">Microsoft: ASP.NET Core Middleware</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-9.0">Microsoft: Write custom ASP.NET Core middleware</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/request-response?view=aspnetcore-9.0">Microsoft: Request and response operations in ASP.NET Core</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>3 Handling requests with the middleware pipeline</li>
+</ul>
+</li>
+</ul>
+<h3 class="heading" id="the-model-view-controller-design-pattern">
+  The Model-View-Controller Design Pattern
+  <a href="#the-model-view-controller-design-pattern">#</a>
+</h3>
+<h4 class="heading" id="9-aspnet-mvc-starting-templates--basic-routing">
+  9. ASP.NET MVC Starting Templates &amp; Basic Routing
+  <a href="#9-aspnet-mvc-starting-templates--basic-routing">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Create an MVC application that responds to GET and POST requests at at multiple different routes.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-9.0&amp;tabs=visual-studio">Microsoft: ASP.NET Core MVC Tutorial</a></li>
+<li><a href="https://www.tutorialsteacher.com/mvc/mvc-architecture">TutorialsTeacher: MVC Architecture</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>2.8 MVC middleware and the home controller - 52</li>
+<li>4.1 An introduction to MVC - 95</li>
+<li>4.2 MVC controllers and action methods 113</li>
+<li>5 Mapping URLs to methods using conventional routing - 120</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="10-binding-models-to-your-views-in-razor-syntax">
+  10. Binding Models to your Views in Razor Syntax
+  <a href="#10-binding-models-to-your-views-in-razor-syntax">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Create a Razor view from scratch. Create a model to attach to that view. Enable CRUD operations on the page model from scratch.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-9.0">Microsoft: Razor syntax reference for ASP.NET Core</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout?view=aspnetcore-9.0">Microsoft: Layout in ASP.NET Core</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-9.0&amp;tabs=visual-studio">Microsoft: Create reusable UI using the Razor class library project in ASP.NET Core</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>7 Rendering HTML using Razor views - 175</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="11-using-tag-helpers-for-user-input-other-useful-things">
+  11. Using Tag Helpers for User Input other Useful Things
+  <a href="#11-using-tag-helpers-for-user-input-other-useful-things">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Identify and explain the most common ASP.NET tag helpers. Handle different types of user input. Create your own custom tag helper.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-9.0">Microsoft: Tag Helpers in ASP.NET Core</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/?view=aspnetcore-9.0">Microsoft: ASP.NET Core built-in Tag Helpers</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>8 Building Forms with Tag Helpers</li>
+<li>19.4 Creating a custom Razor Tag Helper 591</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="12-using-dataannotations-to-validate-your-models">
+  12. Using DataAnnotations to Validate Your Models
+  <a href="#12-using-dataannotations-to-validate-your-models">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Identify and explain the most common ASP.NET DataAnnotations. Add validation to your model.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.bytehide.com/blog/data-annotations-in-csharp">ByteHide: Data Annotations in C#: Your Complete Guide</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-9.0">Microsoft: System.ComponentModel.DataAnnotations Namespace</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>6.3 Handling user input with model validation</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="13-styling-your-view-models">
+  13. Styling your view models
+  <a href="#13-styling-your-view-models">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Describe common approaches to styling Views in ASP.NET Core. Implement CSS styles and connect the application to Bootstrap. Create a layout and edit its styles.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.syncfusion.com/succinctly-free-ebooks/asp-net-core-succinctly">Syncfusion: ASP.NET Core Succinctly</a>
+<ul>
+<li>Using CSS isolation - 36</li>
+</ul>
+</li>
+<li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Bootstrap: Get started with Bootstrap</a></li>
+<li><a href="https://www.bootstrapdash.com/blog/asp-net-core-with-bootstrap-4">Bootstrapdash: How to Use ASP.NET with Core Bootstrap</a></li>
+<li><a href="https://www.infragistics.com/help/aspnet/web-styling-your-application2">Infragistics: Styling Your Application</a></li>
+</ul>
+<h4 class="heading" id="14-aspnet-core-identity-and-adding-authentication--authorization">
+  14. ASP.NET Core Identity, and Adding Authentication &amp; Authorization
+  <a href="#14-aspnet-core-identity-and-adding-authentication--authorization">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Using ASP.NET Core Identity, add authentication to your application. Describe the common authorization methods used by ASP.NET Core, choose one to implement into your MVC application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>14.1 Introducing authentication and authorization - 402</li>
+<li>14.2 What is ASP.NET Core Identity - 412</li>
+<li>14.4 Adding ASP.NET Core Identity to an existing project - 423</li>
+<li>14.5 Managing users: adding new claims to users - 428</li>
+<li>15 Authorization: securing your application 432</li>
+</ul>
+</li>
+</ul>
+<h3 class="heading" id="polish-and-deploy-your-application">
+  Polish and Deploy Your Application
+  <a href="#polish-and-deploy-your-application">#</a>
+</h3>
+<h4 class="heading" id="15-add-unit-tests-for-your-action-methods-using-nunit">
+  15. Add unit tests for your action methods using NUnit
+  <a href="#15-add-unit-tests-for-your-action-methods-using-nunit">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Add tests to a controller of your ASP.NET application. Create tests that increase the confidence of the application working. Understand the basic syntax of NUnit as it relates to the form of a unit test.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit">Microsoft: Unit testing C# with NUnit and .NET Core</a></li>
+<li><a href="https://www.c-sharpcorner.com/article/introduction-to-nunit-testing-framework/">C# Corner: Introduction to NUnit Testing Framework</a></li>
+<li><a href="https://testrigor.com/asp-net-testing/#Unit_Testing">testRigor: ASP.NET Testing</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>20.4 Unit testing MVC controllers</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="16-publish-your-application-with-iis-express">
+  16. Publish your application with IIS Express
+  <a href="#16-publish-your-application-with-iis-express">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Describe the use of IIS Express and the term &ldquo;publish&rdquo;. Explain the hosting model of ASP.NET Core. Publish your MVC application to IIS Express.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/publish-to-iis?view=aspnetcore-9.0&amp;tabs=visual-studio">Microsoft: Publish an ASP.NET Core app to IIS</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8">Microsoft: Native AOT Deployment</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>16.1 Understanding the ASP.NET Core hosting model - 463</li>
+<li>16.2 Publishing your app to IIS - 470</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="16a-deploy-your-application-to-linux-with-nginx">
+  16a. Deploy your application to Linux with Nginx
+  <a href="#16a-deploy-your-application-to-linux-with-nginx">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Provision an EC2 instance of Ubuntu. Configure Nginx to serve the application on a domain and point a DNS provider to the address. Bonus points for setting up CI/CD with Github Actions.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-9.0&amp;tabs=linux-ubuntu">Microsoft: Host ASP.NET Core on Linux with Nginx</a></li>
+<li><a href="https://nginx.org/en/docs/beginners_guide.html">nginx: Beginner&rsquo;s Guide</a></li>
+<li><a href="https://nginx.org/en/docs/">nginx: Docs</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>16.3 Hosting an application on Linux</li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" id="17-configure-logging-to-monitor-your-application">
+  17. Configure Logging to Monitor your application
+  <a href="#17-configure-logging-to-monitor-your-application">#</a>
+</h4>
+<p><strong>Module Goal:</strong> Add searchable and useful logging to the application using Microsoft-provided logging to monitor the application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-9.0">Microsoft: Logging in .NET Core and ASP.NET Core</a></li>
+<li><a href="https://dev.to/fabriziobagala/logging-in-aspnet-core-6-3mbh#:~:text=In%20ASP.NET%2C%20logging%20is,that%20instance%20to%20log%20messages.&amp;text=One%20of%20the%20first%20steps,json%20file.">Dev.to: Logging in ASP.NET</a></li>
+<li><a href="https://www.manning.com/books/asp-net-core-in-action-third-edition">Andrew Lock - ASP.NET Core in Action</a>
+<ul>
+<li>17.1 Using logging effectively in a production app - 503</li>
+<li>17.2 Adding log messages to your application - 507</li>
+<li>17.5 Structured logging: creating searchable, useful logs</li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/what-id-like-to-learn-in-2025/">
+                        What I&#39;d Like to Learn in 2025
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+    
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
