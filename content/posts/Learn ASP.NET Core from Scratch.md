@@ -11,7 +11,7 @@ tags: ["dotnet", "csharp", "learning", "microsoft"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
 ---
 
 If you read my [last post](https://nolanmiller.me/posts/what-id-like-to-learn-in-2025), you read all of the things that I'd like to learn this year, starting with ASP.NET Core. I've spent the past week gathering resources from Microsoft's documentation, blogs, forums and internet searches to create myself a 17 module learning plan.
