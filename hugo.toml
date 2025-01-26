@@ -3,11 +3,11 @@ languageCode = 'en-us'
 title = 'Log("Nolan");'
 theme = 'typo'
 
-[taxonomies]
-tag = 'tags'
-
 # Google analytics code
 googleAnalytics = "G-729248V2CZ"
+
+[taxonomies]
+tag = 'tags'
 
 [params]
 # Meta description
