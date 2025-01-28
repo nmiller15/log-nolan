@@ -6,8 +6,15 @@
     <description>Recent content in Home on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supercharge Your Productivity with the .NET CLI</title>
+      <link>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
+      <description>Speed up your .NET development</description>
+    </item>
     <item>
       <title>Learn ASP.NET from Scratch</title>
       <link>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</link>

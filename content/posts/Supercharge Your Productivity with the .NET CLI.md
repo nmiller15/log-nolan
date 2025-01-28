@@ -10,7 +10,7 @@ math: true
 tags: ["dotnet", "learning", "commandline", "Microsoft"]
 showTags: true
 hideBackToTop: false
-draft: true
+draft: false
 dev: false
 ---
 
