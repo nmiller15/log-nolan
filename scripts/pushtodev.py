@@ -98,7 +98,7 @@ def process_folder(folder_path):
         if os.path.isfile(file_path):
             try:
                 front_matter, body = read_front_matter(file_path)
-                if front_matter and front_matter.get("dev") == False and front_matter.get("draft") == False:
+                if front_matter and front_matter.get("devto") == False and front_matter.get("draft") == False:
                     print(f"Building article for DEV.to: {file_name}")
                     article_data = {
                         "title": front_matter.get("title", "Untitled"),
@@ -111,7 +111,7 @@ def process_folder(folder_path):
                     }
                     dev_id = post_to_dev(article_data)
                     if dev_id:
-                        front_matter["dev"] = True
+                        front_matter["devto"] = True
                         front_matter["dev_id"] = dev_id
                         updated_content = f"---\n{yaml.dump(front_matter)}---\n{body}"
                         with open(file_path, 'w', encoding='utf-8') as file:
