@@ -3,6 +3,7 @@ import json
 import re
 import yaml
 import requests
+from collections import OrderedDict
 
 def load_api_key():
     """Reads the API key from the .json file in the directory."""
@@ -30,7 +31,7 @@ def read_front_matter(file_path):
             content = file.read()
             if content.startswith('---'):
                 parts = content.split('---', 2)
-                front_matter = yaml.safe_load(parts[1])
+                front_matter = yaml.safe_load(parts[1], Loader=yaml.Loader)
                 body = parts[2].strip()
                 return front_matter, body
     except Exception as e:
@@ -40,11 +41,13 @@ def read_front_matter(file_path):
 def find_article_id_by_title(title, headers):
     """Fetches all articles from DEV.to and returns the ID of the article with the matching title."""
     try:
+        print(f"GET: {DEV_API_URL}/me/published")
         response = requests.get(f"{DEV_API_URL}/me/published", headers=headers)
         if response.status_code == 200:
             articles = response.json()
             for article in articles:
                 if article["title"] == title:
+                    print(f"Match found for article: {article['title']}")
                     return article["id"]
         else:
             print(f"Failed to fetch articles: {response.status_code} {response.text}")
@@ -52,22 +55,24 @@ def find_article_id_by_title(title, headers):
         print(f"Error fetching articles: {e}")
     return None
 
-def post_to_dev(article_data):
+def post_to_dev(article_data, front_matter):
     """Posts or updates an article to DEV.to."""
     headers = {
         "api-key": API_KEY,
         "Content-Type": "application/json"
     }
     try:
-        if "dev_id" in article_data and article_data["dev_id"]:
-            update_url = f"{DEV_API_URL}/{article_data['dev_id']}"
+        if "dev_id" in front_matter and front_matter["dev_id"]:
+            update_url = f"{DEV_API_URL}/{front_matter['dev_id']}"
+            print(f"PUT: {update_url}")
             response = requests.put(update_url, json={"article": article_data}, headers=headers)
         else:
+            print(f"POST: {DEV_API_URL}")
             response = requests.post(DEV_API_URL, json={"article": article_data}, headers=headers)
 
         if response.status_code in [200, 201]:
             article_id = response.json().get("id")
-            print(f"Article '{article_data['title']}' successfully {'updated' if 'dev_id' in article_data else 'posted'}. ID: {article_id}")
+            print(f"Article {article_id} - '{article_data['title']}' successfully {'updated' if 'dev_id' in article_data else 'posted'}.")
             return article_id
         elif response.status_code == 422:
             print(f"Article '{article_data['title']}' already exists. Attempting to find its ID...")
@@ -91,6 +96,20 @@ def generate_canonical_url(title):
     slug = re.sub(r"[^a-z0-9-]", "", title.lower().replace(" ", "-"))
     return f"https://nolanmiller.me/posts/{slug}"
 
+def write_front_matter(file_path, front_matter, body):
+    """Writes the front matter and body back to the file while preserving front matter order."""
+    try:
+        # Use yaml.dump with an ordered dict to preserve the original order of front matter
+        ordered_front_matter = OrderedDict(front_matter)
+        updated_front_matter = yaml.dump(ordered_front_matter, default_flow_style=False, allow_unicode=True).strip()
+        updated_content = f"---\n{updated_front_matter}\n---\n{body}"
+        
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(updated_content)
+            print(f"Updated front matter in {file_path}")
+    except Exception as e:
+        print(f"Error writing front matter to {file_path}: {e}")
+
 def process_folder(folder_path):
     """Processes all files in the folder and updates the 'dev' field and writes the DEV.to ID in the front matter."""
     for file_name in os.listdir(folder_path):
@@ -109,13 +128,11 @@ def process_folder(folder_path):
                         "description": front_matter.get("description"),
                         "tags": front_matter.get("tags"),
                     }
-                    dev_id = post_to_dev(article_data)
+                    dev_id = post_to_dev(article_data, front_matter)
                     if dev_id:
                         front_matter["devto"] = True
                         front_matter["dev_id"] = dev_id
-                        updated_content = f"---\n{yaml.dump(front_matter)}---\n{body}"
-                        with open(file_path, 'w', encoding='utf-8') as file:
-                            file.write(updated_content)
+                        write_front_matter(file_path, front_matter, body)
                         print(f"Updated 'dev' field to True and added 'dev_id' for {file_name}.")
             except Exception as e:
                 print(f"Error processing {file_path}: {e}")

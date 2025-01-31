@@ -37,8 +37,6 @@ __Resources:__
 	+ Reference - 2
 	+ 2.2 Creating your first ASP.NET Core application - p. 32
 
-__My Overview:__ [Supercharge Your Productivity with the .NET CLI](https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/)
-
 
 #### 2. ASP.NET Web Application Starting Template
 
