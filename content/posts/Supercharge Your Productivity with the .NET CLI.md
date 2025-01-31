@@ -200,4 +200,6 @@ This lesson is part of my long-term effort to learn ASP.NET. If you want to see 
 
 Consider getting these posts straight to your inbox using the form or clicking the link below!
 
+Here's a breadcrumb...
+
 [Get these blog posts in your email inbox!](https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi)
