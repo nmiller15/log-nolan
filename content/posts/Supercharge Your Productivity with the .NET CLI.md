@@ -3,15 +3,15 @@ title: Supercharge Your Productivity with the .NET CLI
 date: 2025-01-28
 summary: Speed up your .NET development
 description: Speed up your .NET development
-toc: False
-readTime: True
-autonumber: False
-math: True
-tags: dotnet - learning - commandline - Microsoft
-showTags: True
-hideBackToTop: False
-draft: False
-dev: false
+toc: false
+readTime: true
+autonumber: false
+math: true
+tags: ["dotnet", "learning", "commandline", "Microsoft"]
+showTags: true
+hideBackToTop: false
+draft: false
+dev: true
 dev_id: 2246602
 ---
 I figured a good place to start [my ASP.NET journey](https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/) was the .NET CLI. The tool isn't ASP.NET specific, rather it is an essential development and automation tool for the entire .NET landscape. 
