@@ -107,15 +107,24 @@ def write_front_matter(file_path, front_matter, body):
         # Manually serialize the front matter to avoid unwanted YAML syntax issues
         front_matter_str = "---\n"
         for key, value in front_matter.items():
-            # Convert lists or nested dicts to strings as needed
-            if isinstance(value, list):
-                value = "\n    - ".join(map(str, value))
+            # Handle boolean values properly (keep them lowercase)
+            if isinstance(value, bool):
+                value = 'true' if value else 'false'
+            
+            # Handle lists (e.g., for 'tags')
+            elif isinstance(value, list):
+                value = "[" + ", ".join(f'"{item}"' for item in value) + "]"
+
+            # Handle nested dictionaries (convert to string format)
             elif isinstance(value, dict):
                 value = "\n".join(f"    {k}: {v}" for k, v in value.items())
+            
+            # Add the formatted key-value pair to the front matter string
             front_matter_str += f"{key}: {value}\n"
+        
         front_matter_str += "---\n"
 
-        # Write back the content
+        # Write the updated content to the file
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(front_matter_str + body)
             print(f"Updated front matter in {file_path}")
