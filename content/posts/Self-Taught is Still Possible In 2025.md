@@ -11,7 +11,7 @@ tags: ["beginners", "codenewbie", "ai", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
-devto: true
+devto: false
 ---
 
 I'm pulled from sleep as the soft melody of my alarm clock goes off a bit too early for my taste. Rolling over, I see that it's 4:50 AM. I want to go back to bed, but, *"If you want a job as a software developer, you have to put in the work,"* I tell myself.
