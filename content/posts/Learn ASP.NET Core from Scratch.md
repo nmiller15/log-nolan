@@ -1,8 +1,8 @@
 ---
 title: Learn ASP.NET from Scratch
 date: 2025-01-24
-summary: "A learning roadmap for ASP.NET Core"
-description: "A learning roadmap for ASP.NET Core"
+summary: A learning roadmap for ASP.NET Core
+description: A learning roadmap for ASP.NET Core
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["dotnet", "csharp", "learning", "microsoft"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2239363
 ---
-
 If you read my [last post](https://nolanmiller.me/posts/what-id-like-to-learn-in-2025), you read all of the things that I'd like to learn this year, starting with ASP.NET Core. I've spent the past week gathering resources from Microsoft's documentation, blogs, forums and internet searches to create myself a 17 module learning plan.
 
 If you're looking to get your feet wet on Microsoft's full stack web framework, then I hope these resources are helpful for you too. 
