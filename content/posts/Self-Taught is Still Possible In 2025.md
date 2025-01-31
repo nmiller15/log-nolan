@@ -1,8 +1,8 @@
 ---
-title: "Self-Taught is Still Possible In 2025"
-date: "2025-01-10"
-summary: "AI won't get rid of us, keep going."
-description: "AI won't get rid of us, keep going."
+title: Self-Taught is Still Possible In 2025
+date: 2025-01-10
+summary: AI won't get rid of us, keep going.
+description: AI won't get rid of us, keep going.
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,8 @@ tags: ["beginners", "codenewbie", "ai", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
 ---
-
 I'm pulled from sleep as the soft melody of my alarm clock goes off a bit too early for my taste. Rolling over, I see that it's 4:50 AM. I want to go back to bed, but, *"If you want a job as a software developer, you have to put in the work,"* I tell myself.
 
 After I drag myself out of bed and the coffee is brewing, I pull out my phone to find some blog posts. *"Use every spare moment to learn,"* I think as I scroll through the articles. I start sifting through titles to see what I should read:

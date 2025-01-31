@@ -12,7 +12,6 @@ showTags: true
 hideBackToTop: false
 draft: false
 dev: true
-dev_id: 2225129
 ---
 It's still January, so it seems that I've made it just in time to put together a forward-looking post for the year. I just recently attended Code Mash 2025 in Sandusky, Ohio. This was my first development conference and I got to sit in a lot of sessions with some very thoughtful developers. 
 
