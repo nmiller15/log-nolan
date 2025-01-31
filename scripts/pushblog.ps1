@@ -11,6 +11,8 @@ $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
 git commit -m $commitMessage
 
+git push
+
 # Move the files from source to destination
 Write-Host "Moving files from $sourcePath to $destinationPath"
 robocopy $sourcePath $destinationPath /E /Z /MIR
