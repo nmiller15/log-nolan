@@ -5,6 +5,8 @@ import yaml
 import requests
 from collections import OrderedDict
 
+success = "Did not post."
+
 def load_api_key():
     """Reads the API key from the .json file in the directory."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -66,9 +68,11 @@ def post_to_dev(article_data, front_matter):
             update_url = f"{DEV_API_URL}/{front_matter['dev_id']}"
             print(f"PUT: {update_url}")
             response = requests.put(update_url, json={"article": article_data}, headers=headers)
+            success = "Performed PUT operation."
         else:
             print(f"POST: {DEV_API_URL}")
             response = requests.post(DEV_API_URL, json={"article": article_data}, headers=headers)
+            success = "Performed POST operatiion."
 
         if response.status_code in [200, 201]:
             article_id = response.json().get("id")
@@ -81,6 +85,7 @@ def post_to_dev(article_data, front_matter):
                 print(f"Updating article with ID: {article_id}")
                 update_url = f"{DEV_API_URL}/{article_id}"
                 response = requests.put(update_url, json={"article": article_data}, headers=headers)
+                success = "Performed PUT operation."
                 if response.status_code == 200:
                     print(f"Article '{article_data['title']}' updated successfully.")
                     return article_id
@@ -138,4 +143,4 @@ def process_folder(folder_path):
                 print(f"Error processing {file_path}: {e}")
 
 process_folder(FOLDER_PATH)
-print("Pushes to DEV.to finished successfully.")
+print("DEV.to publishing script exited. {success}")
