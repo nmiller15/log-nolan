@@ -104,13 +104,20 @@ def generate_canonical_url(title):
 def write_front_matter(file_path, front_matter, body):
     """Writes the front matter and body back to the file while preserving front matter order."""
     try:
-        # Use yaml.dump with an ordered dict to preserve the original order of front matter
-        ordered_front_matter = OrderedDict(front_matter)
-        updated_front_matter = yaml.dump(ordered_front_matter, default_flow_style=False, allow_unicode=True).strip()
-        updated_content = f"---\n{updated_front_matter}\n---\n{body}"
-        
+        # Manually serialize the front matter to avoid unwanted YAML syntax issues
+        front_matter_str = "---\n"
+        for key, value in front_matter.items():
+            # Convert lists or nested dicts to strings as needed
+            if isinstance(value, list):
+                value = "\n    - ".join(map(str, value))
+            elif isinstance(value, dict):
+                value = "\n".join(f"    {k}: {v}" for k, v in value.items())
+            front_matter_str += f"{key}: {value}\n"
+        front_matter_str += "---\n"
+
+        # Write back the content
         with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(updated_content)
+            file.write(front_matter_str + body)
             print(f"Updated front matter in {file_path}")
     except Exception as e:
         print(f"Error writing front matter to {file_path}: {e}")
