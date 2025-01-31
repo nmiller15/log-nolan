@@ -3,14 +3,14 @@ $sourcePath = "C:\Users\NMiller\OneDrive - CAB\Documents\Vault\blog-posts"
 $destinationPath = "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\content\posts"
 
 # Commit current changes to source control
-git pull
+Set-Location -Path $sourcePath
 
+git pull
 git add -A
 
 $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
 git commit -m $commitMessage
-
 git push
 
 # Move the files from source to destination
