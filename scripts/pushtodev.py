@@ -129,7 +129,7 @@ def process_folder(folder_path):
         if os.path.isfile(file_path):
             try:
                 front_matter, body = read_front_matter(file_path)
-                if front_matter and front_matter.get("devto") == False and front_matter.get("draft") == False:
+                if front_matter and front_matter.get("dev") == False and front_matter.get("draft") == False:
                     print(f"Building article for DEV.to: {file_name}")
                     article_data = {
                         "title": front_matter.get("title", "Untitled"),
@@ -142,7 +142,7 @@ def process_folder(folder_path):
                     }
                     dev_id = post_to_dev(article_data, front_matter)
                     if dev_id:
-                        front_matter["devto"] = True
+                        front_matter["dev"] = True
                         front_matter["dev_id"] = dev_id
                         write_front_matter(file_path, front_matter, body)
                         print(f"Updated 'dev' field to True and added 'dev_id' for {file_name}.")

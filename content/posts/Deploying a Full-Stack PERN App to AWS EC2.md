@@ -14,7 +14,7 @@ tags: postgres
 showTags: True
 hideBackToTop: False
 draft: False
-devto: True
+dev: True
 ---
 Roast is officially live! And you can visit it at the following link!
 
