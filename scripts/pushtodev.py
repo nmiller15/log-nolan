@@ -33,7 +33,7 @@ def read_front_matter(file_path):
             content = file.read()
             if content.startswith('---'):
                 parts = content.split('---', 2)
-                front_matter = yaml.safe_load(parts[1], Loader=yaml.Loader)
+                front_matter = yaml.safe_load(parts[1])
                 body = parts[2].strip()
                 return front_matter, body
     except Exception as e:
