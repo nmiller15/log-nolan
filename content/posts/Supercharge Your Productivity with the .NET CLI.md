@@ -11,7 +11,7 @@ tags: ["dotnet", "learning", "commandline", "Microsoft"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: true
+dev: false
 ---
 
 I figured a good place to start [my ASP.NET journey](https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/) was the .NET CLI. The tool isn't ASP.NET specific, rather it is an essential development and automation tool for the entire .NET landscape. 
@@ -200,4 +200,4 @@ This lesson is part of my long-term effort to learn ASP.NET. If you want to see 
 
 Consider getting these posts straight to your inbox using the form or clicking the link below!
 
-[Get these blog posts in your email inbox!](https://d782b8fa.sibforms.com/serve/MUIFALmxNXeir4hZfd4sVZs_haNhL1JiAghVdZwCmj4F0hsCHMXwy5s-qnB9tw11LY8o6MaOj4n3VwlM1GTMqqrW4EpcSGgEKtByckjBID8jMpxDlXTKWVjkgkyq1e9c27JLPD_Aw5hsy-NlmdqeA0ajFpWXyzpd8ozclOObCLtak9WcOmWJL6kX36_U1AwbgHuc_tdoFyhLD-vS)
+[Get these blog posts in your email inbox!](https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi)
