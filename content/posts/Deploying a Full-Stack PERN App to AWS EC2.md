@@ -11,7 +11,7 @@ tags: ["postgres", "react", "aws", "node"]
 showTags: true
 hideBackToTop: false
 draft: false
-devto: true
+devto: false
 ---
 
 Roast is officially live! And you can visit it at the following link!
@@ -331,3 +331,6 @@ But, this is the basic process!
 And to prove that it’s done! Head on over to [roast.nolanmiller.me](https://roast.nolanmiller.me/) and make an account, roast a some coffee beans and let me know what you think!
 
 (FYI, Add the site to your mobile home screen to see the app how it was intended!)
+
+___
+[Don't miss a post! Subscribe to get them right to your inbox!](https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi)

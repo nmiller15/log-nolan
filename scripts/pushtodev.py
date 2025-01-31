@@ -5,17 +5,16 @@ import yaml
 import requests
 
 def load_api_key():
-        """Reads the API key from the .json file the directory."""
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        config_path = os.path.join(script_dir, "keys.json")
-
-        try: 
-            with open(config_path, 'r', encoding='utf-8') as config_file:
-                config = json.load(config_file)
-                return config.get("devto_key")
-        except Exception as e:
-                print(f"Error loading API key: {e}")
-                return None
+    """Reads the API key from the .json file in the directory."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, "keys.json")
+    try: 
+        with open(config_path, 'r', encoding='utf-8') as config_file:
+            config = json.load(config_file)
+            return config.get("devto_key")
+    except Exception as e:
+        print(f"Error loading API key: {e}")
+        return None
 
 # Define constants
 FOLDER_PATH = "C:\\Users\\NMiller\\OneDrive - CAB\\Documents\\Vault\\blog-posts"
@@ -23,8 +22,6 @@ DEV_API_URL = "https://dev.to/api/articles"
 API_KEY = load_api_key()
 if not API_KEY:
     raise ValueError("API key is missing or could not be loaded. Check keys.json for a devto_key.")
-
-
 
 def read_front_matter(file_path):
     """Reads the front matter from a file."""
@@ -36,78 +33,90 @@ def read_front_matter(file_path):
                 front_matter = yaml.safe_load(parts[1])
                 body = parts[2].strip()
                 return front_matter, body
-        return None, None
     except Exception as e:
         print(f"Error reading {file_path}: {e}")
-        return None, None
+    return None, None
+
+def find_article_id_by_title(title, headers):
+    """Fetches all articles from DEV.to and returns the ID of the article with the matching title."""
+    try:
+        response = requests.get(f"{DEV_API_URL}/me/published", headers=headers)
+        if response.status_code == 200:
+            articles = response.json()
+            for article in articles:
+                if article["title"] == title:
+                    return article["id"]
+        else:
+            print(f"Failed to fetch articles: {response.status_code} {response.text}")
+    except Exception as e:
+        print(f"Error fetching articles: {e}")
+    return None
 
 def post_to_dev(article_data):
-    """Posts an article to DEV."""
+    """Posts or updates an article to DEV.to."""
     headers = {
         "api-key": API_KEY,
         "Content-Type": "application/json"
     }
     try:
-        response = requests.post(DEV_API_URL, json={"article": article_data}, headers=headers)
-        if response.status_code == 201:
-            print(f"Article '{article_data['title']}' posted successfully.")
+        if "dev_id" in article_data and article_data["dev_id"]:
+            update_url = f"{DEV_API_URL}/{article_data['dev_id']}"
+            response = requests.put(update_url, json={"article": article_data}, headers=headers)
         else:
-            print(f"Failed to post article '{article_data['title']}': {response.status_code} {response.text}")
+            response = requests.post(DEV_API_URL, json={"article": article_data}, headers=headers)
+
+        if response.status_code in [200, 201]:
+            article_id = response.json().get("id")
+            print(f"Article '{article_data['title']}' successfully {'updated' if 'dev_id' in article_data else 'posted'}. ID: {article_id}")
+            return article_id
+        elif response.status_code == 422:
+            print(f"Article '{article_data['title']}' already exists. Attempting to find its ID...")
+            article_id = find_article_id_by_title(article_data["title"], headers)
+            if article_id:
+                print(f"Updating article with ID: {article_id}")
+                update_url = f"{DEV_API_URL}/{article_id}"
+                response = requests.put(update_url, json={"article": article_data}, headers=headers)
+                if response.status_code == 200:
+                    print(f"Article '{article_data['title']}' updated successfully.")
+                    return article_id
+            else:
+                print(f"Could not find article ID for '{article_data['title']}' to update.")
+        else:
+            print(f"Failed to post/update article '{article_data['title']}': {response.status_code} {response.text}")
     except Exception as e:
-        print(f"Error posting article: {e}")
+        print(f"Error posting/updating article: {e}")
+    return None
 
 def generate_canonical_url(title):
-    slug = title.lower()
-    slug = slug.replace(" ", "-")
-    slug = re.sub(r"[^a-z0-9-]", "", slug)
-    canonical_url = f"https://nolanmiller.me/posts/{slug}"
-    return canonical_url
+    slug = re.sub(r"[^a-z0-9-]", "", title.lower().replace(" ", "-"))
+    return f"https://nolanmiller.me/posts/{slug}"
 
 def process_folder(folder_path):
-    """Processes all files in the folder and updates the 'dev' field in the front matter."""
+    """Processes all files in the folder and updates the 'dev' field and writes the DEV.to ID in the front matter."""
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
             try:
-                # Read the file content
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    content = file.read()
-
-                # Extract the front matter between '---'
-                front_matter_match = re.match(r"---\s*(.*?)\s*---", content, re.DOTALL)
-                if front_matter_match:
-                    front_matter_str = front_matter_match.group(1)
-
-                    # Check if 'dev' field exists and is False
-                    if "dev: false" in front_matter_str and "draft: false" in front_matter_str:
-                        print('Building article for DEV.to...')
-                        front_matter, body = read_front_matter(file_path)
-                        article_data = {
-                            "title": front_matter.get("title", "Untitled"),
-                            "body_markdown": body,
-                            "published": True,
-                            "series": front_matter.get("series"),
-                            "canonical_url": generate_canonical_url(front_matter.get('title')),
-                            "description": front_matter.get("description"),
-                            "tags": front_matter.get("tags")
-                        }
-                        print('Calling Dev.to API...')
-                        post_to_dev(article_data)
-
-                        # Replace the 'dev' field value to 'true'fl
-                        updated_front_matter_str = front_matter_str.replace("dev: false", "dev: true")
-
-                        # Replace the old front matter with the updated one
-                        updated_content = content.replace(front_matter_str, updated_front_matter_str)
-
-                        # Write the updated content back to the file
+                front_matter, body = read_front_matter(file_path)
+                if front_matter and front_matter.get("dev") == False and front_matter.get("draft") == False:
+                    print(f"Building article for DEV.to: {file_name}")
+                    article_data = {
+                        "title": front_matter.get("title", "Untitled"),
+                        "body_markdown": body,
+                        "published": True,
+                        "series": front_matter.get("series"),
+                        "canonical_url": generate_canonical_url(front_matter.get("title", "")),
+                        "description": front_matter.get("description"),
+                        "tags": front_matter.get("tags"),
+                    }
+                    dev_id = post_to_dev(article_data)
+                    if dev_id:
+                        front_matter["dev"] = True
+                        front_matter["dev_id"] = dev_id
+                        updated_content = f"---\n{yaml.dump(front_matter)}---\n{body}"
                         with open(file_path, 'w', encoding='utf-8') as file:
                             file.write(updated_content)
-
-                        print(f"Updated 'dev' field to True for {file_name}.")
-
-                        
-
+                        print(f"Updated 'dev' field to True and added 'dev_id' for {file_name}.")
             except Exception as e:
                 print(f"Error processing {file_path}: {e}")
 
