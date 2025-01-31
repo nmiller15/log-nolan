@@ -2,6 +2,15 @@
 $sourcePath = "C:\Users\NMiller\OneDrive - CAB\Documents\Vault\blog-posts"
 $destinationPath = "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\content\posts"
 
+# Commit current changes to source control
+git pull
+
+git add -A
+
+$commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+
+git commit -m $commitMessage
+
 # Move the files from source to destination
 Write-Host "Moving files from $sourcePath to $destinationPath"
 robocopy $sourcePath $destinationPath /E /Z /MIR
