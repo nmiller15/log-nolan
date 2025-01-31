@@ -1,19 +1,21 @@
 ---
-title: "Deploying a Full-Stack PERN App to AWS EC2"
-date: "2024-08-16"
-summary: "A full walkthrough for manual deployment."
-description: "A full walkthrough for manual deployment."
-toc: false
-readTime: true
-autonumber: false
-math: true
-tags: ["postgres", "react", "aws", "node"]
-showTags: true
-hideBackToTop: false
-draft: false
-devto: true
+title: Deploying a Full-Stack PERN App to AWS EC2
+date: 2024-08-16
+summary: A full walkthrough for manual deployment.
+description: A full walkthrough for manual deployment.
+toc: False
+readTime: True
+autonumber: False
+math: True
+tags: postgres
+    - react
+    - aws
+    - node
+showTags: True
+hideBackToTop: False
+draft: False
+dev: True
 ---
-
 Roast is officially live! And you can visit it at the following link!
 
 [Roast: Know Your Home Roasts](https://roast.nolanmiller.me/)
@@ -331,3 +333,6 @@ But, this is the basic process!
 And to prove that it’s done! Head on over to [roast.nolanmiller.me](https://roast.nolanmiller.me/) and make an account, roast a some coffee beans and let me know what you think!
 
 (FYI, Add the site to your mobile home screen to see the app how it was intended!)
+
+___
+[Don't miss a post! Subscribe to get them right to your inbox!](https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi)

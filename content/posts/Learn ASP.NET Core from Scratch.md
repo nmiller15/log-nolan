@@ -11,7 +11,7 @@ tags: ["dotnet", "csharp", "learning", "microsoft"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: true
+dev: false
 ---
 
 If you read my [last post](https://nolanmiller.me/posts/what-id-like-to-learn-in-2025), you read all of the things that I'd like to learn this year, starting with ASP.NET Core. I've spent the past week gathering resources from Microsoft's documentation, blogs, forums and internet searches to create myself a 17 module learning plan.
@@ -36,8 +36,6 @@ __Resources:__
 + [Andrew Lock - ASP.NET Core in Action](https://www.manning.com/books/asp-net-core-in-action-third-edition)
 	+ Reference - 2
 	+ 2.2 Creating your first ASP.NET Core application - p. 32
-
-__My Overview:__ [Supercharge Your Productivity with the .NET CLI](https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/)
 
 
 #### 2. ASP.NET Web Application Starting Template
