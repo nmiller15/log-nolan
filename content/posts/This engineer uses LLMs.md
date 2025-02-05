@@ -1,13 +1,13 @@
 ---
 title: This engineer uses LLMs
 date: 2025-02-05
-summary: "via: Sean Goedecke"
-description: "via: Sean Goedecke"
+summary: "via Sean Goedecke"
+description: "via Sean Goedecke"
 toc: false
 readTime: true
 autonumber: false
 math: true
-tags: ["linked-post", "ai", "llm", ""]
+tags: ["linked-post", "ai", "llm"]
 showTags: true
 hideBackToTop: false
 draft: false
