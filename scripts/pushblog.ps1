@@ -1,6 +1,7 @@
 # Define source and destination paths
 $sourcePath = "C:\Users\NMiller\OneDrive - CAB\Documents\Vault\blog-posts"
 $destinationPath = "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\content\posts"
+$currentPath = Get-Location
 
 # Commit current changes to source control
 Set-Location -Path $sourcePath
@@ -41,3 +42,5 @@ Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
 # Push changes to GitHub
 Write-Host "Pushing changes to GitHub..."
 git push
+
+Set-Location -Path $currentPath

@@ -11,7 +11,7 @@ tags: ["via", "ai", "llm"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
 dev_id: 2260991
 ---
 Quotes courtesy of Sean Goedecke, from his article, [*How I Use LLMs as a Staff Engineer*](https://www.seangoedecke.com/how-i-use-llms/)
