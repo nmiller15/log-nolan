@@ -1,8 +1,8 @@
 ---
 title: This engineer uses LLMs
 date: 2025-02-05
-summary: "via Sean Goedecke"
-description: "via Sean Goedecke"
+summary: via Sean Goedecke
+description: via Sean Goedecke
 toc: false
 readTime: true
 autonumber: false
@@ -11,10 +11,10 @@ tags: ["via", "ai", "llm"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2260991
 ---
-
-Quotes courtesy of Sean Goedecke, [see original article here](https://www.seangoedecke.com/how-i-use-llms/?utm_source=pocket_shared).
+Quotes courtesy of Sean Goedecke, from his article, [*How I Use LLMs as a Staff Engineer*](https://www.seangoedecke.com/how-i-use-llms/)
 
 Since starting my job, I've debated how appropriate it is to use LLMs for certain tasks. Sean has some good guidance for those in similar positions.
 
