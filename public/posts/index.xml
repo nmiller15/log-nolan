@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>This engineer uses LLMs</title>
+      <link>https://nolanmiller.me/posts/this-engineer-uses-llms/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/this-engineer-uses-llms/</guid>
+      <description>via: Sean Goedecke</description>
+    </item>
     <item>
       <title>Supercharge Your Productivity with the .NET CLI</title>
       <link>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</link>
