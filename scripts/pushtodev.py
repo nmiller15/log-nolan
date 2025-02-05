@@ -79,6 +79,7 @@ def post_to_dev(article_data, front_matter):
             print(f"Article {article_id} - '{article_data['title']}' successfully {'updated' if 'dev_id' in article_data else 'posted'}.")
             return article_id
         elif response.status_code == 422:
+            print(f"POST RESPONSE: {response.status_code}: {response.reason}")
             print(f"Article '{article_data['title']}' already exists. Attempting to find its ID...")
             article_id = find_article_id_by_title(article_data["title"], headers)
             if article_id:
