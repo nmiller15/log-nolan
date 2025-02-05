@@ -3,18 +3,15 @@ title: Deploying a Full-Stack PERN App to AWS EC2
 date: 2024-08-16
 summary: A full walkthrough for manual deployment.
 description: A full walkthrough for manual deployment.
-toc: False
-readTime: True
-autonumber: False
-math: True
-tags: postgres
-    - react
-    - aws
-    - node
-showTags: True
-hideBackToTop: False
-draft: False
-dev: True
+toc: false
+readTime: true
+autonumber: false
+math: true
+tags: ["postgres", "react", "aws", "node"]
+showTags: true
+hideBackToTop: false
+draft: false
+dev: true
 ---
 Roast is officially live! And you can visit it at the following link!
 

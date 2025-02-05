@@ -1,8 +1,8 @@
 ---
-title: "How I Started My Coding Journey"
-date: "2024-05-28"
-summary: "Humble beginnings."
-description: "Humble beginnings."
+title: How I Started My Coding Journey
+date: 2024-05-28
+summary: Humble beginnings.
+description: Humble beginnings.
 toc: false
 readTime: true
 autonumber: false
@@ -11,7 +11,7 @@ tags: ["coding", "learning", "beginners", "story"]
 showTags: true
 hideBackToTop: false
 draft: false
-devto: true
+dev: true
 ---
 Just 6 months ago, I didn't really know how to code, and coding was just this thing that only really smart people did. I wasn't even pursuing it. I thought it was cool, but not cool enough to learn it. I knew some basics of HTML and CSS… enough to break a Squarespace site that is. But, nothing that would make me *actually* dangerous. The word "JavaScript" sent me cowering.
 
