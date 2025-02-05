@@ -1,8 +1,8 @@
 ---
-title: "Why 'Screw Optimization' Is My New Mantra"
-date: "2024-07-11"
-summary: "Done is better than perfect."
-description: "Done is better than perfect."
+title: Why 'Screw Optimization' Is My New Mantra
+date: 2024-07-11
+summary: Done is better than perfect.
+description: Done is better than perfect.
 toc: false
 readTime: true
 autonumber: false
@@ -11,7 +11,8 @@ tags: ["productivity", "programming", "learning", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2252942
 ---
 Before the LeetCoders jump in, let me clarify: I’m not advocating for sloppy algorithms. Instead, I’m challenging the obsession with finding the perfect solution before taking any action.
 
