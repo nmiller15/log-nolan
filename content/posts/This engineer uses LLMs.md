@@ -7,7 +7,7 @@ toc: false
 readTime: true
 autonumber: false
 math: true
-tags: ["linked-post", "ai", "llm"]
+tags: ["via", "ai", "llm"]
 showTags: true
 hideBackToTop: false
 draft: false
