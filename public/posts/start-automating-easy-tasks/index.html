@@ -14,30 +14,29 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
 
-<meta name="description" content="via Sean Goedecke"/>
+<meta name="description" content="via Alex Tiniuc"/>
 
 
 
 <title>
     
-    This engineer uses LLMs | Log(&#34;Nolan&#34;);
+    Start Automating Easy Tasks | Log(&#34;Nolan&#34;);
     
 </title>
 
-<link rel="canonical" href="https://nolanmiller.me/posts/this-engineer-uses-llms/"/>
+<link rel="canonical" href="https://nolanmiller.me/posts/start-automating-easy-tasks/"/>
 
-<meta property="og:url" content="https://nolanmiller.me/posts/this-engineer-uses-llms/">
+<meta property="og:url" content="https://nolanmiller.me/posts/start-automating-easy-tasks/">
   <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
-  <meta property="og:title" content="This engineer uses LLMs">
-  <meta property="og:description" content="via Sean Goedecke">
+  <meta property="og:title" content="Start Automating Easy Tasks">
+  <meta property="og:description" content="via Alex Tiniuc">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-05T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-02-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-06T00:00:00+00:00">
     <meta property="article:tag" content="Via">
-    <meta property="article:tag" content="Ai">
-    <meta property="article:tag" content="Llm">
+    <meta property="article:tag" content="Automation">
 
 
 
@@ -140,7 +139,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/this-engineer-uses-llms/">This engineer uses LLMs</a>
+    <a class="breadcrumbs-current" href="/posts/start-automating-easy-tasks/">Start Automating Easy Tasks</a>
 </div>
 
 
@@ -151,9 +150,9 @@
 
     
 
-    <h1 class="single-title">This engineer uses LLMs</h1>
+    <h1 class="single-title">Start Automating Easy Tasks</h1>
     
-    <p class="single-summary">via Sean Goedecke</p>
+    <p class="single-summary">via Alex Tiniuc</p>
     
 
     
@@ -162,7 +161,7 @@
       
       
       
-      <time datetime="2025-02-05T00:00:00&#43;00:00">February 5, 2025</time>
+      <time datetime="2025-02-06T00:00:00&#43;00:00">February 6, 2025</time>
       
 
       
@@ -186,12 +185,7 @@
     
     
     <span>
-      <a href="https://nolanmiller.me/tags/ai/">#Ai</a>
-    </span>
-    
-    
-    <span>
-      <a href="https://nolanmiller.me/tags/llm/">#Llm</a>
+      <a href="https://nolanmiller.me/tags/automation/">#Automation</a>
     </span>
     
     
@@ -207,31 +201,32 @@
   
 
   <div class="single-content">
-    <p>Quotes courtesy of Sean Goedecke, from his article, <a href="https://www.seangoedecke.com/how-i-use-llms/"><em>How I Use LLMs as a Staff Engineer</em></a></p>
-<p>Since starting my job, I&rsquo;ve debated how appropriate it is to use LLMs for certain tasks. Sean has some good guidance for those in similar positions.</p>
+    <p>Quotes courtesy of Alex Tiniuc, from his article <a href="https://tiniuc.com/make-more-tools/">Unexpected Benefits of Building Your Own Tools</a></p>
+<p>The amount of time that you can sink into creating a tool to automate a task can sometimes feel like an overcomplication of something that you could just <em>do.</em> I certainly feel that way, but Alex Tiniuc makes a good case for spending this time making tools.</p>
 <blockquote>
-<p>Personally, I feel like I get a lot of value from AI. I think many of the people who don’t feel this way are “holding it wrong”: i.e. they’re not using language models in the most helpful ways. In this post, I’m going to list a bunch of ways I regularly use AI in my day-to-day as a staff engineer.</p>
+<p>What this has made me realize is that <strong>speeding up part of a workflow can provide value far beyond the mere time savings</strong>: it also unlocks new ways of working that were not possible before.</p>
 </blockquote>
-<p>AI has many good uses:</p>
+<p>Creating tools that optimize your workflow save time, which inevitably leads to more discovery taking place in the design process.</p>
 <blockquote>
-<p>I use Copilot completions every time I write code<a href="https://www.seangoedecke.com/how-i-use-llms/?utm_source=pocket_shared#fn-1">1</a>. Almost all the completions I accept are complete boilerplate (filling out function arguments or types, for instance).</p>
+<p>Essentially, the more iterations of the design you can make, the higher quality your game will be - limited, of course, by your budget.</p>
 </blockquote>
+<p>Even if what you want to automate is small, Alex would argue that it&rsquo;s still worth automating.</p>
 <blockquote>
-<p>LLMs excel at writing code that works that doesn’t have to be maintained. Non-production code that’s only run once (e.g. for research) is a perfect fit for this. I would say that my use of LLMs here meant I got this done 2x-4x faster than if I’d been unassisted.</p>
+<p>One of the highest returns on investment I&rsquo;ve had on workflow automation was the script below. It rebuilds an OpenWRT image from scratch with updated dependencies.</p>
 </blockquote>
-<blockquote>
-<p>The magic of learning with LLMs is that you can <em>ask questions</em>: not just “how does X work”, but follow-up questions like “how does X relate to Y”. Even more usefully, you can ask “is this right” questions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"></span>./scripts/feeds update -a
+</span></span><span style="display:flex;"><span>./scripts/feeds install -a
+</span></span><span style="display:flex;"><span>make clean
+</span></span><span style="display:flex;"><span>make -j12
+</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"># Write logs to file, for debugging</span>
+</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#make -j12 V=sc -k 2&gt;&amp;1 | tee build_log.txt</span>
+</span></span><span style="display:flex;"><span>cmatrix -b
+</span></span></code></pre></div><blockquote>
+<p>Ive <em>(sic)</em> lost count of how many times I ran <code>make</code> without first updating the feed I was working on! The call to <code>cmatrix</code> at the end plays a Matrix inspired stream of green characters the moment the build finishes. This solves the problem of starting the build, working on something else &amp; not noticing that the build has completed even when it was a rather high priority task!</p>
+<p>Lets say this script took five minutes to write. If it saves one rebuild, <em>it has already paid for itself four times over</em>. It has saved <em>much</em> more time since. Thanks to this script, debugging certain things that used to take a whole day now can be done in just a few hours.</p>
 </blockquote>
-<p>But, Sean also warns against trusting the LLM generations completely. As engineers, you should know your tools so well that you are more confident in your own work than an LLM.</p>
-<blockquote>
-<p>It’s rare that I let Copilot produce business logic for me, but it does occasionally happen. In my areas of expertise (Ruby on Rails, for instance), I’m confident I can do better work than the LLM. It’s just a (very good) autocomplete.</p>
-</blockquote>
-<p>But, we&rsquo;re not always using our most comfortable tools.</p>
-<blockquote>
-<p>I frequently find myself making small tactical changes in less-familiar areas (for instance, a Golang service or a C library). I know the syntax and have written personal projects in these languages, but I’m less confident about what’s idiomatic. In these cases, I rely on Copilot more. Typically I’ll use Copilot chat with the o1 model enabled, paste in my code, and ask directly “is this idiomatic C?”</p>
-<p>Relying more on the LLM like this is risky, because I don’t know what I’m missing.</p>
-</blockquote>
-<p>Using new tools is part of growing as an engineer, but the tool shouldn&rsquo;t make you a worse engineer.</p>
+<p>Start small, what&rsquo;s one task that you can automate today?</p>
 
     
   </div>
@@ -254,8 +249,8 @@
             <div class="single-pagination-container-prev">
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
-                    <a href="/posts/supercharge-your-productivity-with-the-.net-cli/">
-                        Supercharge Your Productivity with the .NET CLI
+                    <a href="/posts/this-engineer-uses-llms/">
+                        This engineer uses LLMs
                     </a>
                 </div>
             </div>
@@ -263,15 +258,6 @@
         </div>
 
         <div class="single-pagination-next">
-            
-            <div class="single-pagination-container-next">
-                <div class="single-pagination-text">
-                    <a href="/posts/start-automating-easy-tasks/">
-                        Start Automating Easy Tasks
-                    </a>
-                </div>
-                <div class="single-pagination-text">→</div>
-            </div>
             
         </div>
 

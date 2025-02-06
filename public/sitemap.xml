@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nolanmiller.me/tags/ai/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+    <loc>https://nolanmiller.me/tags/automation/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/start-automating-easy-tasks/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/via/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/ai/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/llm/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/posts/this-engineer-uses-llms/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/via/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/commandline/</loc>
