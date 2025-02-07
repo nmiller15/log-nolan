@@ -1,5 +1,5 @@
 # Define source and destination paths
-$sourcePath = "C:\Users\NMiller\OneDrive - CAB\Documents\Vault\blog-posts"
+$sourcePath = "G:\My Drive\Vault\blog-posts"
 $destinationPath = "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\content\posts"
 $currentPath = Get-Location
 
