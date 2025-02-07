@@ -1,8 +1,8 @@
 ---
 title: Start Automating Easy Tasks
 date: 2025-02-06
-summary: "via Alex Tiniuc"
-description: "via Alex Tiniuc"
+summary: via Alex Tiniuc
+description: via Alex Tiniuc
 toc: false
 readTime: true
 autonumber: false
@@ -11,7 +11,8 @@ tags: ["via", "automation"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2262995
 ---
 Quotes courtesy of Alex Tiniuc, from his article [Unexpected Benefits of Building Your Own Tools](https://tiniuc.com/make-more-tools/)
 

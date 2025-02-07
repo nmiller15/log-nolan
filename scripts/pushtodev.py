@@ -20,7 +20,7 @@ def load_api_key():
         return None
 
 # Define constants
-FOLDER_PATH = "C:\\Users\\NMiller\\OneDrive - CAB\\Documents\\Vault\\blog-posts"
+FOLDER_PATH = "G:\\My Drive\\Vault\\blog-posts"
 DEV_API_URL = "https://dev.to/api/articles"
 API_KEY = load_api_key()
 if not API_KEY:

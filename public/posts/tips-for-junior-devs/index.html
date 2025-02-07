@@ -14,29 +14,29 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
 
-<meta name="description" content="via Alex Tiniuc"/>
+<meta name="description" content="via qntm"/>
 
 
 
 <title>
     
-    Start Automating Easy Tasks | Log(&#34;Nolan&#34;);
+    Tips for Junior Devs | Log(&#34;Nolan&#34;);
     
 </title>
 
-<link rel="canonical" href="https://nolanmiller.me/posts/start-automating-easy-tasks/"/>
+<link rel="canonical" href="https://nolanmiller.me/posts/tips-for-junior-devs/"/>
 
-<meta property="og:url" content="https://nolanmiller.me/posts/start-automating-easy-tasks/">
+<meta property="og:url" content="https://nolanmiller.me/posts/tips-for-junior-devs/">
   <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
-  <meta property="og:title" content="Start Automating Easy Tasks">
-  <meta property="og:description" content="via Alex Tiniuc">
+  <meta property="og:title" content="Tips for Junior Devs">
+  <meta property="og:description" content="via qntm">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-06T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-02-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-07T00:00:00+00:00">
     <meta property="article:tag" content="Via">
-    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="Learning">
 
 
 
@@ -139,7 +139,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/start-automating-easy-tasks/">Start Automating Easy Tasks</a>
+    <a class="breadcrumbs-current" href="/posts/tips-for-junior-devs/">Tips for Junior Devs</a>
 </div>
 
 
@@ -150,9 +150,9 @@
 
     
 
-    <h1 class="single-title">Start Automating Easy Tasks</h1>
+    <h1 class="single-title">Tips for Junior Devs</h1>
     
-    <p class="single-summary">via Alex Tiniuc</p>
+    <p class="single-summary">via qntm</p>
     
 
     
@@ -161,12 +161,12 @@
       
       
       
-      <time datetime="2025-02-06T00:00:00&#43;00:00">February 6, 2025</time>
+      <time datetime="2025-02-07T00:00:00&#43;00:00">February 7, 2025</time>
       
 
       
       &nbsp; · &nbsp;
-      2 min read
+      3 min read
       
     </p>
 
@@ -185,7 +185,7 @@
     
     
     <span>
-      <a href="https://nolanmiller.me/tags/automation/">#Automation</a>
+      <a href="https://nolanmiller.me/tags/learning/">#Learning</a>
     </span>
     
     
@@ -201,32 +201,43 @@
   
 
   <div class="single-content">
-    <p>Quotes courtesy of Alex Tiniuc, from his article <a href="https://tiniuc.com/make-more-tools/">Unexpected Benefits of Building Your Own Tools</a></p>
-<p>The amount of time that you can sink into creating a tool to automate a task can sometimes feel like an overcomplication of something that you could just <em>do.</em> I certainly feel that way, but Alex Tiniuc makes a good case for spending this time making tools.</p>
+    <p>Quotes in this article are courtesy of qntm in their article <a href="https://qntm.org/devphilo">Developer philosophy</a></p>
+<p>Qntm provides junior devs with many good pieces of advice around software development. These are conclusions that you will come to over time, and things that are hardly found in print, at least in the reading I&rsquo;ve been doing.</p>
+<p>Here are the points he makes:</p>
+<p><strong>Ground-up rewrites only become attractive after many avoidable mistakes have been made.</strong></p>
 <blockquote>
-<p>What this has made me realize is that <strong>speeding up part of a workflow can provide value far beyond the mere time savings</strong>: it also unlocks new ways of working that were not possible before.</p>
+<p>Warning signs to watch for: compounding technical debt. Increasing difficulty in making seemingly simple changes to code. Difficulty in documenting/commenting code. Difficulty in onboarding new developers. Dwindling numbers of people who know how particular areas of the codebase actually work. Bugs nobody understands.</p>
+<p>Compounding complexity must be fought at every turn.</p>
 </blockquote>
-<p>Creating tools that optimize your workflow save time, which inevitably leads to more discovery taking place in the design process.</p>
+<p><strong>Software always takes more time than you think, but you can plan for that.</strong>_</p>
 <blockquote>
-<p>Essentially, the more iterations of the design you can make, the higher quality your game will be - limited, of course, by your budget.</p>
+<p>Writing the code, once, and getting it to work, takes a certain amount of time. Once you have done this, you need to understand that you are about half done. Polishing code up to a suitable level of coherence and maintainability, proper handling of edge cases and failure cases, unit testing, integration testing, usability testing/demos, &ldquo;last-minute&rdquo; feature changes, performance, serviceability, documentation&hellip; all of these things can take immense amounts of additional time, and they are also part of your job.</p>
 </blockquote>
-<p>Even if what you want to automate is small, Alex would argue that it&rsquo;s still worth automating.</p>
+<p><strong>If something gets forgotten by you or your team often enough, just automate it.</strong></p>
 <blockquote>
-<p>One of the highest returns on investment I&rsquo;ve had on workflow automation was the script below. It rebuilds an OpenWRT image from scratch with updated dependencies.</p>
+<p>When this happens, there are two ways to get the developer base as a whole to change its behaviour:</p>
+<ol>
+<li>Socialise it. Tell everybody in person, one at a time or at the scrum or at the team meeting. Send out emails. Add the new guidelines to the wiki, or to the repo README, or the pull request remplate. Remind people to read the documentation, over and over. Manually review everybody&rsquo;s changes for oversights, forever. Make sure you never forget! Add checklists, try to train everybody to properly enforce those checklists. Increase the level of mandatory peer review. Remind everybody again. And again&hellip;</li>
+<li>Automate it.</li>
+</ol>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"></span>./scripts/feeds update -a
-</span></span><span style="display:flex;"><span>./scripts/feeds install -a
-</span></span><span style="display:flex;"><span>make clean
-</span></span><span style="display:flex;"><span>make -j12
-</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"># Write logs to file, for debugging</span>
-</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#make -j12 V=sc -k 2&gt;&amp;1 | tee build_log.txt</span>
-</span></span><span style="display:flex;"><span>cmatrix -b
-</span></span></code></pre></div><blockquote>
-<p>Ive <em>(sic)</em> lost count of how many times I ran <code>make</code> without first updating the feed I was working on! The call to <code>cmatrix</code> at the end plays a Matrix inspired stream of green characters the moment the build finishes. This solves the problem of starting the build, working on something else &amp; not noticing that the build has completed even when it was a rather high priority task!</p>
-<p>Lets say this script took five minutes to write. If it saves one rebuild, <em>it has already paid for itself four times over</em>. It has saved <em>much</em> more time since. Thanks to this script, debugging certain things that used to take a whole day now can be done in just a few hours.</p>
+<p><strong>The happy path is the road-less-travelled. Plan for the worst.</strong></p>
+<blockquote>
+<p>Edge cases are our <em>entire job</em>. Think about ways in which things can fail. Think about ways to try to make things break. Code should handle <em>every</em> possibility.</p>
 </blockquote>
-<p>Start small, what&rsquo;s one task that you can automate today?</p>
+<p><strong>KISS: Keep it simple stupid.</strong></p>
+<blockquote>
+<p>If you budgeted your time properly (see above), you have time to go back and see if you can do better. <em>C.f.</em> the old chess adage, &ldquo;When you see a good move, look for a better one.&rdquo; And another difficult-to-source quote, &ldquo;I apologise for writing such a long letter, but I didn&rsquo;t have time to write a short one.&rdquo;</p>
+</blockquote>
+<p><strong>KITS: Keep it testable stupid.</strong></p>
+<blockquote>
+<p>Code which is proving to be difficult to test is probably not properly encapsulated.</p>
+</blockquote>
+<p>And I think that he makes a great point with his last heading alone&hellip;</p>
+<blockquote>
+<p><strong>It is insufficient for code to be provably correct; it should be obviously, visibly, trivially correct</strong></p>
+</blockquote>
+<p>Take a look at this article for yourself! There&rsquo;s plenty of wisdom here. Maybe it&rsquo;s not groundbreaking for you, but if we actually do the things that are written here, we can stop giving junior devs a bad name!</p>
 
     
   </div>
@@ -249,8 +260,8 @@
             <div class="single-pagination-container-prev">
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
-                    <a href="/posts/this-engineer-uses-llms/">
-                        This engineer uses LLMs
+                    <a href="/posts/start-automating-easy-tasks/">
+                        Start Automating Easy Tasks
                     </a>
                 </div>
             </div>
@@ -258,15 +269,6 @@
         </div>
 
         <div class="single-pagination-next">
-            
-            <div class="single-pagination-container-next">
-                <div class="single-pagination-text">
-                    <a href="/posts/tips-for-junior-devs/">
-                        Tips for Junior Devs
-                    </a>
-                </div>
-                <div class="single-pagination-text">→</div>
-            </div>
             
         </div>
 
