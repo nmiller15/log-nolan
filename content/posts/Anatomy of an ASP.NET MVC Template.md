@@ -7,7 +7,7 @@ toc: true
 readTime: true
 autonumber: false
 math: true
-tags: [".NET", "csharp", "mvc", "beginners"]
+tags: ["dotnet", "csharp", "mvc", "beginners"]
 showTags: true
 hideBackToTop: false
 draft: true
