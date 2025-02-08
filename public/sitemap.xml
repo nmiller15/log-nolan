@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/beginners/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/csharp/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/dotnet/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/mvc/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/learning/</loc>
-    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/learning/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/tips-for-junior-devs/</loc>
@@ -38,17 +53,11 @@
     <loc>https://nolanmiller.me/tags/commandline/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/dotnet/</loc>
-    <lastmod>2025-01-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/microsoft/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/csharp/</loc>
-    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
@@ -61,9 +70,6 @@
   </url><url>
     <loc>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/beginners/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/codenewbie/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
