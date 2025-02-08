@@ -160,4 +160,4 @@ def process_folder(folder_path):
                 print(f"Error processing {file_path}: {e}")
 
 process_folder(FOLDER_PATH)
-print("DEV.to publishing script exited. {success}")
+print(f"DEV.to publishing script exited. {success}")
