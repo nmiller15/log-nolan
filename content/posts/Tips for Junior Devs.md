@@ -1,8 +1,8 @@
 ---
 title: Tips for Junior Devs
 date: 2025-02-07
-summary: "via qntm"
-description: "via qntm"
+summary: via qntm
+description: via qntm
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["via", "learning"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2264655
 ---
-
 Quotes in this article are courtesy of qntm in their article [Developer philosophy](https://qntm.org/devphilo)
 
 Qntm provides junior devs with many good pieces of advice around software development. These are conclusions that you will come to over time, and things that are hardly found in print, at least in the reading I've been doing. 
