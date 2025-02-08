@@ -1,6 +1,6 @@
 ---
 title: Anatomy of an ASP.NET MVC Template
-date: 2025-02-06
+date: 2025-02-08
 summary: "What are these folders and files?"
 description: "What are these folders and files?"
 toc: true
