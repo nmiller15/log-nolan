@@ -6,15 +6,8 @@
     <description>Recent content in Posts on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>testing</title>
-      <link>https://nolanmiller.me/posts/testing/</link>
-      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/testing/</guid>
-      <description>&lt;p&gt;We&amp;rsquo;re going to make a quick edit here.&lt;/p&gt;&#xA;&lt;p&gt;I really hope this just works.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Anatomy of an ASP.NET MVC Template</title>
       <link>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</link>
