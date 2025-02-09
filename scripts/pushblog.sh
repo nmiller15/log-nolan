@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Pushing blog posts to the website as user $(whoami)"
 
 # Define source and destination paths
 blog_posts_path="/Users/nolanmiller/Library/CloudStorage/GoogleDrive-nolan.miller77@gmail.com/My Drive/Vault/blog-posts"
