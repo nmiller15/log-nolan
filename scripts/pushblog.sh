@@ -1,52 +1,61 @@
 #!/bin/bash
-echo "Pushing blog posts to the website as user $(whoami)"
 
 # Define source and destination paths
-blog_posts_path="/Users/nolanmiller/Library/CloudStorage/GoogleDrive-nolan.miller77@gmail.com/My Drive/Vault/blog-posts"
-content_posts_path="/Users/nolanmiller/Projects/log-nolan/content/posts"
-repository_path="/Users/nolanmiller/Projects/log-nolan"
-scripts_directory="$repository_path/scripts"
-current_path="$(pwd)"
+MARKDOWN_DIR="/Users/nolanmiller/Google Drive/My Drive/Vault/blog-posts"
+HUGO_SITE_DIR="/Users/nolanmiller/Projects/log-nolan"
+SCRIPTS="$HUGO_SITE_DIR/scripts"
+CONTENT="$HUGO_SITE_DIR/content/posts"
+CURRENT_PATH="$(pwd)"
 
-# Commit current changes to source control
-echo "Committing changes to source control..."
-cd "$blog_posts_path" || exit
-echo $(pwd)
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1"
+}
 
-git add -A
+run_safe() {
+    "$@"
+    if [ $? -ne 0 ]; then
+        log "Error executing: $1"
+        exit 1
+    fi
+}
+
+log "Executing blog pipeline script"
+
+log "Committing source file changes from $MARKDOWN_DIR"
+cd "$MARKDOWN_DIR" || exit
+
+run_safe git pull 
+
+run_safe git add -A
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
-git commit -m "$commit_message"
+run_safe git commit -m "$commit_message"
 
-git pull --rebase --strategy-option=ours
-git push --force-with-lease
+run_safe git push 
 
 # Move the files from source to destination
-echo "Moving files from $blog_posts_path to $content_posts_path"
-rsync -av --delete "$blog_posts_path/" "$content_posts_path/"
+log "Moving files from $MARKDOWN_DIR to $CONTENT"
+run_safe rsync -av --delete "$MARKDOWN_DIR/" "$CONTENT/"
 
 # Change to the GitHub repository directory
-cd "$repository_path" || exit
+cd "$HUGO_SITE_DIR" || exit
 
-# Execute Hugo build
-echo "Running Hugo build..."
-hugo
+log "Pulling changes from GitHub repository"
+run_safe git pull
 
-git add -A
+log "Running Hugo build..."
+run_safe hugo
+
+log "Committing changes to GitHub repository"
+run_safe git add -A
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
-git commit -m "$commit_message"
-
-git pull --rebase --strategy-option=ours
+run_safe git commit -m "$commit_message"
+run_safe git push 
 
 # Change to the scripts directory
-cd "$scripts_directory" || exit
-python3 pushtodev.py "$blog_posts_path"
-
-# Change back to the repository directory
-cd "$repository_path" || exit
-
-# Push changes to GitHub
-echo "Pushing changes to GitHub..."
-git push --force-with-lease
+log "Pushing changes to DEV.to"
+cd "$SCRIPTS" || exit
+python3 pushtodev.py "$CONTENT"
 
 # Return to the original directory
-cd "$current_path" || exit
+log "Blog pipeline exited successfully"
+cd "$CURRENT_PATH" || exit
