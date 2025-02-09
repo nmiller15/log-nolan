@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/lets-check/</loc>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,13 +23,7 @@
     <loc>https://nolanmiller.me/tags/dotnet/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/mvc/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/</loc>

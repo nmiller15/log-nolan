@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a904013acd8e3bd04ce56a64a8fe5525fd5f738ad6caa0bfbcbe39a8d7ed932d.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.32c4505ff6f37c4a072861f2cbad7347d8e8e8c8f60e01107b50d77c8c29f9f6.css" media="all">
 
 
 
@@ -216,22 +216,22 @@
     <p>I figured a good place to start <a href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/">my ASP.NET journey</a> was the .NET CLI. The tool isn&rsquo;t ASP.NET specific, rather it is an essential development and automation tool for the entire .NET landscape.</p>
 <h2 class="heading" id="what-is-the-net-cli">
   What is the .NET CLI?
-  <a href="#what-is-the-net-cli">#</a>
+  <a class="anchor" href="#what-is-the-net-cli">#</a>
 </h2>
 <p>The <code>dotnet</code> command-line interface (CLI) is a Microsoft tool that&rsquo;s part of the .NET SDK. It is a series of commands that can be executed from your computer&rsquo;s terminal, or shell. The commands included in the CLI help developers run tests, run build servers, package apps for production, generate templated code snippets and more.</p>
 <h2 class="heading" id="why-would-i-use-the-net-cli">
   Why would I use the .NET CLI?
-  <a href="#why-would-i-use-the-net-cli">#</a>
+  <a class="anchor" href="#why-would-i-use-the-net-cli">#</a>
 </h2>
 <p>When I started developing in C#, I asked, <strong>&ldquo;Why would I use the command line interface when my IDE handles all of this for me?&rdquo;</strong> I hope that if you have the same question, that I can answer it for you today.</p>
 <h3 class="heading" id="develop-faster">
   Develop faster
-  <a href="#develop-faster">#</a>
+  <a class="anchor" href="#develop-faster">#</a>
 </h3>
 <p>First, typing the command into your terminal can <em>save you time</em>. Rather than going through menus to look for a command, you can type <!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted --> + <!-- raw HTML omitted -->`<!-- raw HTML omitted --> in your IDE, type three words and hit enter. The code snippet will appear, tests will run, whatever you need to happen. This may take a bit of time to get used to, but the accumulation of these small bits of time will add up over hours, days, and weeks.</p>
 <h3 class="heading" id="break-free-from-your-ide">
   Break free from your IDE
-  <a href="#break-free-from-your-ide">#</a>
+  <a class="anchor" href="#break-free-from-your-ide">#</a>
 </h3>
 <p>A better reason to learn this CLI is to break your dependence upon your development environment. Visual Studio is an incredibly powerful and time-saving tool, but that doesn&rsquo;t mean have to rely on it.</p>
 <p>Developing using .NET has dependencies, Visual Studio isn&rsquo;t one of them.</p>
@@ -239,12 +239,12 @@
 <p>As a side note, since Microsoft discontinued Visual Studio for Mac, the CLI has become almost necessary on Mac OS.</p>
 <h3 class="heading" id="whats-the-real-reason">
   What&rsquo;s the real reason&hellip;
-  <a href="#whats-the-real-reason">#</a>
+  <a class="anchor" href="#whats-the-real-reason">#</a>
 </h3>
 <p>Okay, you caught me. It&rsquo;s way cooler to type something into your terminal and watch the outcome. Don&rsquo;t you just feel like you&rsquo;re a hacker in a movie? Making your development process more fun is a good thing!</p>
 <h2 class="heading" id="installing-net-cli">
   Installing .NET CLI
-  <a href="#installing-net-cli">#</a>
+  <a class="anchor" href="#installing-net-cli">#</a>
 </h2>
 <p>Alright, have I convinced you? Let&rsquo;s get started by installing what we need.</p>
 <p>If you have the .NET SDK installed on your computer already, then that&rsquo;s it, you should have access already.</p>
@@ -257,12 +257,12 @@
 </span></span></code></pre></div><p>This should give you a version number output, and you know you&rsquo;re ready to get started.</p>
 <h2 class="heading" id="best-uses-for-the-net-cli">
   Best Uses for the .NET CLI
-  <a href="#best-uses-for-the-net-cli">#</a>
+  <a class="anchor" href="#best-uses-for-the-net-cli">#</a>
 </h2>
 <p>Here are the most valuable commands that I&rsquo;ve discovered and <em>actually use</em>. Take some time to try them out on your own and work to incorporate them into your own development environment.</p>
 <h3 class="heading" id="setup">
   Setup
-  <a href="#setup">#</a>
+  <a class="anchor" href="#setup">#</a>
 </h3>
 <p>Before we start, create a folder that we can play in. I&rsquo;m calling mine <code>dotnet-sandbox</code> but you can call yours whatever you want. The following commands will work on Mac, Windows and Linux.</p>
 <p>Open your terminal and make note of the directory you are in (this is typically your User directory). If you&rsquo;re not in your user directory, you can quickly navigate there with the command <code>cd ~</code>. Then create a folder and change directories into it.</p>
@@ -270,7 +270,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#99d1db">cd dotnet-sandbox</span>
 </span></span></code></pre></div><h3 class="heading" id="getting-help">
   Getting help
-  <a href="#getting-help">#</a>
+  <a class="anchor" href="#getting-help">#</a>
 </h3>
 <p>The first and perhaps <em>most useful</em> command of the .NET cli is the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dotnet -?
@@ -280,7 +280,7 @@
 <p>The flag, <code>-?</code> or <code>--help</code> can be run after any of the following <code>dotnet</code> commands to get more information about them right in your terminal!</p>
 <h3 class="heading" id="creating-apps-from-net-templates">
   Creating apps from .NET templates
-  <a href="#creating-apps-from-net-templates">#</a>
+  <a class="anchor" href="#creating-apps-from-net-templates">#</a>
 </h3>
 <p>Visual Studio, lets you start a projects by selecting a template to build off of, but the GUI in isn&rsquo;t the only way to generate these templates.</p>
 <p>Run this command to create a console application template</p>
@@ -289,7 +289,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dotnet new list
 </span></span></code></pre></div><h4 class="heading" id="give-your-projects-a-name">
   Give your projects a name
-  <a href="#give-your-projects-a-name">#</a>
+  <a class="anchor" href="#give-your-projects-a-name">#</a>
 </h4>
 <p>I hardly ever use the <code>dotnet new</code> command without the <code>-n</code> flag. Follow this flag with a string and you can give a name to your project. This name will be used for the namespace, the class name or the directory of your project, depending on the template that you use.</p>
 <p>I recommend always giving a name to these templates. Adding the <code>-n</code> flag results in project templates being created inside their own directory. Without the flag, the CLI dumps all of the template files into your current working directory, which has burned me before.</p>
@@ -301,7 +301,7 @@
 </span></span></code></pre></div><p>One of these is much quicker to type if you get in the habit of it.</p>
 <h3 class="heading" id="use-net-snippets">
   Use .NET snippets
-  <a href="#use-net-snippets">#</a>
+  <a class="anchor" href="#use-net-snippets">#</a>
 </h3>
 <p>If you&rsquo;ve been following along in your own terminal, you saw how many options were available when you ran <code>dotnet new list</code>. The <code>dotnet new</code> command can be used for more than creating new project templates.  It will also insert snippets, smaller templates designed to be used within projects!</p>
 <p>For example, in your <code>dotnet-sandbox</code> directory, create a new MVC app and <code>cd</code> into it.</p>
@@ -326,7 +326,7 @@
 </span></span></code></pre></div><p>You can use the same process to create Razor Views, Razor Pages, ViewImports file, ViewStart file, .gitignore and others.</p>
 <h3 class="heading" id="test-your-apps">
   Test your apps
-  <a href="#test-your-apps">#</a>
+  <a class="anchor" href="#test-your-apps">#</a>
 </h3>
 <p>If you&rsquo;re running your tests with the VSTest framework you can run&hellip;</p>
 <div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dotnet test
@@ -334,14 +334,14 @@
 <p>You can also use your <code>dotnet new</code> command to create test projects and items!</p>
 <h3 class="heading" id="add-packages-to-your-app">
   Add packages to your app
-  <a href="#add-packages-to-your-app">#</a>
+  <a class="anchor" href="#add-packages-to-your-app">#</a>
 </h3>
 <p>Yes, yes, the Nuget package manager is very nice, but we&rsquo;re optimizing for speed! Do you already know the name of the package that you&rsquo;re trying to install?</p>
 <div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dotnet add package EntityFramework
 </span></span></code></pre></div><p>You can do this on the PM Console as well, but if you&rsquo;re already using your Developer Console, then you might as well not switch!</p>
 <h3 class="heading" id="bonus-commands">
   BONUS commands!
-  <a href="#bonus-commands">#</a>
+  <a class="anchor" href="#bonus-commands">#</a>
 </h3>
 <p>A few other commands that I&rsquo;ve liked using!</p>
 <ul>
@@ -354,7 +354,7 @@
 </ul>
 <h2 class="heading" id="have-i-convinced-you-yet">
   Have I convinced you yet?
-  <a href="#have-i-convinced-you-yet">#</a>
+  <a class="anchor" href="#have-i-convinced-you-yet">#</a>
 </h2>
 <p>The .NET CLI is quite powerful (and has the potential to make you feel like a 10X dev wizard). Take a few of these commands with you the next time you&rsquo;re working on a project. It will probably take some time and intentionality to start using them regularly, but if you do, you&rsquo;ll be free of your mouse in no time. 😉</p>
 <p>This lesson is part of my long-term effort to learn ASP.NET. If you want to see the resources that I&rsquo;m using, check out my post, <a href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/">Learn ASP.NET From Scratch</a>.</p>

@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a904013acd8e3bd04ce56a64a8fe5525fd5f738ad6caa0bfbcbe39a8d7ed932d.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.32c4505ff6f37c4a072861f2cbad7347d8e8e8c8f60e01107b50d77c8c29f9f6.css" media="all">
 
 
 
@@ -218,13 +218,13 @@
 <p>In this post, I’m going to go over, broadly how I deployed my full stack application on an AWS EC2 Instance.</p>
 <h2 class="heading" id="deploying-a-full-stack-pern-app-to-ec2">
   Deploying a Full-Stack PERN App to EC2
-  <a href="#deploying-a-full-stack-pern-app-to-ec2">#</a>
+  <a class="anchor" href="#deploying-a-full-stack-pern-app-to-ec2">#</a>
 </h2>
 <p>So, the code for my project was ready to ship, and I had to decide on a hosting solution. II like EC2, because it&rsquo;s just a virtual Linux machine in one of AWS’s datacenters! You have complete customization ability, but that also means the configuration can be a bit of a bear if you’re not used to working with the command line.</p>
 <p>If you have a project that you’re looking to host, grab your code and follow along!</p>
 <h3 class="heading" id="1-spin-up-an-ec2-instance">
   1. Spin Up an EC2 Instance
-  <a href="#1-spin-up-an-ec2-instance">#</a>
+  <a class="anchor" href="#1-spin-up-an-ec2-instance">#</a>
 </h3>
 <ul>
 <li>If you don’t already have an AWS account, create one now, and navigate to the EC2 product.</li>
@@ -235,7 +235,7 @@
 </ul>
 <h3 class="heading" id="2-install-your-dependencies-and-code">
   2. Install Your Dependencies and Code
-  <a href="#2-install-your-dependencies-and-code">#</a>
+  <a class="anchor" href="#2-install-your-dependencies-and-code">#</a>
 </h3>
 <p>To host your project here, you’ll have to find a way to get your project onto the EC2 instance. But, first that means you’ll have to connect via SSH.</p>
 <ul>
@@ -278,7 +278,7 @@ sudo npm i            # install dependencies
 </ul>
 <h3 class="heading" id="3-set-up-your-database">
   3. Set Up Your Database
-  <a href="#3-set-up-your-database">#</a>
+  <a class="anchor" href="#3-set-up-your-database">#</a>
 </h3>
 <p>I chose Postgres for my database for this application. But, the same general steps would apply for MySQL or SQLite. Essentially, you have to walk through everything that you did to create your database on your local machine in the cloud. If you set your database up on a third party service, then go ahead and skip this step!</p>
 <ul>
@@ -327,7 +327,7 @@ postgres=#
 <p>Just as a note here, I would not allow your app to connect to the database as <code>postgres</code> . This is a superuser, and its not a great idea to have your application accessing your database as a superuser in production. You&rsquo;ll miss some permissions when you&rsquo;re testing, sure, but its better than having your database dropped!</p>
 <h3 class="heading" id="4-create-your-environment-variables">
   4. Create Your Environment Variables
-  <a href="#4-create-your-environment-variables">#</a>
+  <a class="anchor" href="#4-create-your-environment-variables">#</a>
 </h3>
 <p>To connect to the database, or to access an api with a key, you’ll be using environment variables. You can create them in a file that you put in the /etc/ directory</p>
 <pre tabindex="0"><code>touch /etc/app.env
@@ -340,7 +340,7 @@ SOME_OTHER_KEY=thismuchlongervalue
 sudo chown ubuntu:ubuntu /etc/roast.env  # Name this file whatever you&#39;d like
 </code></pre><h3 class="heading" id="5-daemonize-your-application">
   5. Daemonize Your Application
-  <a href="#5-daemonize-your-application">#</a>
+  <a class="anchor" href="#5-daemonize-your-application">#</a>
 </h3>
 <p>We’re going to now run the application as a service, so that it runs in the background of our computer. I had to do this twice, once for my api and a second time for my react application.</p>
 <pre tabindex="0"><code>sudo nano /etc/systemd/system/roast-api.service  # You can name the service file anything you&#39;d like
@@ -399,7 +399,7 @@ sudo journalctl -f -u roast-api
 <p>If you’re running into a 404 error, double check that you’re serving from the correct directory. Remeber that WorkingDirectory in your service file should be the directory that you must be in to run your start command.</p>
 <h3 class="heading" id="6-point-a-domain-name-to-your-ec2-instance">
   6. Point a Domain Name to Your EC2 Instance
-  <a href="#6-point-a-domain-name-to-your-ec2-instance">#</a>
+  <a class="anchor" href="#6-point-a-domain-name-to-your-ec2-instance">#</a>
 </h3>
 <p>I used AWS Route 53 to do this, but you can use just about any DNS provider with a domain name that you own. The general steps are:</p>
 <ol>
@@ -410,7 +410,7 @@ sudo journalctl -f -u roast-api
 </ol>
 <h3 class="heading" id="7-set-up-caddy-as-a-reverse-proxy-to-serve-the-app-over-https">
   7. Set up Caddy as a Reverse Proxy to Serve the App over HTTPS
-  <a href="#7-set-up-caddy-as-a-reverse-proxy-to-serve-the-app-over-https">#</a>
+  <a class="anchor" href="#7-set-up-caddy-as-a-reverse-proxy-to-serve-the-app-over-https">#</a>
 </h3>
 <p>I’ve used NGINX for this before, but the amount of configuration and managing SSLs on your own can be kind of a pain. Caddy is <strong>way</strong> better if you don&rsquo;t need a ton of configuration.</p>
 <p>I did have to go back in and add some extra bits to my configuration to make sure that cookies were allowed to be sent over the proxy. But, 10/10, would caddy again.</p>
@@ -444,7 +444,7 @@ roast.nolanmiller.me {
 <p>My SSL certs will be manually updated, and I didn’t even have to worry about installing them. It’s a 7 line config file! (Like I said, mine did get a <em>tiny</em> bit longer when I was troubleshooting cookies).</p>
 <h2 class="heading" id="deployed">
   Deployed!
-  <a href="#deployed">#</a>
+  <a class="anchor" href="#deployed">#</a>
 </h2>
 <p>That’s it! Now, don’t let me fool you, this process took me a while, and it was not as smooth as this blog post made it look. I got stuck in so many places: permissions with my database users, misnaming environment files, figuring out the execute command for my react application, debugging random fetch request and cors issues that I wasn’t having on my localhost.</p>
 <p>But, this is the basic process!</p>

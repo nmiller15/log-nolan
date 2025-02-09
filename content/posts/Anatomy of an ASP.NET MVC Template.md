@@ -1,8 +1,8 @@
 ---
 title: Anatomy of an ASP.NET MVC Template
 date: 2025-02-08
-summary: "What are these folders and files?"
-description: "What are these folders and files?"
+summary: What are these folders and files?
+description: What are these folders and files?
 toc: true
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["dotnet", "csharp", "mvc", "beginners"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2266708
 ---
-
 Using a template for a common technology can speed you along the setup process of building an application. It allows you to bypass the tedious and error-prone boilerplate setup and gives you a working app that is easy to extend! If you're unfamiliar with the technology or the structure, seeing the number of files and directories that are generated for you can be daunting.
 
 I am going to create an ASP.NET MVC app today. Well, actually just the template. But, after one command in your terminal, you will have a working application. Today, I'd like to talk about how all of these files work together to create this MVC application. We'll cover files that are specific to this template, and others that are common to all .NET applications.
