@@ -8,7 +8,9 @@ scripts_directory="$repository_path/scripts"
 current_path="$(pwd)"
 
 # Commit current changes to source control
+echo "Committing changes to source control..."
 cd "$blog_posts_path" || exit
+echo $(pwd)
 
 git pull
 git add -A
