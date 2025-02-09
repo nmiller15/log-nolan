@@ -41,11 +41,6 @@ cd "$HUGO_SITE_DIR" || exit 1
 run_safe git pull "$REMOTE" "$BRANCH"
 
 # 3. Copy markdown directory content to Hugo site content directory
-<<<<<<< HEAD
-=======
-log "Backing up Hugo site's existing content"
-run_safe cp -r "$HUGO_SITE_DIR/content/posts" "$HUGO_SITE_DIR/content/posts-backup-$(date '+%Y%m%d%H%M%S')"
->>>>>>> 99380ceb7c14add502d0ca6383edfd692bfa05b1
 log "Copying markdown posts to Hugo content directory"
 run_safe cp -r "$MARKDOWN_DIR"/* "$HUGO_SITE_DIR/content/posts/"
 log "Verifying that no uncommitted changes exist in Hugo site"
