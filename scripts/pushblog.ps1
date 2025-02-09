@@ -6,7 +6,7 @@ $currentPath = Get-Location
 # Commit current changes to source control
 Set-Location -Path $sourcePath
 
-git pull
+git pull --rebase --strategy-option=ours
 git add -A
 
 $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
@@ -25,7 +25,7 @@ Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
 Write-Host "Running Hugo build..."
 hugo
 
-git pull
+git pull --rebase --strategy-option=ours
 
 # Add all files to Git
 git add -A

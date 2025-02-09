@@ -1,8 +1,8 @@
 ---
 title: Is this really cross-platform?
 date: 2025-02-09
-summary: 
-description: 
+summary: None
+description: None
 toc: false
 readTime: true
 autonumber: false
@@ -14,5 +14,4 @@ draft: false
 dev: true
 dev_id: 2267864
 ---
-
 updating!

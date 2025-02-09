@@ -13,7 +13,7 @@ echo "Committing changes to source control..."
 cd "$blog_posts_path" || exit
 echo $(pwd)
 
-git pull
+git pull --rebase --strategy-option=ours
 git add -A
 
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
@@ -31,7 +31,7 @@ cd "$repository_path" || exit
 echo "Running Hugo build..."
 hugo
 
-git pull
+git pull --rebase --strategy-option=ours
 
 # Add all files to Git
 git add -A
