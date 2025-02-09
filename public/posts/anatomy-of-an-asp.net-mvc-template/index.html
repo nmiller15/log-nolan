@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a904013acd8e3bd04ce56a64a8fe5525fd5f738ad6caa0bfbcbe39a8d7ed932d.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.32c4505ff6f37c4a072861f2cbad7347d8e8e8c8f60e01107b50d77c8c29f9f6.css" media="all">
 
 
 
@@ -248,45 +248,45 @@
 <p>So, without further adieu, open up a terminal, run <code>dotnet new mvc</code> and follow along!</p>
 <h2 class="heading" id="describing-your-project">
   Describing your project
-  <a href="#describing-your-project">#</a>
+  <a class="anchor" href="#describing-your-project">#</a>
 </h2>
 <p>Before we dive into the specifics of this template, we should first talk about the files included with <em>every</em> project template: the <code>.sln</code> and <code>.csproj</code> files. Without these files, your project isn&rsquo;t going to run. Suffice it to say&hellip; they&rsquo;re important.</p>
 <h3 class="heading" id="solutions-are-made-up-of-projects">
   Solutions are made up of projects
-  <a href="#solutions-are-made-up-of-projects">#</a>
+  <a class="anchor" href="#solutions-are-made-up-of-projects">#</a>
 </h3>
 <p>If you&rsquo;re new to .NET, you might be asking &ldquo;What the heck is a solution?&rdquo; I will admit that the terminology threw me a little when I started as well.</p>
 <p>A solution is a container for a project or set of projects that work together and depend on one another. In general different projects like class libraries, console apps and MVC applications can work together to create an entire solution.</p>
 <h3 class="heading" id="the-sln-file-defines-your-projects">
   The <code>.sln</code> file defines your projects
-  <a href="#the-sln-file-defines-your-projects">#</a>
+  <a class="anchor" href="#the-sln-file-defines-your-projects">#</a>
 </h3>
 <p>You probably won&rsquo;t look at this file or do much with it, but that doesn&rsquo;t mean it isn&rsquo;t important. It contains vital configurations for your project. Most of the manipulation of this file will be done by your IDE, not you. Just know that you cannot get rid of this file!</p>
 <h3 class="heading" id="the-csproj-file-sets-up-your-project">
   The <code>.csproj</code> file sets up your project
-  <a href="#the-csproj-file-sets-up-your-project">#</a>
+  <a class="anchor" href="#the-csproj-file-sets-up-your-project">#</a>
 </h3>
 <p>The <code>.csproj</code> file is similar to the <code>.sln</code> file, but it defines your individual projects. What version of .NET is running? Does it depend on a class library? How about a NuGet package? All of that good stuff can be defined right here.</p>
 <p>Your IDE is going to do most of the manipulation of this file for you too, but this one is a bit easier to go in and poke around. The syntax is somewhat similar to HTML. You use opening and closing tags to surround the specific information that you&rsquo;re defining. You can read more about this file in <a href="https://learn.microsoft.com/en-us/aspnet/web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file">Microsoft&rsquo;s documentation</a>.</p>
 <h2 class="heading" id="lets-get-to-the-actual-code-please">
   Let&rsquo;s get to the actual code, please
-  <a href="#lets-get-to-the-actual-code-please">#</a>
+  <a class="anchor" href="#lets-get-to-the-actual-code-please">#</a>
 </h2>
 <p>Okay, okay. I hear you. The next place that we will look is the first file that gets executed after your program is compiled, the <code>Program.cs</code> file.</p>
 <h3 class="heading" id="programcs-is-our-entry-point">
   <code>Program.cs</code> is our entry point
-  <a href="#programcs-is-our-entry-point">#</a>
+  <a class="anchor" href="#programcs-is-our-entry-point">#</a>
 </h3>
 <p>The <code>Program.cs</code> file is the entry point of our application. This is true for all .NET applications. This file contains your <code>Main()</code> method, which sets up your application, adds middleware, mounts configurations and opens pathways to all of the other classes that you create!</p>
 <h3 class="heading" id="startupcs-is-where-you-add-middleware">
   <code>Startup.cs</code> is where you add middleware
-  <a href="#startupcs-is-where-you-add-middleware">#</a>
+  <a class="anchor" href="#startupcs-is-where-you-add-middleware">#</a>
 </h3>
 <p>If we keep all of that configuration in one file, it will get really long and kind of hard to maintain. This is where the <code>Startup.cs</code> file comes in handy.  This file holds a <code>ConfigureServices()</code> method which is called in <code>Program.cs</code>. We can use this to setup any configuration or middleware that we need, but isn&rsquo;t directly related to making our application available. We might define dependency injection configurations, specific error-handling middleware, or logging here!</p>
 <p>When you go to make edits here, you <em>will</em> pick the wrong one. I still do it about 50% of the time.</p>
 <h3 class="heading" id="you-might-not-have-a-startupcs-file">
   You might not have a <code>Startup.cs</code> file
-  <a href="#you-might-not-have-a-startupcs-file">#</a>
+  <a class="anchor" href="#you-might-not-have-a-startupcs-file">#</a>
 </h3>
 <p>You might be looking at your project and thinking that you&rsquo;re missing something&hellip;.</p>
 <p>Depending on the framework version that you chose when you created this template, you may not have a <code>Startup.cs</code> file. And when you&rsquo;re looking closer at <code>Program.cs</code> it doesn&rsquo;t have a  <code>Main()</code> method!</p>
@@ -295,13 +295,13 @@
 <p>This use of top-level statements is also very new, so don&rsquo;t use them as an excuse to not know about the <code>Program.cs</code> and <code>Startup.cs</code> pattern, because most applications running today will still be set up like this.</p>
 <h2 class="heading" id="serving-web-content-with-wwwroot">
   Serving web content with <code>wwwroot</code>
-  <a href="#serving-web-content-with-wwwroot">#</a>
+  <a class="anchor" href="#serving-web-content-with-wwwroot">#</a>
 </h2>
 <p>Now that most of our general .NET files are out the way, lets look at something specific to web applications, the <code>wwwroot</code> directory. In a web application, there are a number of files that are delivered directly to the client, and this is the folder that contains these files.</p>
 <p>This files are called <em>static</em> files. Static files include CSS stylesheets, Javascript, images and files from libraries like Bootstrap or jQuery.</p>
 <h3 class="heading" id="access-static-files-using-their-pathname">
   Access static files using their pathname
-  <a href="#access-static-files-using-their-pathname">#</a>
+  <a class="anchor" href="#access-static-files-using-their-pathname">#</a>
 </h3>
 <p>Since these files are delivered to the client, you can access them in the browser while the app is running.</p>
 <p>Let&rsquo;s test this out.</p>
@@ -318,7 +318,7 @@
 <p>You should see the image displayed in your browser! Using the pathname, as you might in a file browser on your local computer, you can access these static files!</p>
 <h2 class="heading" id="models-views-and-controllers">
   Models, Views, and Controllers
-  <a href="#models-views-and-controllers">#</a>
+  <a class="anchor" href="#models-views-and-controllers">#</a>
 </h2>
 <pre tabindex="0"><code>Controllers/
 └── HomeController.cs
@@ -339,7 +339,7 @@ Views/
 <p>You will add your application views, your model library and all of your business logic between these three directories.</p>
 <h2 class="heading" id="setup-a-layout-for-your-application">
   Setup a layout for your application
-  <a href="#setup-a-layout-for-your-application">#</a>
+  <a class="anchor" href="#setup-a-layout-for-your-application">#</a>
 </h2>
 <p>While we aren&rsquo;t going to piece through each and every file here, two that you should be aware of are <code>_ViewStart.cshtml</code> and <code>_Layout.cshtml</code>. With these two files, you will create a common layout for every view in your application.</p>
 <p>The <code>_ViewStart.cshtml</code> file&hellip;</p>
@@ -351,7 +351,7 @@ Views/
 <p>In <code>_Layout.cshtml</code> you&rsquo;ll also see the <code>@RenderBody()</code> method. Wherever this method is called is where the HTML for the current view is rendered. Without this method, none of the views that you create will ever be displayed.</p>
 <h2 class="heading" id="scratching-the-surface">
   Scratching the surface
-  <a href="#scratching-the-surface">#</a>
+  <a class="anchor" href="#scratching-the-surface">#</a>
 </h2>
 <p>I hope that, armed with this knowledge, you are able to start hacking away at an application template! Over the next few months, keep an eye out as I dig deeper into ASP.NET and uncover more of the nuts and bolts of the technology to share with you.</p>
 <p>Thank you for reading!</p>
