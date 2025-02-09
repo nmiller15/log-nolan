@@ -25,6 +25,7 @@ def load_api_key():
 
 # Define constants
 args = parser.parse_args()
+print(args)
 FOLDER_PATH = args.folder_path
 DEV_API_URL = "https://dev.to/api/articles"
 API_KEY = load_api_key()
