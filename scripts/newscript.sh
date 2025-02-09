@@ -61,7 +61,7 @@ run_safe git push "$REMOTE" "$BRANCH"
 # 6. Call the Python script for dev.to upload/edit
 log "Running Python script to upload/edit posts on dev.to"
 cd "$HUGO_SITE_DIR/scripts" || exit 1
-python3 /path/to/upload_to_devto.py "$MARKDOWN_DIR"
+#python3 /path/to/upload_to_devto.py "$MARKDOWN_DIR"
 
 cd "$CURRENT_DIR" || exit 1
 log "Pipeline executed successfully"
