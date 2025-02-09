@@ -13,12 +13,12 @@ echo "Committing changes to source control..."
 cd "$blog_posts_path" || exit
 echo $(pwd)
 
-git pull
 git add -A
-
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
 git commit -m "$commit_message"
-git push
+
+git pull --rebase --strategy-option=ours
+git push --force-with-lease
 
 # Move the files from source to destination
 echo "Moving files from $blog_posts_path to $content_posts_path"
@@ -31,14 +31,11 @@ cd "$repository_path" || exit
 echo "Running Hugo build..."
 hugo
 
-git pull
-
-# Add all files to Git
 git add -A
-
-# Commit changes with a message including the current date
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
 git commit -m "$commit_message"
+
+git pull --rebase --strategy-option=ours
 
 # Change to the scripts directory
 cd "$scripts_directory" || exit
@@ -49,7 +46,7 @@ cd "$repository_path" || exit
 
 # Push changes to GitHub
 echo "Pushing changes to GitHub..."
-git push
+git push --force-with-lease
 
 # Return to the original directory
 cd "$current_path" || exit

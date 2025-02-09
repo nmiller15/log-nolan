@@ -6,12 +6,12 @@ $currentPath = Get-Location
 # Commit current changes to source control
 Set-Location -Path $sourcePath
 
-git pull
 git add -A
-
 $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-
 git commit -m $commitMessage
+
+Write-Host "Pushing changes to GitHub..."
+git pull --rebase --strategy-option=ours
 git push
 
 # Move the files from source to destination
@@ -25,22 +25,15 @@ Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
 Write-Host "Running Hugo build..."
 hugo
 
-git pull
-
-# Add all files to Git
 git add -A
-
-# Commit changes with a message including the current date
 $commitMessage = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m $commitMessage
 
+Write-Host "Pushing changes to GitHub..."
+git pull --rebase --strategy-option=ours
+git push
+
 Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\scripts"
 python3 pushtodev.py "G:\My Drive\Vault\blog-posts"
-
-Set-Location -Path "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan"
-
-# Push changes to GitHub
-Write-Host "Pushing changes to GitHub..."
-git push
 
 Set-Location -Path $currentPath
