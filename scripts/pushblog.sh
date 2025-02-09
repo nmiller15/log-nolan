@@ -42,7 +42,7 @@ git commit -m "$commit_message"
 
 # Change to the scripts directory
 cd "$scripts_directory" || exit
-python3 pushtodev.py
+python3 pushtodev.py "$blog_posts_path"
 
 # Change back to the repository directory
 cd "$repository_path" || exit
