@@ -9,7 +9,7 @@ import argparse
 success = "Did not post."
 
 parser = argparse.ArgumentParser(description="Process a folder of markdown files to push to DEV.to")
-parser.add_argument("folder", help="The folder containing the markdown files to process.")
+parser.add_argument("folder", type=str, help="The folder containing the markdown files to process.")
 
 def load_api_key():
     """Reads the API key from the .json file in the directory."""
