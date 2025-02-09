@@ -4,8 +4,12 @@ import re
 import yaml
 import requests
 from collections import OrderedDict
+import argparse
 
 success = "Did not post."
+
+parser = argparse.ArgumentParser(description="Process a folder of markdown files to push to DEV.to")
+parser.add_argument("folder_path", type=str, help="The folder containing the markdown files to process.")
 
 def load_api_key():
     """Reads the API key from the .json file in the directory."""
@@ -20,7 +24,9 @@ def load_api_key():
         return None
 
 # Define constants
-FOLDER_PATH = "G:\\My Drive\\Vault\\blog-posts"
+args = parser.parse_args()
+print(args)
+FOLDER_PATH = args.folder_path
 DEV_API_URL = "https://dev.to/api/articles"
 API_KEY = load_api_key()
 if not API_KEY:
