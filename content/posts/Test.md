@@ -10,7 +10,10 @@ math: true
 tags: []
 showTags: true
 hideBackToTop: false
-draft: true
+draft: false
 dev: false
 ---
 
+Here's a test post that will shortly be deleted.
+
+If you found this.. congrats! 
