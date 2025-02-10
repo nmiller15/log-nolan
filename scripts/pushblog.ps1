@@ -45,7 +45,7 @@ git push
 # Change to the scripts directory
 log "Pushing changes to DEV.to"
 Set-Location -Path $SCRIPTS
-python3 pushtodev.py '$CONTENT'
+python3 pushtodev.py $CONTENT
 
 # Return to the original directory
 log "Blog pipeline exited successfully"
