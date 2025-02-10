@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nolanmiller.me/tags/ai/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/can-we-add-ai-to-that/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/mvp/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/product/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/via/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,16 +38,7 @@
     <loc>https://nolanmiller.me/tags/dotnet/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/mvc/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/learning/</loc>
@@ -32,17 +47,11 @@
     <loc>https://nolanmiller.me/posts/tips-for-junior-devs/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/via/</loc>
-    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/automation/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/start-automating-easy-tasks/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/ai/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/llm/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>

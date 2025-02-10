@@ -14,29 +14,31 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
 
-<meta name="description" content="via Alex Tiniuc"/>
+<meta name="description" content="via Lawrence Jones"/>
 
 
 
 <title>
     
-    Start Automating Easy Tasks | Log(&#34;Nolan&#34;);
+    Can we add AI to that? | Log(&#34;Nolan&#34;);
     
 </title>
 
-<link rel="canonical" href="https://nolanmiller.me/posts/start-automating-easy-tasks/"/>
+<link rel="canonical" href="https://nolanmiller.me/posts/can-we-add-ai-to-that/"/>
 
-<meta property="og:url" content="https://nolanmiller.me/posts/start-automating-easy-tasks/">
+<meta property="og:url" content="https://nolanmiller.me/posts/can-we-add-ai-to-that/">
   <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
-  <meta property="og:title" content="Start Automating Easy Tasks">
-  <meta property="og:description" content="via Alex Tiniuc">
+  <meta property="og:title" content="Can we add AI to that?">
+  <meta property="og:description" content="via Lawrence Jones">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-06T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-10T00:00:00+00:00">
     <meta property="article:tag" content="Via">
-    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Product">
+    <meta property="article:tag" content="Mvp">
 
 
 
@@ -139,7 +141,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/start-automating-easy-tasks/">Start Automating Easy Tasks</a>
+    <a class="breadcrumbs-current" href="/posts/can-we-add-ai-to-that/">Can we add AI to that?</a>
 </div>
 
 
@@ -150,9 +152,9 @@
 
     
 
-    <h1 class="single-title">Start Automating Easy Tasks</h1>
+    <h1 class="single-title">Can we add AI to that?</h1>
     
-    <p class="single-summary">via Alex Tiniuc</p>
+    <p class="single-summary">via Lawrence Jones</p>
     
 
     
@@ -161,12 +163,12 @@
       
       
       
-      <time datetime="2025-02-06T00:00:00&#43;00:00">February 6, 2025</time>
+      <time datetime="2025-02-10T00:00:00&#43;00:00">February 10, 2025</time>
       
 
       
       &nbsp; · &nbsp;
-      2 min read
+      3 min read
       
     </p>
 
@@ -185,7 +187,17 @@
     
     
     <span>
-      <a href="https://nolanmiller.me/tags/automation/">#Automation</a>
+      <a href="https://nolanmiller.me/tags/ai/">#Ai</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/product/">#Product</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/mvp/">#Mvp</a>
     </span>
     
     
@@ -201,32 +213,24 @@
   
 
   <div class="single-content">
-    <p>Quotes courtesy of Alex Tiniuc, from his article <a href="https://tiniuc.com/make-more-tools/">Unexpected Benefits of Building Your Own Tools</a></p>
-<p>The amount of time that you can sink into creating a tool to automate a task can sometimes feel like an overcomplication of something that you could just <em>do.</em> I certainly feel that way, but Alex Tiniuc makes a good case for spending this time making tools.</p>
+    <p>Quotes in this article are courtesy of Lawrence Jones in his article, <a href="https://blog.lawrencejones.dev/ai-mvp/index.html">Beyond the AI MVP: What it really takes</a>.</p>
+<p>A little over a month ago, I was in a conference talk about the value of adding AI to products. The speaker asked the room, &ldquo;Who has been asked to incorporate AI into a product you&rsquo;ve already developed in the past year,&rdquo; and the amount of hands up around the room was staggering.</p>
+<p>While it may seem simple on the face of it to load up a model and incorporate a chat interface in your app, the software development lifecycle around AI is much different than traditional software.</p>
+<p>Lawrence Jones argues that there are many challenges that you don&rsquo;t see up front. He points out that you need robust test suites, hefty ai-integrated programs to evaluate ai responses, a test runner, and hosting strategies to keep costs manageable. On top of all of this, the languages of many of the frameworks is in the way:</p>
 <blockquote>
-<p>What this has made me realize is that <strong>speeding up part of a workflow can provide value far beyond the mere time savings</strong>: it also unlocks new ways of working that were not possible before.</p>
+<p>Honestly, writing the tests themselves is the easy bit! Almost all AI tools and frameworks are written in Python, reflecting the origins of AI in the research teams who built the models and the machine-learning community who first adopted them.</p>
+<p>But most product teams don’t use Python, which means you need to create a lot of these tools from scratch. That’s big undertaking, and almost no one is talking about how to integrate this stuff into a normal software development lifecycle.</p>
 </blockquote>
-<p>Creating tools that optimize your workflow save time, which inevitably leads to more discovery taking place in the design process.</p>
+<p>The biggest issue with AI is what Jones calls the &ldquo;Deceptive MVP.&rdquo; Have you built a basic chat interface with OpenAI&rsquo;s API? It&rsquo;s not all that difficult or complex to do, and if you&rsquo;re using a framework you&rsquo;re familiar with, you could probably piece something together in an afternoon. But, once you begin adding requirements for this application, and expecting it to behave in deterministic(-ish) ways, you&rsquo;re going to run into issues.</p>
 <blockquote>
-<p>Essentially, the more iterations of the design you can make, the higher quality your game will be - limited, of course, by your budget.</p>
+<p>You start iterating on your MVP, trying to improve it. But as you add complexity, the system becomes increasingly unpredictable. You’re making changes based on vibes, improving some edge cases while (invisibly) breaking others.</p>
+<p>This is the stage 90% of companies building AI are in. You can even see it in FANG: the AI features Google have added to GCP feel very much like an engineers first attempt to use an LLM in a product, spitting out terrible SQL suggestions in BigQuery. Apple’s message summarisation features cross-pollinating between messages and providing horribly inaccurate headlines is another.</p>
 </blockquote>
-<p>Even if what you want to automate is small, Alex would argue that it&rsquo;s still worth automating.</p>
+<p>Adding AI to an application is not just a peel-and-stick solution that will dramatically increase the impact of your product. While it may be easy to implement, if you&rsquo;re making any meaningful measurements of the efficacy of your product, it will be much, much, much more difficult.</p>
+<p>Adding the connection to an API, or downloading and hosting a model for your codebase to interact with is the easiest part of the product development stage. Brainstorming ways to leverage this technology in a <em>meaningful</em> way, ensuring that it performs tasks <em>reliably</em>, and setting up systems to <em>monitor</em> the efficacy of your product are where your time is going to be spent. So, before you think about building out your AI side-project, thinking that you&rsquo;ll be able to turn this into the next big thing, make sure to evaluate the massive hidden costs first.</p>
 <blockquote>
-<p>One of the highest returns on investment I&rsquo;ve had on workflow automation was the script below. It rebuilds an OpenWRT image from scratch with updated dependencies.</p>
+<p>The companies that will succeed with AI won’t be the ones with the biggest budgets, access to the latest models, or even the most ML expertise. They’ll be the ones that invest in understanding their systems, that build the tools to measure and improve them, and that take the time to do things right.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"></span>./scripts/feeds update -a
-</span></span><span style="display:flex;"><span>./scripts/feeds install -a
-</span></span><span style="display:flex;"><span>make clean
-</span></span><span style="display:flex;"><span>make -j12
-</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic"># Write logs to file, for debugging</span>
-</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic">#make -j12 V=sc -k 2&gt;&amp;1 | tee build_log.txt</span>
-</span></span><span style="display:flex;"><span>cmatrix -b
-</span></span></code></pre></div><blockquote>
-<p>Ive <em>(sic)</em> lost count of how many times I ran <code>make</code> without first updating the feed I was working on! The call to <code>cmatrix</code> at the end plays a Matrix inspired stream of green characters the moment the build finishes. This solves the problem of starting the build, working on something else &amp; not noticing that the build has completed even when it was a rather high priority task!</p>
-<p>Lets say this script took five minutes to write. If it saves one rebuild, <em>it has already paid for itself four times over</em>. It has saved <em>much</em> more time since. Thanks to this script, debugging certain things that used to take a whole day now can be done in just a few hours.</p>
-</blockquote>
-<p>Start small, what&rsquo;s one task that you can automate today?</p>
 
     
   </div>
@@ -249,8 +253,8 @@
             <div class="single-pagination-container-prev">
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
-                    <a href="/posts/this-engineer-uses-llms/">
-                        This engineer uses LLMs
+                    <a href="/posts/anatomy-of-an-asp.net-mvc-template/">
+                        Anatomy of an ASP.NET MVC Template
                     </a>
                 </div>
             </div>
@@ -258,15 +262,6 @@
         </div>
 
         <div class="single-pagination-next">
-            
-            <div class="single-pagination-container-next">
-                <div class="single-pagination-text">
-                    <a href="/posts/tips-for-junior-devs/">
-                        Tips for Junior Devs
-                    </a>
-                </div>
-                <div class="single-pagination-text">→</div>
-            </div>
             
         </div>
 
