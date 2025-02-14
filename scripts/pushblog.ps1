@@ -15,12 +15,12 @@ log "Executing blog pipeline script"
 log "Committing source file changes from $MARKDOWN_DIR"
 Set-Location -Path $MARKDOWN_DIR
 
-git pull
 
 git add -A
 $commit_message = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m $commit_message
 
+git pull --rebase -X ours
 git push
 
 # Move the files from source to destination
@@ -30,8 +30,6 @@ robocopy $MARKDOWN_DIR $CONTENT /MIR
 # Change to the GitHub repository directory
 Set-Location -Path $HUGO_SITE_DIR
 
-log "Pulling changes from GitHub repository"
-git pull
 
 log "Running Hugo build..."
 hugo
@@ -40,6 +38,8 @@ log "Committing changes to GitHub repository"
 git add -A
 $commit_message = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git commit -m '$commit_message'
+
+git pull --rebase -X ours
 git push
 
 # Change to the scripts directory
