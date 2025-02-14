@@ -24,12 +24,11 @@ log "Executing blog pipeline script"
 log "Committing source file changes from $MARKDOWN_DIR"
 cd "$MARKDOWN_DIR" || exit
 
-run_safe git pull 
-
 run_safe git add -A
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
 run_safe git commit -m "$commit_message"
 
+run_safe git pull --rebase
 run_safe git push 
 
 # Move the files from source to destination
@@ -39,9 +38,6 @@ run_safe rsync -av --delete "$MARKDOWN_DIR/" "$CONTENT/"
 # Change to the GitHub repository directory
 cd "$HUGO_SITE_DIR" || exit
 
-log "Pulling changes from GitHub repository"
-run_safe git pull
-
 log "Running Hugo build..."
 run_safe hugo
 
@@ -49,6 +45,8 @@ log "Committing changes to GitHub repository"
 run_safe git add -A
 commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
 run_safe git commit -m "$commit_message"
+
+run_safe git pull --rebase
 run_safe git push 
 
 # Change to the scripts directory
