@@ -2,6 +2,8 @@
 
 # Define source and destination paths
 MARKDOWN_DIR="/Users/nolanmiller/Google Drive/My Drive/Vault/blog-posts"
+ATTACHMENTS_DIR="/Users/nolanmiller/Google Drive/My Drive/Vault/attachments"
+S3_BUCKET_NAME="nolanmiller-image-hosting"
 HUGO_SITE_DIR="/Users/nolanmiller/Projects/log-nolan"
 SCRIPTS="$HUGO_SITE_DIR/scripts"
 CONTENT="$HUGO_SITE_DIR/content/posts"
@@ -20,6 +22,9 @@ run_safe() {
 }
 
 log "Executing blog pipeline script"
+
+log "Replacing attached images with s3 links"
+python3 $SCRIPTS/images.py $MARKDOWN_DIR $S3_BUCKET_NAME $ATTACHMENTS_DIR
 
 log "Committing source file changes from $MARKDOWN_DIR"
 cd "$MARKDOWN_DIR" || exit

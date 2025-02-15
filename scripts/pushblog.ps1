@@ -1,5 +1,7 @@
 # Define source and destination paths
 $MARKDOWN_DIR = "G:\My Drive\Vault\blog-posts"
+$ATTACHMENTS_DIR = "G:\My Drive\Vault\attachments"
+$S3_BUCKET_NAME = "nolanmiller-image-hosting"
 $HUGO_SITE_DIR = "C:\Users\NMiller\OneDrive - CAB\Documents\blog-nolan\"
 $SCRIPTS = "$HUGO_SITE_DIR\scripts"
 $CONTENT = "$HUGO_SITE_DIR\content\posts"
@@ -12,9 +14,11 @@ function log {
 
 log "Executing blog pipeline script"
 
+log "Replacing attached images with s3 links"
+python3 $SCRIPTS/images.py $MARKDOWN_DIR $S3_BUCKET_NAME $ATTACHMENTS_DIR
+
 log "Committing source file changes from $MARKDOWN_DIR"
 Set-Location -Path $MARKDOWN_DIR
-
 
 git add -A
 $commit_message = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
