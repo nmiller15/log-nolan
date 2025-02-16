@@ -57,7 +57,7 @@ run_safe git push
 # Change to the scripts directory
 log "Pushing changes to DEV.to"
 cd "$SCRIPTS" || exit
-python3 pushtodev.py "$CONTENT"
+python3 pushtodev.py "$MARKDOWN_DIR"
 
 # Return to the original directory
 log "Blog pipeline exited successfully"
