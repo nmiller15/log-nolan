@@ -1,8 +1,8 @@
 ---
 title: Can we add AI to that?
 date: 2025-02-10
-summary: via Lawrence Jones
-description: via Lawrence Jones
+summary: "via Lawrence Jones"
+description: "via Lawrence Jones"
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["via", "ai", "product", "mvp"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: true
-dev_id: 2269873
+dev: false
 ---
+
 Quotes in this article are courtesy of Lawrence Jones in his article, [Beyond the AI MVP: What it really takes](https://blog.lawrencejones.dev/ai-mvp/index.html).
 
 A little over a month ago, I was in a conference talk about the value of adding AI to products. The speaker asked the room, "Who has been asked to incorporate AI into a product you've already developed in the past year," and the amount of hands up around the room was staggering. 

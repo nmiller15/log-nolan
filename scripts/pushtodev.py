@@ -111,32 +111,18 @@ def generate_canonical_url(title):
 def write_front_matter(file_path, front_matter, body):
     """Writes the front matter and body back to the file while preserving front matter order."""
     try:
-        # Manually serialize the front matter to avoid unwanted YAML syntax issues
+        # Serialize the front matter using PyYAML
         front_matter_str = "---\n"
-        for key, value in front_matter.items():
-            # Handle boolean values properly (keep them lowercase)
-            if isinstance(value, bool):
-                value = 'true' if value else 'false'
-            
-            # Handle lists (e.g., for 'tags')
-            elif isinstance(value, list):
-                value = "[" + ", ".join(f'"{item}"' for item in value) + "]"
-
-            # Handle nested dictionaries (convert to string format)
-            elif isinstance(value, dict):
-                value = "\n".join(f"    {k}: {v}" for k, v in value.items())
-            
-            # Add the formatted key-value pair to the front matter string
-            front_matter_str += f"{key}: {value}\n"
+        front_matter_str += yaml.dump(front_matter, default_flow_style=False, sort_keys=False)
+        front_matter_str += "---\n\n"  # Add a newline after closing the front matter
         
-        front_matter_str += "---\n"
-
         # Write the updated content to the file
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(front_matter_str + body)
             print(f"Updated front matter in {file_path}")
     except Exception as e:
         print(f"Error writing front matter to {file_path}: {e}")
+
 
 def process_folder(folder_path):
     """Processes all files in the folder and updates the 'dev' field and writes the DEV.to ID in the front matter."""
