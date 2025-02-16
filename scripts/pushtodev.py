@@ -100,6 +100,7 @@ def post_to_dev(article_data, front_matter):
                 print(f"Could not find article ID for '{article_data['title']}' to update.")
         else:
             print(f"Failed to post/update article '{article_data['title']}': {response.status_code} {response.text}")
+        print(f"{success}")
     except Exception as e:
         print(f"Error posting/updating article: {e}")
     return None
@@ -166,4 +167,4 @@ def process_folder(folder_path):
                 print(f"Error processing {file_path}: {e}")
 
 process_folder(FOLDER_PATH)
-print(f"DEV.to publishing script exited. {success}")
+print(f"DEV.to publishing script exited.")

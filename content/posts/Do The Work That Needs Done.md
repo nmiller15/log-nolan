@@ -7,17 +7,13 @@ toc: false
 readTime: true
 autonumber: false
 math: true
-tags:
-- via
-- startup
-- productivity
-- career
+tags: ["via", "startup", "productivity", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2271555
 ---
-
 Quotes in this post courtesy of BrainBun Labs in the article, [I conditioned myself to fail](https://www.brainbun.com/blog/i-conditioned-myself-to-fail?utm_source=pocket_shared).
 
 This article from BrainBun hit a little too close to home. I want to start a business, or sell a product, or something. But, I know that there's something that's holding me back. I think that it might be what the author talks about here.
