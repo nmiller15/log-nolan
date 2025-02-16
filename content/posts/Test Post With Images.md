@@ -16,4 +16,4 @@ dev: false
 
 Here's some text
 
-![[Screenshot 2025-02-15 at 11.19.53 AM.png]]
+![Screenshot 2025-02-15 at 11.19.53 AM](https://nolanmiller-image-hosting.s3.amazonaws.com/Screenshot+2025-02-15+at+11.19.53+AM.png)
