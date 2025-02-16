@@ -110,6 +110,8 @@ def generate_canonical_url(title):
 
 def write_front_matter(file_path, front_matter, body):
     """Writes the front matter and body back to the file while preserving front matter order."""
+    if not os.access(file_path, os.W_OK):
+        print(f"No write access to {file_path}")
     try:
         # Serialize the front matter using PyYAML
         front_matter_str = "---\n"
@@ -117,6 +119,7 @@ def write_front_matter(file_path, front_matter, body):
         front_matter_str += "---\n\n"  # Add a newline after closing the front matter
         
         # Write the updated content to the file
+        os.chmod(file_path, 0o666)
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(front_matter_str + body)
             print(f"Updated front matter in {file_path}")
