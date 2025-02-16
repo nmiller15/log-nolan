@@ -1,13 +1,17 @@
 ---
 title: Can we add AI to that?
 date: 2025-02-10
-summary: "via Lawrence Jones"
-description: "via Lawrence Jones"
+summary: via Lawrence Jones
+description: via Lawrence Jones
 toc: false
 readTime: true
 autonumber: false
 math: true
-tags: ["via", "ai", "product", "mvp"]
+tags:
+- via
+- ai
+- product
+- mvp
 showTags: true
 hideBackToTop: false
 draft: false
