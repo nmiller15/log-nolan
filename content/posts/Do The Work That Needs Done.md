@@ -11,8 +11,7 @@ tags: ["via", "startup", "productivity", "career"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: true
-dev_id: 2271555
+dev: false
 ---
 Quotes in this post courtesy of BrainBun Labs in the article, [I conditioned myself to fail](https://www.brainbun.com/blog/i-conditioned-myself-to-fail?utm_source=pocket_shared).
 
