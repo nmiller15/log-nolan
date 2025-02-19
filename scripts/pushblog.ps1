@@ -41,7 +41,7 @@ hugo
 log "Committing changes to GitHub repository"
 git add -A
 $commit_message = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-git commit -m '$commit_message'
+git commit -m $commit_message
 
 git pull --rebase -X ours
 git push
@@ -49,7 +49,7 @@ git push
 # Change to the scripts directory
 log "Pushing changes to DEV.to"
 Set-Location -Path $SCRIPTS
-python3 pushtodev.py $CONTENT
+python3 pushtodev.py $MARKDOWN_DIR
 
 # Return to the original directory
 log "Blog pipeline exited successfully"
