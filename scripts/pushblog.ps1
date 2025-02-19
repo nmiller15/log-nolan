@@ -22,7 +22,7 @@ Set-Location -Path $MARKDOWN_DIR
 
 git add -A
 $commit_message = "Automated commit on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-git commit -m $commit_message
+git commit -m "$commit_message"
 
 git pull --rebase -X ours
 git push
