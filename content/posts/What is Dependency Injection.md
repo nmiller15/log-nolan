@@ -11,7 +11,7 @@ tags: ["dotnet", "csharp", "oop", "learning"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: true
+dev: false
 dev_id: 2295707
 ---
 My heart rate was elevated and my hands were clenching the plush armrests of a very comfortable chair in a board room. *He knew.*
