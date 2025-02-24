@@ -1,8 +1,8 @@
 ---
 title: Cure Depression with Software Development
 date: 2025-02-19
-summary: "via Liam Galvin"
-description: "via Liam Galvin"
+summary: via Liam Galvin
+description: via Liam Galvin
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["via"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2288201
 ---
-
 Quotes in this post are courtesy of Liam Galvin in his article, [Despair-Driven Development: Harnessing Malaise for Effective Software Engineering](https://lia.mg/posts/despair-driven-development/?utm_source=pocket_shared)
 
 Anxiety and depression are at all time high levels this generation, and rather than pointing fingers at causes, Liam Galvin points to a solution: develop more software. 
