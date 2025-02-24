@@ -1,8 +1,8 @@
 ---
 title: "Interviewers Will Ask You About This: Dependency Injection Made Simple"
 date: 2025-02-24
-summary: "The simple guide to getting started with DI."
-description: "The simple guide to getting started with DI."
+summary: The simple guide to getting started with DI.
+description: The simple guide to getting started with DI.
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["dotnet", "csharp", "oop", "learning"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2295707
 ---
-
 My heart rate was elevated and my hands were clenching the plush armrests of a very comfortable chair in a board room. *He knew.*
 
 After thinking about it way too long, I'd just called a singleton a factory method in a code example that was broadcast onto one of the two flat screens on the far wall. 
@@ -419,7 +419,7 @@ public IActionResult Singleton()
 
 When we bind our `SingletonRandomFactGenerator` and inject it twice, once for each fact. What do you think the output will be? 
 
-![[Singleton Facts.png]]
+![Singleton Facts](https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped+Facts.png)
 
 We got the same fact back! Why is this?
 
@@ -448,7 +448,7 @@ public IActionResult Transient()
 
 In this example, we are calling for two injections of `TransientRandomFactGenerator`, just as we did with `SingletonRandomFactGenerator`. And this is the output that we get:
 
-![[Transient Facts.png]]
+![Transient Facts](https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Transient+Facts.png)
 
 Two different facts! 
 
@@ -477,7 +477,7 @@ public IActionResult Scoped()
 
 With this action method set up the same as the other two, what do you expect will happen? 
 
-![[Scoped Facts.png]]
+![Scoped Facts](https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped+Facts.png)
 
 Hm... the same fact? *So... it's a singleton?* 
 
@@ -487,7 +487,7 @@ When we called for two injections of the generator here, it built them upon requ
 
 We can create a second request by refreshing the page.
 
-![[Scoped Facts Refreshed.png]]
+![Scoped Facts Refreshed](https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped+Facts+Refreshed.png)
 
 After our refresh, we get a new fact! This is due to the fact that once we entered a new request, a new instance was generated and injected. 
 
@@ -495,7 +495,7 @@ After our refresh, we get a new fact! This is due to the fact that once we enter
 
 Yep, I get it. They're very similar. But, watch what happens if I click back over the the singleton.
 
-![[Singleton Facts Refreshed.png]]
+![Singleton Facts Refreshed](https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Singleton+Facts+Refreshed.png)
 
 The same fact as the first time we loaded the page!
 

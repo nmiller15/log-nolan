@@ -532,7 +532,27 @@ An <strong>instance</strong>, is the usable object with property values and beha
 </span></span><span style="display:flex;"><span>	    <span style="color:#ca9ee6">return</span> View(viewModel);
 </span></span><span style="display:flex;"><span>	}
 </span></span></code></pre></div><p>When we bind our <code>SingletonRandomFactGenerator</code> and inject it twice, once for each fact. What do you think the output will be?</p>
-<p>![[Singleton Facts.png]]</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Singleton Facts" src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>We got the same fact back! Why is this?</p>
 <p>When we bound the SingletonRandomFactGenerator implementation to our builder <em>as</em> a singleton, only one instance is created. We called for an injection twice in our controller and the same instance was delivered to both references. So, it didn&rsquo;t matter that we called the <code>GetFact</code> method again on our second reference, we still got the same fact back since the <code>GetFact</code> method only returns one unique fact.</p>
 <p>Let&rsquo;s see how this is different with a transient binding.</p>
@@ -555,7 +575,27 @@ An <strong>instance</strong>, is the usable object with property values and beha
 </span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">return</span> View(viewModel);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In this example, we are calling for two injections of <code>TransientRandomFactGenerator</code>, just as we did with <code>SingletonRandomFactGenerator</code>. And this is the output that we get:</p>
-<p>![[Transient Facts.png]]</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Transient Facts" src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Transient&#43;Facts.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>Two different facts!</p>
 <p>Since we used <code>AddTransient</code>, when we call for two different injections of the same implementation, two <em>separate instances</em> are injected. So when we call <code>GetFact</code> on the first, it doesn&rsquo;t affect the second!</p>
 <p>Now that we understand the difference between transient and singleton, let tackle scoped, which is a little more subtle.</p>
@@ -578,16 +618,76 @@ An <strong>instance</strong>, is the usable object with property values and beha
 </span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">return</span> View(viewModel);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>With this action method set up the same as the other two, what do you expect will happen?</p>
-<p>![[Scoped Facts.png]]</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Scoped Facts" src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>Hm&hellip; the same fact? <em>So&hellip; it&rsquo;s a singleton?</em></p>
 <p>It is. But, only for a while.</p>
 <p>When we called for two injections of the generator here, it built them upon request. Since the calls for both of the injections happened on the same request, we got the same instance injected for both, just like a singleton.</p>
 <p>We can create a second request by refreshing the page.</p>
-<p>![[Scoped Facts Refreshed.png]]</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Scoped Facts Refreshed" src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts&#43;Refreshed.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>After our refresh, we get a new fact! This is due to the fact that once we entered a new request, a new instance was generated and injected.</p>
 <p><em>This still seems like it&rsquo;s just a singleton.</em></p>
 <p>Yep, I get it. They&rsquo;re very similar. But, watch what happens if I click back over the the singleton.</p>
-<p>![[Singleton Facts Refreshed.png]]</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Singleton Facts Refreshed" src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Singleton&#43;Facts&#43;Refreshed.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>The same fact as the first time we loaded the page!</p>
 <p>The singleton binding doesn&rsquo;t care that we&rsquo;ve made a separate request. It is still delivering that exact same instance to our controller no matter what.</p>
 <p>If I click back over to see the scoped binding, we will get yet another random fact!</p>
