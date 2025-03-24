@@ -26,16 +26,6 @@ log "Executing blog pipeline script"
 log "Replacing attached images with s3 links"
 python3 $SCRIPTS/images.py "$MARKDOWN_DIR" "$S3_BUCKET_NAME" "$ATTACHMENTS_DIR"
 
-log "Committing source file changes from $MARKDOWN_DIR"
-cd "$MARKDOWN_DIR" || exit
-
-run_safe git add -A
-commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
-run_safe git commit -m "$commit_message"
-
-run_safe git pull --rebase -X ours
-run_safe git push 
-
 # Move the files from source to destination
 log "Moving files from $MARKDOWN_DIR to $CONTENT"
 run_safe rsync -av --delete "$MARKDOWN_DIR/" "$CONTENT/"
