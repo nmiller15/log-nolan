@@ -1,8 +1,8 @@
 ---
-title: Learn Application Configuration in ASP.NET 
+title: Learn Application Configuration in ASP.NET
 date: 2025-03-24
-summary: "Creating a configurable music player."
-description: "Creating a configurable music player."
+summary: Creating a configurable music player.
+description: Creating a configurable music player.
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["dotnet", "learning", "asp", "configuration"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2353588
 ---
-
 As a self-taught developer, a part of software development that I didn't know much about when I started my first development job was configuration.
 
 When I was building solo projects, it was hard to see the value in loading configurations rather than just hard coding. *Why would I introduce complexity?* *It would take time learn how to load them in.* *Maybe I'll learn how to do it later, but that's just a waste of time.*  
@@ -66,7 +66,7 @@ Most of our changes are in the `SongProvider` class. I've added three more song 
 
 With these changes the `SongProvider` is able to change its selection of songs without having to alter it's implementation details. We've now moved control of the song bank selection outside of the provider. That means that we'll have to define our Enum to pass in before we can instantiate our `SongProvider`.
 
-```cs {hl_lines=[23]}
+```cs
 // SongProvider.cs
 public SongProvider(Decades decade)
 {
@@ -158,7 +158,7 @@ In our example `appsettings.json`, we have a simple JSON object that defines a "
 
 Now, to add this file to our configuration object, we need to use the built-in `ConfigurationBuilder` and use the `AddJsonFile` method. Pass the relative path of the JSON file that you want to add to register the key-value pairs inside it.
 
-```cs {hl_lines=[5]}
+```cs
 
 public static IConfiguration LoadConfig()
 {
@@ -174,7 +174,7 @@ When we run `LoadConfig()` any values that we have in our `appsettings.json` fil
 
 To actually make use of this `IConfiguration` object, we have to pass it into our `DisplaySong` method. You can take a look at the necessary changes below.
 
-```cs {hl_lines=["6-12"]}
+```cs
 
 public static void DisplaySong(IConfiguration config)
 {
@@ -219,7 +219,7 @@ git checkout 4-config-from-commandline
 
 You may not notice the change at first because it's so small, but there is one. We've added one line which calls the `.AddCommandLine(args)` to the `ConfigurationBuilder`.
 
-```cs {hl_lines=[5]}
+```cs
 public static IConfiguration LoadConfig(string[] args)
 {
 	var builder = new ConfigurationBuilder()
@@ -299,7 +299,7 @@ In the *Environment Variables* section, under "Name", write "ShowImage", and for
 
 Now to access these when we run our code, all we need to do is add the `.AddEnvironmentVariables()` method to our `ConfigurationBuilder`. 
 
-```cs {hl_lines=[6]}
+```cs
 public static IConfiguration LoadConfig(string[] args)
 {
 	var builder = new ConfigurationBuilder()
@@ -312,7 +312,7 @@ public static IConfiguration LoadConfig(string[] args)
 
 All we have to do to get this configuration up and running is to use our Boolean conversion in an `if` statement and put our image inside it. 
 
-```cs {hl_lines=[14,15,16,17,18,19,20,21,22,23]}
+```cs
 public static void DisplaySong(IConfiguration config)
 {
 	// Additional setup ommitted for space
@@ -396,7 +396,7 @@ dotnet user-secrets set {key} {value}
 
 In our `LoadConfig` method, we only have to add one line to bind our user secrets.
 
-```cs {hl_lines=[7]}
+```cs
 public static IConfiguration LoadConfig(string[] args)
 {
     var builder = new ConfigurationBuilder()
@@ -410,7 +410,7 @@ public static IConfiguration LoadConfig(string[] args)
 
 We also have to add a little logic to our `DisplaySong` method to create our auto-play behavior. 
 
-```cs {hl_lines=[4, 16, "25-29"]}
+```cs
 public static void DisplaySong(IConfiguration config)
 {
 	var userResponse = string.Empty;
