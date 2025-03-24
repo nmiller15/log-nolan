@@ -6,8 +6,15 @@
     <description>Recent content in Home on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Application Configuration in ASP.NET</title>
+      <link>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</guid>
+      <description>Creating a configurable music player.</description>
+    </item>
     <item>
       <title>Interviewers Will Ask You About This: Dependency Injection Made Simple</title>
       <link>https://nolanmiller.me/posts/what-is-dependency-injection/</link>
