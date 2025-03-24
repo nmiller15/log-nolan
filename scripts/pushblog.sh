@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define source and destination paths
-MARKDOWN_DIR="/Users/nolanmiller/Google Drive/My Drive/Vault/blog-posts"
-ATTACHMENTS_DIR="/Users/nolanmiller/Google Drive/My Drive/Vault/attachments"
+MARKDOWN_DIR="/Users/nolanmiller/Vault/blog-posts"
+ATTACHMENTS_DIR="/Users/nolanmiller/Vault/attachments"
 S3_BUCKET_NAME="nolanmiller-image-hosting"
 HUGO_SITE_DIR="/Users/nolanmiller/Projects/log-nolan"
 SCRIPTS="$HUGO_SITE_DIR/scripts"
