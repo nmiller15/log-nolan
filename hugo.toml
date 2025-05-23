@@ -1,7 +1,8 @@
+# Try hextro theme
 baseURL = 'https://nolanmiller.me/'
 languageCode = 'en-us'
 title = 'Log("Nolan");'
-theme = 'typo'
+theme = 'paper'
 
 # Google analytics code
 googleAnalytics = "G-729248V2CZ"
@@ -35,6 +36,18 @@ listDateFormat = '2 Jan 2006'
 
 # Breadcrumbs
 breadcrumbs = true
+
+
+# Paper Theme Params
+color = 'wheat'
+
+github = 'https://github.com/nmiller15'
+linkedin = "https://www.linkedin.com/in/nolan-miller-2a763b20a/"
+rss = true
+
+name = 'Nolan Miller'
+bio = "I'm a self taught software-developer from Ohio. I work full-stack in .NET, and I play the trombone. These things are related... I will discover how."
+
 
 # Social icons
 [[params.social]]
