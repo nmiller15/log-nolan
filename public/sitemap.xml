@@ -3,19 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/none/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/test-post/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/asp/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
@@ -30,6 +21,9 @@
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/learning/</loc>
+    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/csharp/</loc>
