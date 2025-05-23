@@ -350,7 +350,8 @@
 </h3>
 <p>The most common way to register key-value pairs is through an <code>appsettings.json</code> file. This is a file that contains a valid JSON object that sits at the root level of your project.</p>
 <blockquote>
-<p><strong>Note:</strong> It is common for <code>appsettings.json</code> to be checked into source control, so do <em>not</em> store sensitive data like API keys or connection strings here.</p></blockquote>
+<p><strong>Note:</strong> It is common for <code>appsettings.json</code> to be checked into source control, so do <em>not</em> store sensitive data like API keys or connection strings here.</p>
+</blockquote>
 <p>In our example <code>appsettings.json</code>, we have a simple JSON object that defines a &ldquo;Decade&rdquo; key.</p>
 <div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ca9ee6">&#34;Decade&#34;</span>: <span style="color:#a6d189">&#34;TwoThousands&#34;</span>
@@ -394,7 +395,8 @@
 </ul>
 <p><strong>What did I just do?</strong></p>
 <p>Your application runs from the <code>/bin/Debug/netX.X</code> directory when you run your application in Debug mode. When Visual Studio tries to compile and run your project, it&rsquo;s looking for the <code>appsettings.json</code> file relative to the file that it complied (in the <code>bin</code>).</p>
-<p>By setting the &ldquo;Copy Always&rdquo;, whenever we click &ldquo;Debug&rdquo; our <code>appsettings.json</code> will be copied into <code>/bin/Debug/netX.X</code> so that we can access it in our program.</p></blockquote>
+<p>By setting the &ldquo;Copy Always&rdquo;, whenever we click &ldquo;Debug&rdquo; our <code>appsettings.json</code> will be copied into <code>/bin/Debug/netX.X</code> so that we can access it in our program.</p>
+</blockquote>
 <p>While we don&rsquo;t have to release another version of the application to change this behavior, it&rsquo;s still a little bit involved. We still have to find the right text file and change the correct value to get this to happen. Now let&rsquo;s explore how we can change the behavior of our application without having to edit any additional files!</p>
 <h2 class="heading" id="passing-command-line-arguments">
   Passing command-line arguments
@@ -555,7 +557,8 @@
 </p>
 <p>But, I like to see my ASCII masterpiece while I&rsquo;m &ldquo;listening&rdquo; to music, so I&rsquo;m going to change this configuration back!</p>
 <blockquote>
-<p>It&rsquo;s worth noting here that this is a fairly atypical usage of environment variables. Since both environment variables and command line arguments come in as strings, it isn&rsquo;t wise to use them as Booleans or integers or any other type unless you&rsquo;re parsing or validating them into another object.</p></blockquote>
+<p>It&rsquo;s worth noting here that this is a fairly atypical usage of environment variables. Since both environment variables and command line arguments come in as strings, it isn&rsquo;t wise to use them as Booleans or integers or any other type unless you&rsquo;re parsing or validating them into another object.</p>
+</blockquote>
 <p>Let&rsquo;s add one more configuration to this application, I&rsquo;d like to make the songs play automatically, but again, I don&rsquo;t want to have to change any code. I could add another configuration in a JSON file or any of the other methods that we&rsquo;ve discussed, but I want to show you how to do this with a .NET-specific solution, User Secrets.</p>
 <h2 class="heading" id="setting-up-user-secrets-in-net">
   Setting up User Secrets in .NET
@@ -638,7 +641,8 @@
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote>
-<p>These variables also come in as strings, so they carry the same warning as environment variables did above.</p></blockquote>
+<p>These variables also come in as strings, so they carry the same warning as environment variables did above.</p>
+</blockquote>
 <h3 class="heading" id="adding-the-autoplay-key">
   Adding the <code>&quot;Autoplay&quot;</code> key
   <a class="anchor" href="#adding-the-autoplay-key">#</a>
@@ -701,6 +705,15 @@
         </div>
 
         <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/test-post/">
+                        Test Post
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
             
         </div>
 

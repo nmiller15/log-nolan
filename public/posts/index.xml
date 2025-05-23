@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Log(&#34;Nolan&#34;);</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://nolanmiller.me/posts/</link>
     <description>Recent content in Posts on Log(&#34;Nolan&#34;);</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test Post</title>
-      <link>http://localhost:1313/posts/test-post/</link>
+      <link>https://nolanmiller.me/posts/test-post/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/test-post/</guid>
-      <description></description>
+      <guid>https://nolanmiller.me/posts/test-post/</guid>
+      <description>&lt;p&gt;content&lt;/p&gt;</description>
     </item>
     <item>
       <title>Learn Application Configuration in ASP.NET</title>
-      <link>http://localhost:1313/posts/learn-application-configuration-in-asp.net/</link>
+      <link>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</link>
       <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/learn-application-configuration-in-asp.net/</guid>
+      <guid>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</guid>
       <description>Creating a configurable music player.</description>
     </item>
     <item>
       <title>Interviewers Will Ask You About This: Dependency Injection Made Simple</title>
-      <link>http://localhost:1313/posts/what-is-dependency-injection/</link>
+      <link>https://nolanmiller.me/posts/what-is-dependency-injection/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-is-dependency-injection/</guid>
+      <guid>https://nolanmiller.me/posts/what-is-dependency-injection/</guid>
       <description>The simple guide to getting started with DI.</description>
     </item>
     <item>
       <title>Cure Depression with Software Development</title>
-      <link>http://localhost:1313/posts/cure-depression-with-software-development/</link>
+      <link>https://nolanmiller.me/posts/cure-depression-with-software-development/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cure-depression-with-software-development/</guid>
+      <guid>https://nolanmiller.me/posts/cure-depression-with-software-development/</guid>
       <description>via Liam Galvin</description>
     </item>
     <item>
       <title>Do The Work That Needs Done</title>
-      <link>http://localhost:1313/posts/do-the-work-that-needs-done/</link>
+      <link>https://nolanmiller.me/posts/do-the-work-that-needs-done/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/do-the-work-that-needs-done/</guid>
+      <guid>https://nolanmiller.me/posts/do-the-work-that-needs-done/</guid>
       <description>via BrainBun</description>
     </item>
     <item>
       <title>Can we add AI to that?</title>
-      <link>http://localhost:1313/posts/can-we-add-ai-to-that/</link>
+      <link>https://nolanmiller.me/posts/can-we-add-ai-to-that/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/can-we-add-ai-to-that/</guid>
+      <guid>https://nolanmiller.me/posts/can-we-add-ai-to-that/</guid>
       <description>via Lawrence Jones</description>
     </item>
     <item>
       <title>Anatomy of an ASP.NET MVC Template</title>
-      <link>http://localhost:1313/posts/anatomy-of-an-asp.net-mvc-template/</link>
+      <link>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/anatomy-of-an-asp.net-mvc-template/</guid>
+      <guid>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</guid>
       <description>What are these folders and files?</description>
     </item>
     <item>
       <title>Tips for Junior Devs</title>
-      <link>http://localhost:1313/posts/tips-for-junior-devs/</link>
+      <link>https://nolanmiller.me/posts/tips-for-junior-devs/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tips-for-junior-devs/</guid>
+      <guid>https://nolanmiller.me/posts/tips-for-junior-devs/</guid>
       <description>via qntm</description>
     </item>
     <item>
       <title>Start Automating Easy Tasks</title>
-      <link>http://localhost:1313/posts/start-automating-easy-tasks/</link>
+      <link>https://nolanmiller.me/posts/start-automating-easy-tasks/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/start-automating-easy-tasks/</guid>
+      <guid>https://nolanmiller.me/posts/start-automating-easy-tasks/</guid>
       <description>via Alex Tiniuc</description>
     </item>
     <item>
       <title>This engineer uses LLMs</title>
-      <link>http://localhost:1313/posts/this-engineer-uses-llms/</link>
+      <link>https://nolanmiller.me/posts/this-engineer-uses-llms/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/this-engineer-uses-llms/</guid>
+      <guid>https://nolanmiller.me/posts/this-engineer-uses-llms/</guid>
       <description>via Sean Goedecke</description>
     </item>
     <item>
       <title>Supercharge Your Productivity with the .NET CLI</title>
-      <link>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</link>
+      <link>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
+      <guid>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
       <description>Speed up your .NET development</description>
     </item>
     <item>
       <title>Learn ASP.NET from Scratch</title>
-      <link>http://localhost:1313/posts/learn-asp.net-core-from-scratch/</link>
+      <link>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/learn-asp.net-core-from-scratch/</guid>
+      <guid>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</guid>
       <description>A learning roadmap for ASP.NET Core</description>
     </item>
     <item>
       <title>What I&#39;d Like to Learn in 2025</title>
-      <link>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</link>
+      <link>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</guid>
+      <guid>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</guid>
       <description>A list of topics I may or may not learn.</description>
     </item>
     <item>
       <title>Self-Taught is Still Possible In 2025</title>
-      <link>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</link>
+      <link>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</guid>
+      <guid>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</guid>
       <description>AI won&amp;rsquo;t get rid of us, keep going.</description>
     </item>
     <item>
       <title>Deploying a Full-Stack PERN App to AWS EC2</title>
-      <link>http://localhost:1313/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</link>
+      <link>https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</guid>
+      <guid>https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</guid>
       <description>A full walkthrough for manual deployment.</description>
     </item>
     <item>
       <title>Why &#39;Screw Optimization&#39; Is My New Mantra</title>
-      <link>http://localhost:1313/posts/why-screw-optimization-is-my-new-mantra/</link>
+      <link>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/why-screw-optimization-is-my-new-mantra/</guid>
+      <guid>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</guid>
       <description>Done is better than perfect.</description>
     </item>
     <item>
       <title>How I Started My Coding Journey</title>
-      <link>http://localhost:1313/posts/how-i-started-my-coding-journey/</link>
+      <link>https://nolanmiller.me/posts/how-i-started-my-coding-journey/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/how-i-started-my-coding-journey/</guid>
+      <guid>https://nolanmiller.me/posts/how-i-started-my-coding-journey/</guid>
       <description>Humble beginnings.</description>
     </item>
   </channel>
