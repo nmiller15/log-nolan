@@ -24,7 +24,6 @@ jobs:
 
       - name: Test SSH connection 
         run: |
-            echo {{ secrets.EC2_PUBLIC_IP}}
             ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "echo Hello World"  
 
       - name: Deploy to EC2
@@ -33,7 +32,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > private_key.pem
           chmod 600 private_key.pem
-          rsync -avz -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./public/ ubuntu@{{ secrets.EC2_Public_IP }}:/srv/log-nolanv2/
+          rsync -avz -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./public/ ubuntu@${{ secrets.EC2_Public_IP }}:/srv/log-nolanv2/
 
       - name: Restart Caddy
         env:
