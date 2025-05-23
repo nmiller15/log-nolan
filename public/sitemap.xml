@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/test-post/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/tags/asp/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,16 +20,10 @@
     <loc>https://nolanmiller.me/tags/dotnet/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/learning/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/</loc>

@@ -11,25 +11,30 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH }}
+
+      - name: Test SSH connection 
+        run: |
+            ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "echo Hello World"  
+
       - name: Deploy to EC2
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH }}
         run: |
-          # Output the SSH key to check it is being read correctly
-          echo "Saving SSH private key..."
           echo "$EC2_SSH_KEY" > private_key.pem
-
-          # Set the correct permissions for the private key
           chmod 600 private_key.pem
+          rsync -avz -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./public/ ubuntu@{{ secrets.EC2_Public_IP }}:/srv/log-nolanv2/
 
-          # Run the SSH command, use verbose mode for debugging
-          echo "Connecting to EC2 instance..."
-          ssh -i "private_key.pem" -o StrictHostKeyChecking=no -v ubuntu@ec2-3-15-29-106.us-east-2.compute.amazonaws.com << 'EOF'
-            cd /srv/log-nolan
-            sudo git pull  # Pull latest changes
-            sudo systemctl restart caddy
-          EOF
+      - name: Restart Caddy
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        run: |
+          ssh ubuntu@${{ secrets.EC2_PUBLIC_IP }} "sudo systemctl restart caddy"
 
       
 

@@ -38,8 +38,8 @@ run_safe hugo
 
 log "Committing changes to GitHub repository"
 run_safe git add -A
-commit_message="Automated commit on $(date '+%Y-%m-%d %H:%M:%S')"
-run_safe git commit -m "$commit_message"
+commit_message="You Got Mail... on $(date '+%Y-%m-%d %H:%M:%S')"
+run_safe git commit -m "$commit_message" -m "Automated commit brought to you by \~BASH\~"
 
 run_safe git pull --rebase -X ours
 run_safe git push 
