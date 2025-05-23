@@ -3,13 +3,17 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check trigger source
+        run: echo "Triggered by ${{ github.event_name }} on branch ${{ github.ref_name }}"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
