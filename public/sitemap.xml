@@ -2,145 +2,145 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nolanmiller.me/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/test-post/</loc>
+    <loc>http://localhost:1313/posts/test-post/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/asp/</loc>
+    <loc>http://localhost:1313/tags/asp/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/configuration/</loc>
+    <loc>http://localhost:1313/tags/configuration/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/dotnet/</loc>
+    <loc>http://localhost:1313/tags/dotnet/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</loc>
+    <loc>http://localhost:1313/posts/learn-application-configuration-in-asp.net/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/learning/</loc>
+    <loc>http://localhost:1313/tags/learning/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/csharp/</loc>
+    <loc>http://localhost:1313/tags/csharp/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/what-is-dependency-injection/</loc>
+    <loc>http://localhost:1313/posts/what-is-dependency-injection/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/oop/</loc>
+    <loc>http://localhost:1313/tags/oop/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/cure-depression-with-software-development/</loc>
+    <loc>http://localhost:1313/posts/cure-depression-with-software-development/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/via/</loc>
+    <loc>http://localhost:1313/tags/via/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/career/</loc>
+    <loc>http://localhost:1313/tags/career/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/do-the-work-that-needs-done/</loc>
+    <loc>http://localhost:1313/posts/do-the-work-that-needs-done/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/productivity/</loc>
+    <loc>http://localhost:1313/tags/productivity/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/startup/</loc>
+    <loc>http://localhost:1313/tags/startup/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/ai/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/can-we-add-ai-to-that/</loc>
+    <loc>http://localhost:1313/posts/can-we-add-ai-to-that/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/mvp/</loc>
+    <loc>http://localhost:1313/tags/mvp/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/product/</loc>
+    <loc>http://localhost:1313/tags/product/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</loc>
+    <loc>http://localhost:1313/posts/anatomy-of-an-asp.net-mvc-template/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/beginners/</loc>
+    <loc>http://localhost:1313/tags/beginners/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/mvc/</loc>
+    <loc>http://localhost:1313/tags/mvc/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/tips-for-junior-devs/</loc>
+    <loc>http://localhost:1313/posts/tips-for-junior-devs/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/start-automating-easy-tasks/</loc>
+    <loc>http://localhost:1313/posts/start-automating-easy-tasks/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/llm/</loc>
+    <loc>http://localhost:1313/tags/llm/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/this-engineer-uses-llms/</loc>
+    <loc>http://localhost:1313/posts/this-engineer-uses-llms/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/commandline/</loc>
+    <loc>http://localhost:1313/tags/commandline/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/microsoft/</loc>
+    <loc>http://localhost:1313/tags/microsoft/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</loc>
+    <loc>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</loc>
+    <loc>http://localhost:1313/posts/learn-asp.net-core-from-scratch/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/programming/</loc>
+    <loc>http://localhost:1313/tags/programming/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</loc>
+    <loc>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/codenewbie/</loc>
+    <loc>http://localhost:1313/tags/codenewbie/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</loc>
+    <loc>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/aws/</loc>
+    <loc>http://localhost:1313/tags/aws/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</loc>
+    <loc>http://localhost:1313/posts/deploying-a-full-stack-pern-app-to-aws-ec2/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/node/</loc>
+    <loc>http://localhost:1313/tags/node/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/postgres/</loc>
+    <loc>http://localhost:1313/tags/postgres/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/react/</loc>
+    <loc>http://localhost:1313/tags/react/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</loc>
+    <loc>http://localhost:1313/posts/why-screw-optimization-is-my-new-mantra/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/coding/</loc>
+    <loc>http://localhost:1313/tags/coding/</loc>
     <lastmod>2024-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/posts/how-i-started-my-coding-journey/</loc>
+    <loc>http://localhost:1313/posts/how-i-started-my-coding-journey/</loc>
     <lastmod>2024-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/story/</loc>
+    <loc>http://localhost:1313/tags/story/</loc>
     <lastmod>2024-05-28T00:00:00+00:00</lastmod>
   </url>
 </urlset>
