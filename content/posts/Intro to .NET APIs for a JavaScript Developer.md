@@ -1,16 +1,20 @@
 ---
 title: Intro to .NET APIs for a JavaScript Developer
 date: 2025-04-04
-summary: "An intro to Minimal APIs"
-description: "An intro to Minimal APIs"
+summary: An intro to Minimal APIs
+description: An intro to Minimal APIs
 toc: false
 readTime: true
 autonumber: false
 math: true
-tags: ["javascript", "dotnet", "api", "learning"]
+tags:
+  - javascript
+  - dotnet
+  - api
+  - learning
 showTags: true
 hideBackToTop: false
-draft: true
+draft: false
 dev: false
 ---
 When I was applying like crazy to developer jobs, I'd scroll past so many .NET focused ones, thinking, "I'm only a JavaScript developer." 
@@ -97,7 +101,9 @@ app.listen(3000, () => {
 
 Notice how similar. We `require` Express, which abstracts our builder logic. Then we run the application, specifying the port!
 
-==The similarities get more stark wh==en we begin to look at how endpoints are created. This is where the biggest difference between Controller-Based and Minimal APIs is. Instead of creating a controller method, we will just use a Map*Verb* method on our application.
+### Creating Endpoints
+
+The syntax is even more similar between these two frameworks for endpoint creation.  Using the `app` that our builder created we the correct endpoint verb creation method to create the endpoint listener. In ASP.NET, this will look like this.
 
 ```cs
 app.MapGet("/", (HttpRequest request, HttpResponse response) =>
@@ -106,7 +112,7 @@ app.MapGet("/", (HttpRequest request, HttpResponse response) =>
 });
 ```
 
-If you're already an Express developer, this is is looking pretty familiar. Here's how we could create the same route in Express.
+This pattern is nearly identical to what we would write in Express.js.
 
 ```js
 app.get("/", (req, res) => {
@@ -114,19 +120,19 @@ app.get("/", (req, res) => {
 })
 ```
 
-The two-argument syntax is very similar. In both the Minimal API and the Express API, we pass the endpoint route as the first parameters, and the callback function as the second. 
+In both the Minimal API and the Express API, we pass the endpoint route as the first parameters, and the callback function as the second. 
 
-However, our C# Minimal API is *more flexible* than the Express one. In Express, we *must* take in the request and response objects (and a third callback function which continues the chain). But, with a minimal API, it would be equally valid to write:
+### Get started with ASP.NET
 
-```cs
-app.MapGet("/" => "Hello World");
-```
+If you're tired of seeing job postings you feel that you can't apply for, then start learning C#! It doesn't have to be scary, or overly complex. And, I hope that I've shown that with the knowledge that you have already, you can get started in creating a useful application that has the potential to solve real world problems. 
 
-Highlight the simplicity.
+There are numerous free resources to get started with the basics of C#, and if it's your first strongly typed language, there will probably be some hurdles. But, once you get through the initial learning phase, so many of the skills you've already developed will transfer over.
 
-### Conclusion
+Over the past several months, I've been diving deeper into ASP.NET. Check out some of my posts that detail my journey!
 
-- Recap of key points
-    
-- Encouragement to explore minimal APIs further
+- [Learn ASP.NET Core from Scratch ](https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/)
+- [Supercharge Your Productivity with the .NET CLI](https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/)
+- [Anatomy of an ASP.NET MVC Template](https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/)
+- [Interviewers will Ask You About This: Dependency Injection Made Simple](https://nolanmiller.me/posts/what-is-dependency-injection/)
+- [Learn Application Configuration in ASP.NET](https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/)
 
