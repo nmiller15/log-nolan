@@ -1,4 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://nolanmiller.me//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nolanmiller.me//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nolanmiller.me//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
+
+<meta name="description" content="Creating a configurable music player."/>
+
+
+
+<title>
+    
+    Learn Application Configuration in ASP.NET | Nolan Miller
+    
+</title>
+
+<link rel="canonical" href="https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/"/>
+
+<meta property="og:url" content="https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/">
+  <meta property="og:site_name" content="Nolan Miller">
+  <meta property="og:title" content="Learn Application Configuration in ASP.NET">
+  <meta property="og:description" content="Creating a configurable music player.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-24T00:00:00+00:00">
+    <meta property="article:tag" content="Dotnet">
+    <meta property="article:tag" content="Learning">
+    <meta property="article:tag" content="Asp">
+    <meta property="article:tag" content="Configuration">
 
 
 
@@ -6,83 +46,17 @@
 
 
 
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#f8f5d7"
-  lang="en-us"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Learn Application Configuration in ASP.NET - Log(&#34;Nolan&#34;);</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Creating a configurable music player." />
-  <meta name="author" content="Nolan Miller" /><link rel="preload stylesheet" as="style" href="https://nolanmiller.me/main.min.css" />
-
-  
-  <link rel="preload" as="image" href="https://nolanmiller.me/theme.png" />
-
-  
-
-  <link rel="preload" as="image" href="https://nolanmiller.me/github.svg" /><link rel="preload" as="image" href="https://nolanmiller.me/linkedin.svg" /><link rel="preload" as="image" href="https://nolanmiller.me/rss.svg" />
-
-  <script
-    defer
-    src="https://nolanmiller.me/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script><link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
-  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
-  crossorigin="anonymous"
-/>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
-  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
-  crossorigin="anonymous"
-></script>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
-  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
-  crossorigin="anonymous"
-></script><script>
-  document.addEventListener('DOMContentLoaded', () =>
-    renderMathInElement(document.body, {
-      
-      
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false },
-      ],
-      
-      throwOnError: false,
-    }),
-  );
-</script>
 
 
-  
-  <link
-    rel="icon"
-    href="https://nolanmiller.me/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://nolanmiller.me/apple-touch-icon.png"
-  />
 
-  <meta name="generator" content="Hugo 0.141.0">
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.667f13d7f1b378e4e08609d8404b06b195d672b9d122546fac8be63ee9148ee9.css" media="all">
+
+
+
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
       <script>
         var doNotTrack = false;
@@ -97,240 +71,319 @@
           gtag('config', 'G-729248V2CZ');
         }
       </script>
-  <meta itemprop="name" content="Learn Application Configuration in ASP.NET">
-  <meta itemprop="description" content="Creating a configurable music player.">
-  <meta itemprop="datePublished" content="2025-03-24T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-03-24T00:00:00+00:00">
-  <meta itemprop="wordCount" content="3195">
-  <meta itemprop="keywords" content="Dotnet,Learning,Asp,Configuration"><meta property="og:url" content="https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/">
-  <meta property="og:site_name" content="Log(&#34;Nolan&#34;);">
-  <meta property="og:title" content="Learn Application Configuration in ASP.NET">
-  <meta property="og:description" content="Creating a configurable music player.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-24T00:00:00+00:00">
-    <meta property="article:tag" content="Dotnet">
-    <meta property="article:tag" content="Learning">
-    <meta property="article:tag" content="Asp">
-    <meta property="article:tag" content="Configuration">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Learn Application Configuration in ASP.NET">
-  <meta name="twitter:description" content="Creating a configurable music player.">
 
-  <link rel="canonical" href="https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/" />
+
+
+
 </head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://nolanmiller.me/"
-      >Log(&#34;Nolan&#34;);</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://nolanmiller.me/">Nolan Miller</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/learn-application-configuration-in-asp.net/">Learn Application Configuration in ASP.NET</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Learn Application Configuration in ASP.NET</h1>
+    
+    <p class="single-summary">Creating a configurable music player.</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-24T00:00:00&#43;00:00">March 24, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      16 min read
+      
+    </p>
+
   </div>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  
 
-  <script>
+  
+  
+
+  <div class="single-tags">
     
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
+    <span>
+      <a href="https://nolanmiller.me/tags/dotnet/">#Dotnet</a>
+    </span>
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
     
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f8f5d7'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
+    <span>
+      <a href="https://nolanmiller.me/tags/learning/">#Learning</a>
+    </span>
     
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
     
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
+    <span>
+      <a href="https://nolanmiller.me/tags/asp/">#Asp</a>
+    </span>
     
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/https://github.com/nmiller15"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./linkedin.svg)"
-        href="https://linkedin.com/in/https://www.linkedin.com/in/nolan-miller-2a763b20a/"
-        target="_blank"
-        rel="me"
-      >linkedin</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://nolanmiller.me/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/configuration/">#Configuration</a>
+    </span>
+    
+    
   </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Learn Application Configuration in ASP.NET</h1><div class="text-xs antialiased opacity-60"><time>Mar 24, 2025</time></div></header>
 
-  <section><p>As a self-taught developer, a part of software development that I didn&rsquo;t know much about when I started my first development job was configuration.</p>
+  
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>As a self-taught developer, a part of software development that I didn&rsquo;t know much about when I started my first development job was configuration.</p>
 <p>When I was building solo projects, it was hard to see the value in loading configurations rather than just hard coding. <em>Why would I introduce complexity?</em> <em>It would take time learn how to load them in.</em> <em>Maybe I&rsquo;ll learn how to do it later, but that&rsquo;s just a waste of time.</em></p>
 <p>I knew that these thoughts weren&rsquo;t true, but the excuses kept me from learning. As I got some experience with larger codebases, however, I started seeing the clear need for configuration objects. We have to able to change specific behaviors of our application without releasing. This is what enables us to connect one release of an application to different databases or APIs, to change features for development or production, and make many other important changes.</p>
 <p>If you follow along with this article, we will create a basic console application that shuffles through the titles of songs to demonstrate how to load values into a configuration object and access them to change functionality in .NET.</p>
-<h2 id="lets-create-a-music-player">Let&rsquo;s create a music player!</h2>
+<h2 class="heading" id="lets-create-a-music-player">
+  Let&rsquo;s create a music player!
+  <a class="anchor" href="#lets-create-a-music-player">#</a>
+</h2>
 <p>Okay&hellip; only sort of. Unfortunately, we won&rsquo;t be sending anything to your speakers. For the purpose of learning how to load and use configurations within ASP.NET, I created a console application called SongShuffle!</p>
 <p>To follow along with the sections in this article, go ahead and clone the GitHub repo by running the <code>git clone</code> command below in your console.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/nmiller15/SongShuffle/
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/nmiller15/SongShuffle/
 </span></span></code></pre></div><p>I&rsquo;ve created branches to guide you through the codebase in this article, at any point you can checkout the branches and arrive at a working application at a different step! I encourage you to experiment and load some of your own configurations and functionality here though!</p>
 <p>To make sure you&rsquo;re on the correct branch, run the following in your console.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 1-start
-</span></span></code></pre></div><h3 id="a-tour-of-our-music-player">A tour of our music player</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 1-start
+</span></span></code></pre></div><h3 class="heading" id="a-tour-of-our-music-player">
+  A tour of our music player
+  <a class="anchor" href="#a-tour-of-our-music-player">#</a>
+</h3>
 <p>If you launch the SongShuffle console application by clicking Run/Debug, or using <code>dotnet run</code> in the project directory, you will see a modest user command line interface that asks you to press any key to start listening.</p>
 <p>The song screen shows the title, artist and year of the current song&rsquo;s release at the top of the screen and will allow you to select a new song by pressing enter. If you type in <code>q</code> before pressing enter, the program will exit.</p>
-<p><img src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle+Interface.png" alt="SongShuffle Interface"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="SongShuffle Interface" src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle&#43;Interface.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>This is the basic function of the music player that we will configure. Go ahead and play around with it!</p>
 <p>Take some time to familiarize yourself with the classes that we have here that create the behavior for this application: <code>Song.cs</code> and <code>SongProvider</code>.</p>
 <p>If you&rsquo;re digging around in the song bank in the <code>SongProvider</code>, you might notice that we only have 80s music loaded into the application. While this might be all that I play, others might want their music player to be a bit more versatile, so this is going to be the first configurable feature that we are going to add to the music player.</p>
-<h2 id="configuring-for-the-90s-groove">Configuring for the 90s groove</h2>
+<h2 class="heading" id="configuring-for-the-90s-groove">
+  Configuring for the 90s groove
+  <a class="anchor" href="#configuring-for-the-90s-groove">#</a>
+</h2>
 <p>To add this feature, we have to add another song bank and a way to select those banks. To see my implementation, run the following command in your console.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 2-pick-a-decade
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 2-pick-a-decade
 </span></span></code></pre></div><p>Most of our changes are in the <code>SongProvider</code> class. I&rsquo;ve added three more song banks, containing music from different decades. I&rsquo;ve created an Enum <code>Decades</code> that will select the song set for the <code>SongBank</code>. And I&rsquo;ve added a switch statement in the <code>SongPovider</code> constructor, that sets the <code>SongBank</code> property.</p>
 <p>With these changes the <code>SongProvider</code> is able to change its selection of songs without having to alter it&rsquo;s implementation details. We&rsquo;ve now moved control of the song bank selection outside of the provider. That means that we&rsquo;ll have to define our Enum to pass in before we can instantiate our <code>SongProvider</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#737994;font-style:italic">// SongProvider.cs</span>
-</span></span><span style="display:flex;"><span><span style="color:#e78284">public</span> SongProvider(Decades decade)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// SongProvider.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span> SongProvider(Decades decade)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">switch</span> (decade)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">switch</span> (decade)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">case</span> Decades.Eighties:
-</span></span><span style="display:flex;"><span>            SongBank = EightiesSongs; <span style="color:#ca9ee6">break</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">case</span> Decades.Nineties:
-</span></span><span style="display:flex;"><span>            SongBank = NinetiesSongs; <span style="color:#ca9ee6">break</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">case</span> Decades.TwoThousands:
-</span></span><span style="display:flex;"><span>            SongBank = TwoThousandsSongs; <span style="color:#ca9ee6">break</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">case</span> Decades.TwentyTens:
-</span></span><span style="display:flex;"><span>            SongBank = TwoThousandTensSongs; <span style="color:#ca9ee6">break</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">default</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">throw</span> <span style="color:#ca9ee6">new</span> ArgumentException(<span style="color:#a6d189">&#34;Must include a valid decade.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">case</span> Decades.Eighties:
+</span></span><span style="display:flex;"><span>            SongBank = EightiesSongs; <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">case</span> Decades.Nineties:
+</span></span><span style="display:flex;"><span>            SongBank = NinetiesSongs; <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">case</span> Decades.TwoThousands:
+</span></span><span style="display:flex;"><span>            SongBank = TwoThousandsSongs; <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">case</span> Decades.TwentyTens:
+</span></span><span style="display:flex;"><span>            SongBank = TwoThousandTensSongs; <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">default</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">throw</span> <span style="color:#ff7b72">new</span> ArgumentException(<span style="color:#a5d6ff">&#34;Must include a valid decade.&#34;</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#737994;font-style:italic">// Program.cs</span>
-</span></span><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> <span style="color:#ca9ee6">void</span> DisplaySong()
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Program.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">void</span> DisplaySong()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> userResponse = <span style="color:#e78284">string</span>.Empty;
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> decade = SongProvider.Decades.Nineties;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> userResponse = <span style="color:#ff7b72">string</span>.Empty;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> decade = SongProvider.Decades.Nineties;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> provider = <span style="color:#ca9ee6">new</span> SongProvider(decade);
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> provider = <span style="color:#ff7b72">new</span> SongProvider(decade);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#737994;font-style:italic">// ... </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8b949e;font-style:italic">// ... </span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And now we can rock out to some Madonna!</p>
-<p><img src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle+Hard+Coded+Nineties+Music.png" alt="SongShuffle Hard Coded Nineties Music"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="SongShuffle Hard Coded Nineties Music" src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle&#43;Hard&#43;Coded&#43;Nineties&#43;Music.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>If we wanted to change the decade we can do that a bit more easily now, but its still a developer task. Someone without any code experience would have issues working with this. We&rsquo;d have to go in, change the value of the <code>Decades</code> Enum. Then, we&rsquo;d also have to create a release and push it.</p>
 <p>Man&hellip; That&rsquo;s a lot of work for a small feature.</p>
 <p>So, we&rsquo;ve moved the song bank selection out of the <code>SongProvider</code> but, what if we pull it out of the application itself. This would keep us from having to deal with this release issue.</p>
-<h2 id="loading-our-first-configuration">Loading our first configuration</h2>
+<h2 class="heading" id="loading-our-first-configuration">
+  Loading our first configuration
+  <a class="anchor" href="#loading-our-first-configuration">#</a>
+</h2>
 <p>Checkout the next branch to see how we can load values into our .NET program from external files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 3-config-from-json
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 3-config-from-json
 </span></span></code></pre></div><p>The first thing I&rsquo;d like to point out is the <code>LoadConfig()</code> method that I&rsquo;ve created which has a fairly straightforward goal&hellip;. to load the configuration. But, how is this handled in .NET?</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">static</span> <span style="color:#ca9ee6">void</span> Main(<span style="color:#e78284">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">static</span> <span style="color:#ff7b72">void</span> Main(<span style="color:#ff7b72">string</span>[] args)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> config = LoadConfig()
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> config = LoadConfig()
 </span></span><span style="display:flex;"><span>	Welcome();
 </span></span><span style="display:flex;"><span>	DisplaySong(config);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="the-configuration-interface">The configuration interface</h3>
+</span></span></code></pre></div><h3 class="heading" id="the-configuration-interface">
+  The configuration interface
+  <a class="anchor" href="#the-configuration-interface">#</a>
+</h3>
 <p>Microsoft has an <code>IConfiguration</code> interface built into the framework. The interface allows us to attach key-value pairs from multiple sources and then access them later. These values are what we will use to configure parts of our application.</p>
 <p>The <code>LoadConfig()</code> method that I created, just returns an instance of <code>IConfiguration</code> loaded with our configuration values. The configuration object that is returned by this method will be passed around our application with values being accessed and determining app behavior.</p>
-<h3 id="accessing-values-from-a-config-object">Accessing values from a config object</h3>
+<h3 class="heading" id="accessing-values-from-a-config-object">
+  Accessing values from a config object
+  <a class="anchor" href="#accessing-values-from-a-config-object">#</a>
+</h3>
 <p>There are a few ways that we can use to access these values. First, is using the Indexer syntax, borrowed from the dictionary.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">var</span> <span style="color:#ca9ee6">value</span> = configuration[<span style="color:#a6d189">&#34;KeyName&#34;</span>];
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> <span style="color:#ff7b72">value</span> = configuration[<span style="color:#a5d6ff">&#34;KeyName&#34;</span>];
 </span></span></code></pre></div><p>This is the way that we will access them throughout this article, but also know that .NET provides other ways to access complex configuration objects using methods like <code>.GetSection()</code> and <code>.Bind()</code>. If you&rsquo;d like more information on those, <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0#bind-hierarchical-configuration-data-using-the-options-pattern">check out this article from Microsoft&rsquo;s documentation</a>.</p>
-<h3 id="registering-key-value-pairs-to-a-config-object">Registering key-value pairs to a config object</h3>
+<h3 class="heading" id="registering-key-value-pairs-to-a-config-object">
+  Registering key-value pairs to a config object
+  <a class="anchor" href="#registering-key-value-pairs-to-a-config-object">#</a>
+</h3>
 <p>The most common way to register key-value pairs is through an <code>appsettings.json</code> file. This is a file that contains a valid JSON object that sits at the root level of your project.</p>
 <blockquote>
 <p><strong>Note:</strong> It is common for <code>appsettings.json</code> to be checked into source control, so do <em>not</em> store sensitive data like API keys or connection strings here.</p>
 </blockquote>
 <p>In our example <code>appsettings.json</code>, we have a simple JSON object that defines a &ldquo;Decade&rdquo; key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ca9ee6">&#34;Decade&#34;</span>: <span style="color:#a6d189">&#34;TwoThousands&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;Decade&#34;</span>: <span style="color:#a5d6ff">&#34;TwoThousands&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now, to add this file to our configuration object, we need to use the built-in <code>ConfigurationBuilder</code> and use the <code>AddJsonFile</code> method. Pass the relative path of the JSON file that you want to add to register the key-value pairs inside it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> IConfiguration LoadConfig()
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> IConfiguration LoadConfig()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> builder = <span style="color:#ca9ee6">new</span> ConfigurationBuilder()
-</span></span><span style="display:flex;"><span>		.AddJsonFile(<span style="color:#a6d189">&#34;appsettings.json&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#ca9ee6">return</span> builder.Build();
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> builder = <span style="color:#ff7b72">new</span> ConfigurationBuilder()
+</span></span><span style="display:flex;"><span>		.AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.json&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">return</span> builder.Build();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>When we run <code>LoadConfig()</code> any values that we have in our <code>appsettings.json</code> file will be accessible within our application in our <code>IConfiguration</code> object!</p>
-<h3 id="using-our-configuration-object-in-the-application">Using our configuration object in the application</h3>
+<h3 class="heading" id="using-our-configuration-object-in-the-application">
+  Using our configuration object in the application
+  <a class="anchor" href="#using-our-configuration-object-in-the-application">#</a>
+</h3>
 <p>To actually make use of this <code>IConfiguration</code> object, we have to pass it into our <code>DisplaySong</code> method. You can take a look at the necessary changes below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> <span style="color:#ca9ee6">void</span> DisplaySong(IConfiguration config)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">void</span> DisplaySong(IConfiguration config)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> userResponse = <span style="color:#e78284">string</span>.Empty;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> userResponse = <span style="color:#ff7b72">string</span>.Empty;
 </span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> decade = config[<span style="color:#a6d189">&#34;Decade&#34;</span>] <span style="color:#ca9ee6">switch</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> decade = config[<span style="color:#a5d6ff">&#34;Decade&#34;</span>] <span style="color:#ff7b72">switch</span>
 </span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>	    <span style="color:#a6d189">&#34;Nineties&#34;</span> =&gt; SongProvider.Decades.Nineties,
-</span></span><span style="display:flex;"><span>	    <span style="color:#a6d189">&#34;TwoThousands&#34;</span> =&gt; SongProvider.Decades.TwoThousands,
-</span></span><span style="display:flex;"><span>	    <span style="color:#a6d189">&#34;TwentyTens&#34;</span> =&gt; SongProvider.Decades.TwentyTens,
+</span></span><span style="display:flex;"><span>	    <span style="color:#a5d6ff">&#34;Nineties&#34;</span> =&gt; SongProvider.Decades.Nineties,
+</span></span><span style="display:flex;"><span>	    <span style="color:#a5d6ff">&#34;TwoThousands&#34;</span> =&gt; SongProvider.Decades.TwoThousands,
+</span></span><span style="display:flex;"><span>	    <span style="color:#a5d6ff">&#34;TwentyTens&#34;</span> =&gt; SongProvider.Decades.TwentyTens,
 </span></span><span style="display:flex;"><span>	    _ =&gt; SongProvider.Decades.Eighties
 </span></span><span style="display:flex;"><span>	};
 </span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> provider = <span style="color:#ca9ee6">new</span> SongProvider(decade);
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> provider = <span style="color:#ff7b72">new</span> SongProvider(decade);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>With this method, the selection of the decade is decoupled from the logic that displays the song. The selection of the decade is being set outside of our application.</p>
 <blockquote>
@@ -345,24 +398,47 @@
 <p>By setting the &ldquo;Copy Always&rdquo;, whenever we click &ldquo;Debug&rdquo; our <code>appsettings.json</code> will be copied into <code>/bin/Debug/netX.X</code> so that we can access it in our program.</p>
 </blockquote>
 <p>While we don&rsquo;t have to release another version of the application to change this behavior, it&rsquo;s still a little bit involved. We still have to find the right text file and change the correct value to get this to happen. Now let&rsquo;s explore how we can change the behavior of our application without having to edit any additional files!</p>
-<h2 id="passing-command-line-arguments">Passing command-line arguments</h2>
+<h2 class="heading" id="passing-command-line-arguments">
+  Passing command-line arguments
+  <a class="anchor" href="#passing-command-line-arguments">#</a>
+</h2>
 <p>With only a few changes to our application, we can take in strings from outside the application by allowing command line arguments. Run the following command to see the changes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 4-config-from-commandline
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 4-config-from-commandline
 </span></span></code></pre></div><p>You may not notice the change at first because it&rsquo;s so small, but there is one. We&rsquo;ve added one line which calls the <code>.AddCommandLine(args)</code> to the <code>ConfigurationBuilder</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> IConfiguration LoadConfig(<span style="color:#e78284">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> IConfiguration LoadConfig(<span style="color:#ff7b72">string</span>[] args)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> builder = <span style="color:#ca9ee6">new</span> ConfigurationBuilder()
-</span></span><span style="display:flex;"><span>		.AddJsonFile(<span style="color:#a6d189">&#34;appsettings.json&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> builder = <span style="color:#ff7b72">new</span> ConfigurationBuilder()
+</span></span><span style="display:flex;"><span>		.AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.json&#34;</span>)
 </span></span><span style="display:flex;"><span>		.AddCommandLine(args);
-</span></span><span style="display:flex;"><span>	<span style="color:#ca9ee6">return</span> builder.Build();
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">return</span> builder.Build();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>By chaining this to the <code>.AddJsonFile()</code> method, we&rsquo;re adding all the values from both to our configuration object.</p>
 <p>Command line arguments are key-value pairs declared after the execution command. To attach a key-value pair you would run the program like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet run --Decade <span style="color:#a6d189">&#34;TwentyTens&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet run --Decade <span style="color:#a5d6ff">&#34;TwentyTens&#34;</span>
 </span></span></code></pre></div><p>The key <code>&quot;Decade&quot;</code> would then be passed into the program with the value <code>&quot;TwentyTens&quot;</code>. Luckily, we don&rsquo;t have to type these arguments into the program every time we want to Debug our program.</p>
 <p>In order to add a command line argument to your Debug profile, first, right-click your project and click <em>Properties</em>.</p>
 <p>In that window, select <em>Debug</em> from the sidebar, and click <em>Launch Profiles UI</em>. After you click this, you will see the following UI window. Under <em>Command line arguments</em> you can type in anything you like.</p>
-<p><img src="https://nolanmiller-image-hosting.s3.amazonaws.com/Visual+Studio+Command+Line+Arguments+For+Debug.png" alt="Visual Studio Command Line Arguments For Debug"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Visual Studio Command Line Arguments For Debug" src="https://nolanmiller-image-hosting.s3.amazonaws.com/Visual&#43;Studio&#43;Command&#43;Line&#43;Arguments&#43;For&#43;Debug.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>Command line arguments can be passed in four different syntaxes.</p>
 <ul>
 <li><code>[command] --key value</code></li>
@@ -371,85 +447,140 @@
 <li><code>[command] /key=value</code></li>
 </ul>
 <p>I&rsquo;m not sure what the advantage of having these different syntaxes is, but I prefer the first, since it is the most common way that I&rsquo;ve seen arguments passed.</p>
-<h3 id="didnt-we-just-pass-decade-twice">Didn&rsquo;t we just pass <code>&quot;Decade&quot;</code> twice?</h3>
+<h3 class="heading" id="didnt-we-just-pass-decade-twice">
+  Didn&rsquo;t we just pass <code>&quot;Decade&quot;</code> twice?
+  <a class="anchor" href="#didnt-we-just-pass-decade-twice">#</a>
+</h3>
 <p>If never removed our <code>appsettings.json</code> file, it&rsquo;s still being loaded into the configuration with a <code>Decade</code> key, meaning that the <code>&quot;Decade&quot;</code> key was loaded twice.</p>
 <p>Our <code>ConfigurationBuilder</code> doesn&rsquo;t handle key collisions. It doesn&rsquo;t check to see if a key has already been assigned before binding a value to it.</p>
 <p>What does this mean?</p>
 <p>If you have two configuration files or methods that assign the same key, the key that was loaded earlier will be overwritten by the one loaded later.</p>
 <p>If you go back to the <code>appsettings.json</code> file, you&rsquo;ll see that we still have a <code>&quot;TwoThousands&quot;</code> value there. That value was successfully loaded, but immediately after that, our command line argument with the same key overwrote it with its value <code>&quot;TwentyTens&quot;</code>. In our final configuration object, the key <code>&quot;Decade&quot;</code> will have the value of the command line argument.</p>
 <p>This behavior allows us to keep configuration files that are subsets of other configuration files. Take for example an application that uses a different API in production and development. We can create a config file that only have the values that we need to overwrite, like a API key and endpoint that is only loaded in development.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">var</span> builder = <span style="color:#ca9ee6">new</span> ConfigurationBuilder();
-</span></span><span style="display:flex;"><span>builder.AddJsonFile(<span style="color:#a6d189">&#34;appsettings.json&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">if</span> (env.IsDevelopment())
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> builder = <span style="color:#ff7b72">new</span> ConfigurationBuilder();
+</span></span><span style="display:flex;"><span>builder.AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.json&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (env.IsDevelopment())
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	builder.AddJsonFile(<span style="color:#a6d189">&#34;appsettings.development.json&#34;</span>);
+</span></span><span style="display:flex;"><span>	builder.AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.development.json&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">return</span> builder.Build();
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">return</span> builder.Build();
 </span></span></code></pre></div><p>If you&rsquo;re going to use this approach, make sure to be mindful of the order that you add your files and configuration sources in. There are no priority rules, so keys will <em>always</em> be overwritten load methods later in the chain.</p>
-<h2 id="environmental-influence">Environmental influence</h2>
+<h2 class="heading" id="environmental-influence">
+  Environmental influence
+  <a class="anchor" href="#environmental-influence">#</a>
+</h2>
 <p>There may by instances in which multiple applications will all share the same configuration values if they&rsquo;re running in the same environment. In that case, we can also load these into our program. Run the following command to see the changes that we make:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 5-environment-variables
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 5-environment-variables
 </span></span></code></pre></div><p>Just like the above methods, environment variables will be added as key-value pairs . It goes beyond the scope of this article to talk about how to set these on various systems, but I&rsquo;ll show you how you can set them in Visual Studio for development.</p>
 <p>If you open up the <em>Launch Profiles UI</em> that we accessed to set our command line variables (<em>Properties</em> &gt; <em>Debug</em> &gt; <em>Launch Profiles</em>), you can also set environment variables!</p>
-<p><img src="https://nolanmiller-image-hosting.s3.amazonaws.com/Visual+Studio+Launch+Profiles+Environment+Variables.png" alt="Visual Studio Launch Profiles Environment Variables"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Visual Studio Launch Profiles Environment Variables" src="https://nolanmiller-image-hosting.s3.amazonaws.com/Visual&#43;Studio&#43;Launch&#43;Profiles&#43;Environment&#43;Variables.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>Since we already have sources defining our decade, let&rsquo;s use a new variable <code>ShowImage</code> that we will use to decide whether or not you see my beautiful ASCII rendering of an iPod.</p>
 <p>In the <em>Environment Variables</em> section, under &ldquo;Name&rdquo;, write &ldquo;ShowImage&rdquo;, and for it&rsquo;s value, type &ldquo;false&rdquo;.</p>
 <p>Now to access these when we run our code, all we need to do is add the <code>.AddEnvironmentVariables()</code> method to our <code>ConfigurationBuilder</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> IConfiguration LoadConfig(<span style="color:#e78284">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> IConfiguration LoadConfig(<span style="color:#ff7b72">string</span>[] args)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> builder = <span style="color:#ca9ee6">new</span> ConfigurationBuilder()
-</span></span><span style="display:flex;"><span>	    .AddJsonFile(<span style="color:#a6d189">&#34;appsettings.json&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> builder = <span style="color:#ff7b72">new</span> ConfigurationBuilder()
+</span></span><span style="display:flex;"><span>	    .AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.json&#34;</span>)
 </span></span><span style="display:flex;"><span>	    .AddCommandLine(args)
 </span></span><span style="display:flex;"><span>	    .AddEnvironmentVariables();
-</span></span><span style="display:flex;"><span>	<span style="color:#ca9ee6">return</span> builder.Build();
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">return</span> builder.Build();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>All we have to do to get this configuration up and running is to use our Boolean conversion in an <code>if</code> statement and put our image inside it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> <span style="color:#ca9ee6">void</span> DisplaySong(IConfiguration config)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">void</span> DisplaySong(IConfiguration config)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#737994;font-style:italic">// Additional setup ommitted for space</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8b949e;font-style:italic">// Additional setup ommitted for space</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ca9ee6">while</span> (userResponse != <span style="color:#a6d189">&#34;q&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">while</span> (userResponse != <span style="color:#a5d6ff">&#34;q&#34;</span>)
 </span></span><span style="display:flex;"><span>	{
 </span></span><span style="display:flex;"><span>		song = provider.ShuffleSelect();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		Console.Clear();
 </span></span><span style="display:flex;"><span>		Console.WriteLine();
-</span></span><span style="display:flex;"><span>		Console.WriteLine(<span style="color:#a6d189">$&#34;Now playing {song.ToString()}&#34;</span>);
+</span></span><span style="display:flex;"><span>		Console.WriteLine(<span style="color:#a5d6ff">$&#34;Now playing {song.ToString()}&#34;</span>);
 </span></span><span style="display:flex;"><span>		Console.WriteLine();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ca9ee6">if</span> (config[<span style="color:#a6d189">&#34;ShowImage&#34;</span>]?.ToLower() == <span style="color:#a6d189">&#34;true&#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#ff7b72">if</span> (config[<span style="color:#a5d6ff">&#34;ShowImage&#34;</span>]?.ToLower() == <span style="color:#a5d6ff">&#34;true&#34;</span>)
 </span></span><span style="display:flex;"><span>		{
-</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a6d189">@&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">				╔═══╗
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">				║███║
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">				║(O)║♫ ♪ ♫ ♪
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">				╚═══╝
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">			▄ █ ▄ █ ▄ ▄ █ ▄ █ ▄ █
-</span></span></span><span style="display:flex;"><span><span style="color:#a6d189">			&#34;</span>);
+</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a5d6ff">@&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">				╔═══╗
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">				║███║
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">				║(O)║♫ ♪ ♫ ♪
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">				╚═══╝
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">			▄ █ ▄ █ ▄ ▄ █ ▄ █ ▄ █
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">			&#34;</span>);
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#737994;font-style:italic">// ...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#8b949e;font-style:italic">// ...</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now, our iPod will only be displayed if the configuration is set to &ldquo;true&rdquo;.</p>
-<p><img src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle+ShowImage+false.png" alt="SongShuffle ShowImage false"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="SongShuffle ShowImage false" src="https://nolanmiller-image-hosting.s3.amazonaws.com/SongShuffle&#43;ShowImage&#43;false.png" >
+    </div>
+
+    
+</figure>
+</p>
 <p>But, I like to see my ASCII masterpiece while I&rsquo;m &ldquo;listening&rdquo; to music, so I&rsquo;m going to change this configuration back!</p>
 <blockquote>
 <p>It&rsquo;s worth noting here that this is a fairly atypical usage of environment variables. Since both environment variables and command line arguments come in as strings, it isn&rsquo;t wise to use them as Booleans or integers or any other type unless you&rsquo;re parsing or validating them into another object.</p>
 </blockquote>
 <p>Let&rsquo;s add one more configuration to this application, I&rsquo;d like to make the songs play automatically, but again, I don&rsquo;t want to have to change any code. I could add another configuration in a JSON file or any of the other methods that we&rsquo;ve discussed, but I want to show you how to do this with a .NET-specific solution, User Secrets.</p>
-<h2 id="setting-up-user-secrets-in-net">Setting up User Secrets in .NET</h2>
+<h2 class="heading" id="setting-up-user-secrets-in-net">
+  Setting up User Secrets in .NET
+  <a class="anchor" href="#setting-up-user-secrets-in-net">#</a>
+</h2>
 <p>See the code changes to accept user secrets by running the following command, but keep it open, we&rsquo;ll have a few more to run to make sure that we&rsquo;re all set up.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 6-user-secrets
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git checkout 6-user-secrets
 </span></span></code></pre></div><p>User Secrets is a Microsoft-created, development-only solution for storing sensitive strings outside of source control. It&rsquo;s built right into the .NET SDK and makes loading sensitive information into your application very simple for development.</p>
 <p>You do <strong>not</strong> want to use this in production because this offers no encryption for your sensitive information, you would be better off using some sort of secrets manager.</p>
-<h3 id="how-does-user-secrets-work">How does User Secrets work?</h3>
+<h3 class="heading" id="how-does-user-secrets-work">
+  How does User Secrets work?
+  <a class="anchor" href="#how-does-user-secrets-work">#</a>
+</h3>
 <p>User Secrets is very similar to adding a JSON file to your application. We will create a file with key-value pairs and tell the framework where to look for the file.</p>
 <p>We identify the file using the <code>&lt;UserSecretsId&gt;</code> tag with a Guid value in our .csproj file. Then in our <code>%AppData%\Microsoft\UserSecrets\{project-guid}</code> we can store our secrets in a file called <code>secrets.json</code>.</p>
 <p>Don&rsquo;t worry though, you don&rsquo;t have to set this up manually.</p>
-<h3 id="setting-up-user-secrets">Setting up User Secrets</h3>
+<h3 class="heading" id="setting-up-user-secrets">
+  Setting up User Secrets
+  <a class="anchor" href="#setting-up-user-secrets">#</a>
+</h3>
 <p>Using the .NET CLI, all we have to do is run one command to get set up.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets init
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets init
 </span></span></code></pre></div><p>When you run this command a few things happen:</p>
 <ul>
 <li>an ID is created</li>
@@ -458,49 +589,52 @@
 <li>a <code>secrets.json</code> file is created</li>
 </ul>
 <p>The CLI also provides us a method of adding values to our <code>secrets.json</code> file without having to dig through our user directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets <span style="color:#99d1db">set</span> <span style="color:#99d1db;font-weight:bold">{</span>key<span style="color:#99d1db;font-weight:bold">}</span> <span style="color:#99d1db;font-weight:bold">{</span>value<span style="color:#99d1db;font-weight:bold">}</span>
-</span></span></code></pre></div><h3 id="using-user-secrets-to-auto-play-our-songs">Using User Secrets to auto-play our songs</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets set <span style="color:#ff7b72;font-weight:bold">{</span>key<span style="color:#ff7b72;font-weight:bold">}</span> <span style="color:#ff7b72;font-weight:bold">{</span>value<span style="color:#ff7b72;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 class="heading" id="using-user-secrets-to-auto-play-our-songs">
+  Using User Secrets to auto-play our songs
+  <a class="anchor" href="#using-user-secrets-to-auto-play-our-songs">#</a>
+</h3>
 <p>In our <code>LoadConfig</code> method, we only have to add one line to bind our user secrets.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> IConfiguration LoadConfig(<span style="color:#e78284">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> IConfiguration LoadConfig(<span style="color:#ff7b72">string</span>[] args)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#e78284">var</span> builder = <span style="color:#ca9ee6">new</span> ConfigurationBuilder()
-</span></span><span style="display:flex;"><span>        .AddJsonFile(<span style="color:#a6d189">&#34;appsettings.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">var</span> builder = <span style="color:#ff7b72">new</span> ConfigurationBuilder()
+</span></span><span style="display:flex;"><span>        .AddJsonFile(<span style="color:#a5d6ff">&#34;appsettings.json&#34;</span>)
 </span></span><span style="display:flex;"><span>        .AddCommandLine(args)
 </span></span><span style="display:flex;"><span>        .AddEnvironmentVariables()
 </span></span><span style="display:flex;"><span>        .AddUserSecrets&lt;Program&gt;();
-</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">return</span> builder.Build();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> builder.Build();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>We also have to add a little logic to our <code>DisplaySong</code> method to create our auto-play behavior.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#e78284">public</span> <span style="color:#e78284">static</span> <span style="color:#ca9ee6">void</span> DisplaySong(IConfiguration config)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff7b72">public</span> <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">void</span> DisplaySong(IConfiguration config)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> userResponse = <span style="color:#e78284">string</span>.Empty;
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> counter = <span style="color:#ef9f76">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> userResponse = <span style="color:#ff7b72">string</span>.Empty;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> counter = <span style="color:#a5d6ff">0</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#e78284">var</span> decade = config[<span style="color:#a6d189">&#34;Decade&#34;</span>] <span style="color:#ca9ee6">switch</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">var</span> decade = config[<span style="color:#a5d6ff">&#34;Decade&#34;</span>] <span style="color:#ff7b72">switch</span>
 </span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>		<span style="color:#a6d189">&#34;Nineties&#34;</span> =&gt; SongProvider.Decades.Nineties,
-</span></span><span style="display:flex;"><span>		<span style="color:#a6d189">&#34;TwoThousands&#34;</span> =&gt; SongProvider.Decades.TwoThousands,
-</span></span><span style="display:flex;"><span>		<span style="color:#a6d189">&#34;TwentyTens&#34;</span> =&gt; SongProvider.Decades.TwentyTens,
+</span></span><span style="display:flex;"><span>		<span style="color:#a5d6ff">&#34;Nineties&#34;</span> =&gt; SongProvider.Decades.Nineties,
+</span></span><span style="display:flex;"><span>		<span style="color:#a5d6ff">&#34;TwoThousands&#34;</span> =&gt; SongProvider.Decades.TwoThousands,
+</span></span><span style="display:flex;"><span>		<span style="color:#a5d6ff">&#34;TwentyTens&#34;</span> =&gt; SongProvider.Decades.TwentyTens,
 </span></span><span style="display:flex;"><span>		_ =&gt; SongProvider.Decades.Eighties
 </span></span><span style="display:flex;"><span>	};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ca9ee6">while</span> (userResponse != <span style="color:#a6d189">&#34;q&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">while</span> (userResponse != <span style="color:#a5d6ff">&#34;q&#34;</span>)
 </span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>	<span style="color:#737994;font-style:italic">// ... existing logic remains unchanged ... after </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8b949e;font-style:italic">// ... existing logic remains unchanged ... after </span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ca9ee6">if</span> (counter == <span style="color:#ef9f76">4</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#ff7b72">if</span> (counter == <span style="color:#a5d6ff">4</span>)
 </span></span><span style="display:flex;"><span>		{
-</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a6d189">&#34;You&#39;ve listened to 5 songs! Want to keep going?&#34;</span>);
-</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a6d189">&#34;(Type q to quit.)&#34;</span>);
+</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a5d6ff">&#34;You&#39;ve listened to 5 songs! Want to keep going?&#34;</span>);
+</span></span><span style="display:flex;"><span>			Console.WriteLine(<span style="color:#a5d6ff">&#34;(Type q to quit.)&#34;</span>);
 </span></span><span style="display:flex;"><span>			userResponse = Console.ReadLine()?.ToLower();
-</span></span><span style="display:flex;"><span>			counter = <span style="color:#ef9f76">0</span>;
+</span></span><span style="display:flex;"><span>			counter = <span style="color:#a5d6ff">0</span>;
 </span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>		<span style="color:#ca9ee6">if</span> (config[<span style="color:#a6d189">&#34;Autoplay&#34;</span>]?.ToLower() == <span style="color:#a6d189">&#34;true&#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#ff7b72">if</span> (config[<span style="color:#a5d6ff">&#34;Autoplay&#34;</span>]?.ToLower() == <span style="color:#a5d6ff">&#34;true&#34;</span>)
 </span></span><span style="display:flex;"><span>		{
-</span></span><span style="display:flex;"><span>			Thread.Sleep(<span style="color:#ef9f76">2000</span>);
+</span></span><span style="display:flex;"><span>			Thread.Sleep(<span style="color:#a5d6ff">2000</span>);
 </span></span><span style="display:flex;"><span>			counter++;
 </span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>		<span style="color:#ca9ee6">else</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff7b72">else</span>
 </span></span><span style="display:flex;"><span>		{
 </span></span><span style="display:flex;"><span>			userResponse = Console.ReadLine()?.ToLower();
 </span></span><span style="display:flex;"><span>		}
@@ -509,86 +643,179 @@
 </span></span></code></pre></div><blockquote>
 <p>These variables also come in as strings, so they carry the same warning as environment variables did above.</p>
 </blockquote>
-<h3 id="adding-the-autoplay-key">Adding the <code>&quot;Autoplay&quot;</code> key</h3>
+<h3 class="heading" id="adding-the-autoplay-key">
+  Adding the <code>&quot;Autoplay&quot;</code> key
+  <a class="anchor" href="#adding-the-autoplay-key">#</a>
+</h3>
 <p>Run the following command to write the <code>&quot;Autoplay&quot;</code> key to our <code>secrets.json</code> file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets <span style="color:#99d1db">set</span> <span style="color:#a6d189">&#34;Autoplay&#34;</span> <span style="color:#a6d189">&#34;true&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets set <span style="color:#a5d6ff">&#34;Autoplay&#34;</span> <span style="color:#a5d6ff">&#34;true&#34;</span>
 </span></span></code></pre></div><p>We can quickly check what keys are accessible in our <code>secrets.json</code> by running the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets list
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets list
 </span></span></code></pre></div><p>Oh no! Did you verify and see that you misspelled something? That&rsquo;s okay, we can remove the key using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets remove <span style="color:#99d1db;font-weight:bold">{</span>key<span style="color:#99d1db;font-weight:bold">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets remove <span style="color:#ff7b72;font-weight:bold">{</span>key<span style="color:#ff7b72;font-weight:bold">}</span>
 </span></span></code></pre></div><p>&hellip; or, we can clear out all the keys by using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c6d0f5;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets clear
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet user-secrets clear
 </span></span></code></pre></div><p>&hellip; and you can add the key again to correct any misspellings.</p>
 <p>And we&rsquo;re done! If we start up our application, now, a new song will appear on the screen every two seconds until 5 consecutive songs have played!</p>
-<h2 id="misusing-configurations">Misusing configurations</h2>
+<h2 class="heading" id="misusing-configurations">
+  Misusing configurations
+  <a class="anchor" href="#misusing-configurations">#</a>
+</h2>
 <p>As I previously stated in some asides, this is a wild misuse of the <code>ConfigurationBuilder</code>, but I believe it demonstrates the ways in which you can pass data from different sources into your application.</p>
 <p>So, if this is wrong, what is the right way to use a configuration object?</p>
 <p>The most common use-cases for configurations are storing connection strings for databases, external API keys for authentication, setting logging behaviors, to turn on and off features, and configuring environment-specific variables.</p>
 <p>While we may not be using it to select the specific decade of music that you&rsquo;re listening to, you no longer have to look at your <code>Program.cs</code> file and wonder how these values are making their way into the projects that you work on.</p>
-<h2 id="using-configurations-on-your-own">Using configurations on your own</h2>
+<h2 class="heading" id="using-configurations-on-your-own">
+  Using configurations on your own
+  <a class="anchor" href="#using-configurations-on-your-own">#</a>
+</h2>
 <p>In your next project, give the <code>ConfigurationBuilder</code> a try! A good time to think about this is in the deployment phase of your next personal project.</p>
 <p>What are the lines of code that you&rsquo;re changing because you&rsquo;re about to load the application on another machine? These are great candidates to load into an <code>IConfiguraiton</code> object!</p>
 <hr>
 <p>If you&rsquo;re getting value out of these posts, consider subscribing using the link below to receive these posts straight to your inbox!</p>
 <p><a href="https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi">Click here to subscribe!</a></p>
-</section>
 
-  <footer class="mt-12 flex flex-wrap"><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://nolanmiller.me/tags/dotnet"
-      >dotnet</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://nolanmiller.me/tags/learning"
-      >learning</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://nolanmiller.me/tags/asp"
-      >asp</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://nolanmiller.me/tags/configuration"
-      >configuration</a
-    ></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intro to .NET APIs for a JavaScript Developer</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://nolanmiller.me/posts/what-is-dependency-injection/"
-      ><span>Interviewers Will Ask You About This: Dependency Injection Made Simple</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav><div class="giscus mt-24"></div>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="user/repo"
-    data-repo-id="repoId"
-    data-category="General"
-    data-category-id="categoryId"
-    data-mapping="pathname"
-    data-strict="1"
-    data-reactions-enabled="0"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="preferred_color_scheme"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async
-  ></script></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">&copy;2025
-    <a class="link" href="https://nolanmiller.me/">Log(&#34;Nolan&#34;);</a></div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/what-is-dependency-injection/">
+                        Interviewers Will Ask You About This: Dependency Injection Made Simple
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/intro-to-.net-apis-for-a-javascript-developer/">
+                        Intro to .NET APIs for a JavaScript Developer
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+<iframe width="540" height="650" src="https://d782b8fa.sibforms.com/serve/MUIFALLieswUJmHTwIGy-U1O-vXH4y8D30R4YZ-kURtFpFXxKrJtV5k9T_7VvfJ0ATj3f7mZcsatfsBFPQmtX4FsM2QorSR4oRu1jGOF_rZ8hT4R8O0tA_TBTsF92Q3jfbisPdRCOLfJ7VFlBdpbfPfW33bRUdlhuIHFIALBgi9oA_C-MR8hRP1p8Pqqo7ynv_6fN06e5fNDcejz" frameborder="0" scrolling="no" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+  
+
 </body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+<script defer src="/js/copy-code.js"></script>
 </html>
