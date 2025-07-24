@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/api/</loc>
-    <lastmod>2025-04-04T00:00:00+00:00</lastmod>
+    <loc>https://nolanmiller.me/tags/asp/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/dotnet/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/learning/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/postgres/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/api/</loc>
     <lastmod>2025-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/</loc>
@@ -19,15 +34,6 @@
   </url><url>
     <loc>https://nolanmiller.me/tags/javascript/</loc>
     <lastmod>2025-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/learning/</loc>
-    <lastmod>2025-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
-    <lastmod>2025-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/asp/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/configuration/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
@@ -129,9 +135,6 @@
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/node/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/postgres/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/react/</loc>

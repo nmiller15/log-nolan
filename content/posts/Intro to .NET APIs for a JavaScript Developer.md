@@ -7,15 +7,12 @@ toc: false
 readTime: true
 autonumber: false
 math: true
-tags:
-  - javascript
-  - dotnet
-  - api
-  - learning
+tags: ["javascript", "dotnet", "api", "learning"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2533486
 ---
 When I was applying like crazy to developer jobs, I'd scroll past so many .NET focused ones, thinking, "I'm only a JavaScript developer." 
 
@@ -135,4 +132,3 @@ Over the past several months, I've been diving deeper into ASP.NET. Check out so
 - [Anatomy of an ASP.NET MVC Template](https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/)
 - [Interviewers will Ask You About This: Dependency Injection Made Simple](https://nolanmiller.me/posts/what-is-dependency-injection/)
 - [Learn Application Configuration in ASP.NET](https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/)
-

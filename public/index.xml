@@ -6,8 +6,15 @@
     <description>Recent content in Home on Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quidditch - Powered By PostgreSQL and ASP.NET</title>
+      <link>https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/</guid>
+      <description>Use Entity Framework to connect Postgres to your ASP.NET API.</description>
+    </item>
     <item>
       <title>Intro to .NET APIs for a JavaScript Developer</title>
       <link>https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/</link>
