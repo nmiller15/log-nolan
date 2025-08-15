@@ -7,15 +7,12 @@ toc: false
 readTime: true
 autonumber: false
 math: true
-tags:
-  - postgres
-  - asp
-  - dotnet
-  - learning
+tags: ["postgres", "asp", "dotnet", "learning"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 2720828
 ---
 As a software developer, it's important to work on your craft. That's why I've been studying ASP.NET for the past few months. [In my last article](https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/) I walk through how to set up an ASP.NET Minimal Web API. Today, I'll be building on that foundation, by adding a persistent data store, a la PostgreSQL. In order to configure a .NET API to communicate with a PostgreSQL database, I'm going to use Entity Framework.
 
@@ -276,4 +273,4 @@ In my day job, I rely on libraries that have been provided for me, so I'm lookin
 
 Regardless, it is always good to take some time to learn new technologies.
 
-Thanks again for reading! 
+Thanks again for reading!
