@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://nolanmiller.me//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nolanmiller.me//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nolanmiller.me//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://nolanmiller.me//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://nolanmiller.me//apple-touch-icon.png">
+
+<meta name="description" content="Creating my first dotfiles repository"/>
+
+
+
+<title>
+    
+    The Perfect Programming Environment | Nolan Miller
+    
+</title>
+
+<link rel="canonical" href="https://nolanmiller.me/posts/the-perfect-programming-environment/"/>
+
+<meta property="og:url" content="https://nolanmiller.me/posts/the-perfect-programming-environment/">
+  <meta property="og:site_name" content="Nolan Miller">
+  <meta property="og:title" content="The Perfect Programming Environment">
+  <meta property="og:description" content="Creating my first dotfiles repository">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-11T00:00:00+00:00">
+    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="Tooling">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="Learning">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.667f13d7f1b378e4e08609d8404b06b195d672b9d122546fac8be63ee9148ee9.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://nolanmiller.me/">Nolan Miller</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/the-perfect-programming-environment/">The Perfect Programming Environment</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">The Perfect Programming Environment</h1>
+    
+    <p class="single-summary">Creating my first dotfiles repository</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-08-11T00:00:00&#43;00:00">August 11, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      10 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  
+
+  <div class="single-tags">
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/automation/">#Automation</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/tooling/">#Tooling</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/bash/">#Bash</a>
+    </span>
+    
+    
+    <span>
+      <a href="https://nolanmiller.me/tags/learning/">#Learning</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#centralized-and-modular-configurations">Centralized and Modular Configurations</a>
+      <ul>
+        <li><a href="#what-are-dotfiles">What are dotfiles?</a></li>
+        <li><a href="#why-i-created-my-own-dotfiles">Why I created my own dotfiles</a></li>
+        <li><a href="#making-it-your-own">Making it your own</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-dotfiles">Building Dotfiles</a>
+      <ul>
+        <li><a href="#centralizing-configurations">Centralizing configurations</a></li>
+        <li><a href="#making-them-modular">Making them modular</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-i-dont-like-forking">Why I don&rsquo;t like forking</a></li>
+    <li><a href="#but-theyre-your-dotfiles">But, they&rsquo;re <em>your</em> dotfiles.</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <p>I often encounter programming terms and lingo that goes way over my head when I&rsquo;m browsing software engineering content on the internet. I wish that I could say that I drop everything and search these terms as soon as I see them, but this is rarely the case. But, this article is about a time that I took my medicine and not only looked up something I didn&rsquo;t understand, but implemented it into my daily workflow.</p>
+<p>The term? —<em>dotfiles</em></p>
+<h2 class="heading" id="centralized-and-modular-configurations">
+  Centralized and Modular Configurations
+  <a class="anchor" href="#centralized-and-modular-configurations">#</a>
+</h2>
+<h3 class="heading" id="what-are-dotfiles">
+  What are dotfiles?
+  <a class="anchor" href="#what-are-dotfiles">#</a>
+</h3>
+<p>Maybe you&rsquo;re more hip than I was, but if you&rsquo;re not, let me fill you in. <em>Dotfile</em> is technical shorthand for a hidden file on your system that provides configuration settings to your operating system, shell, or applications. Most systems&rsquo; preferred method of hiding files s to add a <code>.</code> at the beginning of the file—hence, <em>dotfile</em>.</p>
+<p>Many developers choose to alter these files to exert a level of god-like control over their own computers (i.e. to change the color of their terminal prompt&hellip; ). Having these files spread across the computer can make them difficult to update and maintain, so it&rsquo;s convenient to package them together into a personal <em>dotfiles</em> git repository.</p>
+<p>Alright, you&rsquo;re filled in, and I&rsquo;ll admit that on the face of it, dotfiles sound pretty boring. I expected this project to fulfill my neurotic need to organize, but in the end, I found that it presented interesting challenges to solve, and that this project represents the only project that I&rsquo;ve built that I use <em>daily</em>.</p>
+<h3 class="heading" id="why-i-created-my-own-dotfiles">
+  Why I created my own dotfiles
+  <a class="anchor" href="#why-i-created-my-own-dotfiles">#</a>
+</h3>
+<p>I hesitate to write this, but Pewdiepie (yes, the Fortnite streamer) was actually the first inspiration for this project. After <a href="https://www.youtube.com/watch?v=pVI_smLgTY0">watching him install Arch</a>, I went down a rabbit hole of customization possibilities for my own devices.</p>
+<p>The discovery of this video coincided pretty closely with the beginning of my transition to Neovim (by the way). Neovim&rsquo;s configurations are all stored in text files, text files that are notoriously easy to break and hard to recover if you&rsquo;ve made too many changes at once. It&rsquo;s a good idea to keep these tracked in a git repository, and to change them intentionally so that you can run <code>git reset HEAD --hard</code> when the worst happens.</p>
+<p>I am not an Arch Linux user quite yet, but my current OS&rsquo;s were another motivation. I work on Windows and do personal development on Mac. If I want to make a change to my dev environment, I&rsquo;m adjusting it in two places. Not all of the applications that I use are cross platform, but I still like to keep as much of the workflow the same as I can. This means that I wind up translating keyboard shortcuts and other configurations from one DSL to another. This is much easier, when everything is centralized.</p>
+<p>Writing my own version-controlled and modular dotfiles repository solves all of these problems. But, I&rsquo;d be lying if I said that the primary reason wasn&rsquo;t just that I like to tinker, and this may be one of the most fun ways to explore your operating system.</p>
+<h3 class="heading" id="making-it-your-own">
+  Making it your own
+  <a class="anchor" href="#making-it-your-own">#</a>
+</h3>
+<p>In 2010, developer and startup advisor, Zach Holman, wrote a piece called <a href="https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/">Dotfiles Are Meant To Be Forked</a>, where he argues that some of the best developers have horribly disorganized configurations, and that a dotfiles repo should be well designed, personalized and extensible. He ends the article with an encouragement to get started:</p>
+<blockquote>
+<p>So, <a href="https://github.com/holman/dotfiles">fork it</a>. Or, if not mine, then fork some of the awesome other projects I mentioned. Or come up with your own way of organizing your stuff and share it. Everyone’s got their own way of streamlining their system, and sharing dotfiles helps everyone.</p>
+</blockquote>
+<p>I would only alter this advice slightly. If you haven&rsquo;t created your own dotfiles repository before, start from scratch. Before going to see what other people have done, find out what problems <em>you</em> are trying to solve for <em>your</em> workflow. Once you&rsquo;ve done this, digging into someone else&rsquo;s configurations can give you inspiration for things to change. But, I&rsquo;ve found that adding configurations from others has led to creating features that I never use, and a more difficult to maintain repository that is cluttered with unnecessary configurations.</p>
+<p>This might sound strange coming from a blogger who is about to tell you about his own dotfiles. My goal with this article is not to show you every inch of my configuration. In fact, I won&rsquo;t discuss most of the configurations at all. Rather, I want to give you a skeleton that will get your own repository <em>working</em>. The questions that I will answer today are: &ldquo;How do I centralize my config files?&rdquo; and &ldquo;How can I make them modular?&rdquo;</p>
+<p>I&rsquo;m hoping that removing this barrier makes it easier for you to joyfully discover your preferences, your operating system, and new tools and applications shared by the community.</p>
+<h2 class="heading" id="building-dotfiles">
+  Building Dotfiles
+  <a class="anchor" href="#building-dotfiles">#</a>
+</h2>
+<h3 class="heading" id="centralizing-configurations">
+  Centralizing configurations
+  <a class="anchor" href="#centralizing-configurations">#</a>
+</h3>
+<p>The first problem to solve when creating a dotfiles repo is getting all of your configurations into one directory without breaking all of the software and firmware that read from them. These files are typically located in a few different locations on your computer. That means the configurations aren&rsquo;t portable or easily maintainable. To solve this we need a way to tell our computer where to look for our configuration files.</p>
+<p>Luckily, the solution for this is built into your operating system. It&rsquo;s called symbolic linking or symlinking.</p>
+<p>When we boot up, say, Neovim (by the way), the application tries to set its configuration by looking for files. By default, it goes to my user directory for this path <code>~/.config/nvim</code>. We could just put the configuration files there, <em>or</em> we could put a symlink there that basically says, &ldquo;This file that you&rsquo;re looking for is over there.&rdquo; The computer will redirect to the linked file or files and read them as if they are in the location of the symlink.</p>
+<p>Let&rsquo;s take another example, a <code>.zshrc</code> file that contains some customizations on my terminal prompt. For my terminal to read this file, it has to be in my user directory. If I want to keep this file in my dotfiles repo I&rsquo;ll create a symlink at <code>~/.zshrc</code> that points to <code>/Projects/dotfiles/.zshrc</code>. Now when the computer goes to <code>~/.zshrc</code> it&rsquo;s invisibly redirected to the file at <code>/Projects/dotfiles/.zshrc</code>. My terminal can read its configurations and I get to keep them in a tidy folder with all my other configurations.</p>
+<p>Implementing a link in a unix-based environment is as simple as running the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ln -sf <span style="color:#ff7b72;font-weight:bold">[</span>source<span style="color:#ff7b72;font-weight:bold">]</span> <span style="color:#ff7b72;font-weight:bold">[</span>link<span style="color:#ff7b72;font-weight:bold">]</span>
+</span></span></code></pre></div><p>&hellip; where source is the file in your dotfiles and link is the location that you want to put the link.</p>
+<p>The following script will allow you to quickly add source/link pairs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create an associative array for source/target pairs</span>
+</span></span><span style="display:flex;"><span>typeset -A links
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">links</span><span style="color:#ff7b72;font-weight:bold">=(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/mac/.zshrc&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$HOME</span><span style="color:#a5d6ff">/.zshrc&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/mac/.zprofile&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$HOME</span><span style="color:#a5d6ff">/.zprofile&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/mac/.zshenv&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$HOME</span><span style="color:#a5d6ff">/.zshenv&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/shared/nvim&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$HOME</span><span style="color:#a5d6ff">/.config&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Loop through each key in the associative array</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> source in <span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span>(@k)links<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>; <span style="color:#ff7b72">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#79c0ff">link</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">links</span>[<span style="color:#79c0ff">$source</span>]<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#79c0ff">backup</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">.backup&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic"># Check if the link target or [target].backup exists</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -e <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> ! -e <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$backup</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> ! -d <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#8b949e;font-style:italic"># Backup any existing configuration files (just in case)</span>
+</span></span><span style="display:flex;"><span>        mv -f <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$backup</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#a5d6ff">&#34;Backed up: </span><span style="color:#79c0ff">$backup</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff7b72">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic"># This section handles making sure that parent directories exist</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic"># Checking if the source is a directory and the</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic"># target doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -d <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$source</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> ! -e <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>      mkdir -p <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">else</span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#8b949e;font-style:italic"># We need to split the file name off of the path to </span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#8b949e;font-style:italic"># create all the parent directories.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#79c0ff">parent_dir</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">link</span>:<span style="color:#79c0ff">h</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>      mkdir -p <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$parent_dir</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">fi</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic"># Create the link</span>
+</span></span><span style="display:flex;"><span>  ln -sf <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$source</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -d <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$source</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#a5d6ff">&#34;Linked </span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">source</span>:<span style="color:#79c0ff">t</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> directory to </span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">else</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#a5d6ff">&#34;Linked </span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">source</span>:<span style="color:#79c0ff">t</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> to </span><span style="color:#79c0ff">$link</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">done</span>
+</span></span></code></pre></div><p>As you need to centralize more files, and create more links, they can quickly be added to the <code>links</code> array at the top, and the links will automatically be created. As I encounter more configurations across my system that I&rsquo;d like to change, it&rsquo;s very simple to add them here, link them, and run the script. The friction to making changes now is pretty much gone.</p>
+<h3 class="heading" id="making-them-modular">
+  Making them modular
+  <a class="anchor" href="#making-them-modular">#</a>
+</h3>
+<p>While having everything in one place makes things easier to maintain, if the files get unmanageably long, then that friction comes back. So, combining related configurations into well-named files is a must. I&rsquo;ll focus here on two methods to modularize your configuration files, one for language-based configurations and one for plaintext configurations.</p>
+<p>If you&rsquo;re interested in the structure that I use to modularize the configurations of my different operating systems, check out the <a href="https://github.com/nmiller15/dotfiles">repository</a>.</p>
+<h4 class="heading" id="scripting-language-configurations">
+  Scripting-Language Configurations
+  <a class="anchor" href="#scripting-language-configurations">#</a>
+</h4>
+<p>When splitting up configurations into multiple files, it&rsquo;s important to know the configuration language of the application. Sometimes, this is a Turing-complete language like Bash or Lua, but other times its a domain specific language (DSL) that can only be used with that piece of software.</p>
+<p>When we scripting languages, the way that we make things modular is a bit more straightforward. Let&rsquo;s look at my <code>.zshrc</code> for example. I want to customize my prompt, add some functions and keep aliases as shortcuts to different locations on my drive. Since, the <code>.zshrc</code> is written in Zsh (very similar to Bash), I can organize my configurations into separate files like this:</p>
+<pre tabindex="0"><code>dotfiles/
+├── shell/
+|   ├── aliases.sh
+|   ├── functions.sh
+|   └── prompt.sh
+├── .zshrc
+└── bootstrap.zsh
+</code></pre><p>My shell is still going to look for a <code>.zshrc</code> file, not our modules. Instead of jamming all of our configurations in the file, we will tell it to look for our dotfiles repository and loop through the <code>shell</code> subdirector and source every readable file that ends in <code>.sh</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#79c0ff">DOTFILES</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$HOME</span><span style="color:#a5d6ff">/Path/To/dotfiles&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> FILE in <span style="color:#79c0ff">$DOTFILES</span>/shell/*.sh; <span style="color:#ff7b72">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">[</span> -r <span style="color:#79c0ff">$FILE</span> <span style="color:#ff7b72;font-weight:bold">]</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> source <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$FILE</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">done</span>
+</span></span></code></pre></div><h4 class="heading" id="dsl--plaintext-configuration">
+  DSL / Plaintext Configuration
+  <a class="anchor" href="#dsl--plaintext-configuration">#</a>
+</h4>
+<p>While DSLs can still be Turing-complete, many configuration languages aren&rsquo;t, which means that we don&rsquo;t have access to helpful things like conditionals or loops. To make modular configurations, we are going to have to construct the source files from our modules using a scripting language.</p>
+<p>For my tmux configuration I have a similar directory structure to my shell configurations.</p>
+<pre tabindex="0"><code>dotfiles/
+├── tmux/
+|   ├── theme.conf
+|   ├── bindings.conf
+|   └── general.conf
+├── .tmux.conf
+└── bootstrap.zsh
+</code></pre><p>Notice that we still have a modular structure. But, our <code>.tmux.conf</code> file is written in plaintext, it&rsquo;s not executable, so we can&rsquo;t loop through the <code>tmux/</code> directory there. Instead, we have to write a function that can write our <code>.tmux.conf</code> to use in <code>bootstrap.zsh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>write_conf <span style="color:#ff7b72;font-weight:bold">()</span> <span style="color:#ff7b72;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    local <span style="color:#79c0ff">dir</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">$1</span>
+</span></span><span style="display:flex;"><span>    local <span style="color:#79c0ff">out</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">$2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cat <span style="color:#79c0ff">$dir</span>/* &gt; <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$out</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;# Conf written on </span><span style="color:#ff7b72">$(</span>gdate<span style="color:#ff7b72">)</span><span style="color:#a5d6ff">&#34;</span> &gt;&gt; <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$out</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>write_conf <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/tmux&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$DOTFILES</span><span style="color:#a5d6ff">/.tmux.conf&#34;</span>
+</span></span></code></pre></div><p>Now for every plaintext configuration, we can write every file in a given directory to a single file. I also added a timestamp to the end of the file to make sure the bootstrap script ran properly.</p>
+<h2 class="heading" id="why-i-dont-like-forking">
+  Why I don&rsquo;t like forking
+  <a class="anchor" href="#why-i-dont-like-forking">#</a>
+</h2>
+<p>You can get a lot of ideas for your own configurations by perusing <a href="https://github.com/nmiller15/dotfiles">my dotfiles</a>, or any of the dotfiles that many people share on <a href="https://www.reddit.com/r/dotfiles/">reddit</a>, or <a href="https://github.com/search?type=repositories&amp;q=dotfiles">GitHub</a> or other sites. However, I think that <em>if you&rsquo;re just starting,</em> forking someone else&rsquo;s configurations can side-step the the self-discovery and growth than comes from starting from scratch.</p>
+<p>By all means, take inspiration from others, but the goal is to solve the problems that <em>you</em> have on <em>your</em> system. If you start with a fork dotfiles, you&rsquo;re getting someone else&rsquo;s solutions to someone else&rsquo;s problems. Often, these solutions have <em>way more</em> configurations that you want or need, because you&rsquo;re jumping into a repository that may have been built on for years. For me, that kind of starting point is overwhelming and adds friction when there are changes that I want to make.</p>
+<h2 class="heading" id="but-theyre-your-dotfiles">
+  But, they&rsquo;re <em>your</em> dotfiles.
+  <a class="anchor" href="#but-theyre-your-dotfiles">#</a>
+</h2>
+<p>So, do what you want. If you want to fork, fork. If you want to start from scratch, start from scratch. Nobody&rsquo;s opinion on your dotfiles matters because they are uniquely yours, for your computer, your workflow, and your enjoyment.</p>
+<p>Happy scripting!</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/quidditch---powered-by-postgresql-and-asp.net/">
+                        Quidditch - Powered By PostgreSQL and ASP.NET
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+<iframe width="540" height="650" src="https://d782b8fa.sibforms.com/serve/MUIFALLieswUJmHTwIGy-U1O-vXH4y8D30R4YZ-kURtFpFXxKrJtV5k9T_7VvfJ0ATj3f7mZcsatfsBFPQmtX4FsM2QorSR4oRu1jGOF_rZ8hT4R8O0tA_TBTsF92Q3jfbisPdRCOLfJ7VFlBdpbfPfW33bRUdlhuIHFIALBgi9oA_C-MR8hRP1p8Pqqo7ynv_6fN06e5fNDcejz" frameborder="0" scrolling="no" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+<script defer src="/js/copy-code.js"></script>
+</html>
