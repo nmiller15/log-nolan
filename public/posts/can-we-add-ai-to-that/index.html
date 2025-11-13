@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Can we add AI to that? :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="via Lawrence Jones" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/can-we-add-ai-to-that/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Can we add AI to that?">
+<meta property="og:description" content="via Lawrence Jones" />
+<meta property="og:url" content="https://nolanmiller.me/posts/can-we-add-ai-to-that/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-02-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/can-we-add-ai-to-that/">Can we add AI to that?</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-02-10</time><span class="post-reading-time">3 min read (610 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/via/">via</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/ai/">ai</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/product/">product</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/mvp/">mvp</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Quotes in this article are courtesy of Lawrence Jones in his article, <a href="https://blog.lawrencejones.dev/ai-mvp/index.html">Beyond the AI MVP: What it really takes</a>.</p>
+<p>A little over a month ago, I was in a conference talk about the value of adding AI to products. The speaker asked the room, &ldquo;Who has been asked to incorporate AI into a product you&rsquo;ve already developed in the past year,&rdquo; and the amount of hands up around the room was staggering.</p>
+<p>While it may seem simple on the face of it to load up a model and incorporate a chat interface in your app, the software development lifecycle around AI is much different than traditional software.</p>
+<p>Lawrence Jones argues that there are many challenges that you don&rsquo;t see up front. He points out that you need robust test suites, hefty ai-integrated programs to evaluate ai responses, a test runner, and hosting strategies to keep costs manageable. On top of all of this, the languages of many of the frameworks is in the way:</p>
+<blockquote>
+<p>Honestly, writing the tests themselves is the easy bit! Almost all AI tools and frameworks are written in Python, reflecting the origins of AI in the research teams who built the models and the machine-learning community who first adopted them.</p>
+<p>But most product teams don’t use Python, which means you need to create a lot of these tools from scratch. That’s big undertaking, and almost no one is talking about how to integrate this stuff into a normal software development lifecycle.</p></blockquote>
+<p>The biggest issue with AI is what Jones calls the &ldquo;Deceptive MVP.&rdquo; Have you built a basic chat interface with OpenAI&rsquo;s API? It&rsquo;s not all that difficult or complex to do, and if you&rsquo;re using a framework you&rsquo;re familiar with, you could probably piece something together in an afternoon. But, once you begin adding requirements for this application, and expecting it to behave in deterministic(-ish) ways, you&rsquo;re going to run into issues.</p>
+<blockquote>
+<p>You start iterating on your MVP, trying to improve it. But as you add complexity, the system becomes increasingly unpredictable. You’re making changes based on vibes, improving some edge cases while (invisibly) breaking others.</p>
+<p>This is the stage 90% of companies building AI are in. You can even see it in FANG: the AI features Google have added to GCP feel very much like an engineers first attempt to use an LLM in a product, spitting out terrible SQL suggestions in BigQuery. Apple’s message summarisation features cross-pollinating between messages and providing horribly inaccurate headlines is another.</p></blockquote>
+<p>Adding AI to an application is not just a peel-and-stick solution that will dramatically increase the impact of your product. While it may be easy to implement, if you&rsquo;re making any meaningful measurements of the efficacy of your product, it will be much, much, much more difficult.</p>
+<p>Adding the connection to an API, or downloading and hosting a model for your codebase to interact with is the easiest part of the product development stage. Brainstorming ways to leverage this technology in a <em>meaningful</em> way, ensuring that it performs tasks <em>reliably</em>, and setting up systems to <em>monitor</em> the efficacy of your product are where your time is going to be spent. So, before you think about building out your AI side-project, thinking that you&rsquo;ll be able to turn this into the next big thing, make sure to evaluate the massive hidden costs first.</p>
+<blockquote>
+<p>The companies that will succeed with AI won’t be the ones with the biggest budgets, access to the latest models, or even the most ML expertise. They’ll be the ones that invest in understanding their systems, that build the tools to measure and improve them, and that take the time to do things right.</p></blockquote>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://nolanmiller.me/posts/do-the-work-that-needs-done/" class="button inline prev">
+        &lt; [<span class="button__text">Do The Work That Needs Done</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/" class="button inline next">
+         [<span class="button__text">Anatomy of an ASP.NET MVC Template</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Quidditch - Powered By PostgreSQL and ASP.NET :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Use Entity Framework to connect Postgres to your ASP.NET API." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Quidditch - Powered By PostgreSQL and ASP.NET">
+<meta property="og:description" content="Use Entity Framework to connect Postgres to your ASP.NET API." />
+<meta property="og:url" content="https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-06-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/quidditch---powered-by-postgresql-and-asp.net/">Quidditch - Powered By PostgreSQL and ASP.NET</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-06-10</time><span class="post-reading-time">11 min read (2234 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/postgres/">postgres</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/asp/">asp</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/dotnet/">dotnet</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/learning/">learning</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>As a software developer, it&rsquo;s important to work on your craft. That&rsquo;s why I&rsquo;ve been studying ASP.NET for the past few months. <a href="https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/">In my last article</a> I walk through how to set up an ASP.NET Minimal Web API. Today, I&rsquo;ll be building on that foundation, by adding a persistent data store, a la PostgreSQL. In order to configure a .NET API to communicate with a PostgreSQL database, I&rsquo;m going to use Entity Framework.</p>
+<p>Though I could have worked with my animal sounds API, I decided to implement the database for an app that scores a road trip game that my wife and I took this summer.
+I recently saw a video about a new road trip game that&rsquo;s inspired by Harry Potter (my favorite book series). I knew that my wife and I had to try it. If you&rsquo;re interested, the rules of the game are <a href="https://www.instagram.com/reel/DEs-Stox4d2/?hl=en">described in this video,</a> and you can play using my score tracker at <a href="https://quidditchtrip.nolanmiller.me">https://quidditchtrip.nolanmiller.me</a>.</p>
+<p>In this article, I&rsquo;ll go over making sure that you have PostgreSQL installed and running, and then how to install and configure Entity Framework to read to and write from the database.</p>
+<h2 id="what-youll-need-to-start">What you&rsquo;ll need to start:<a href="#what-youll-need-to-start" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>A .NET Web API (that you&rsquo;ve created <a href="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/">using the dotnet CLI</a>)</li>
+<li>Access to an internet connection</li>
+<li>A little bit of patience</li>
+</ul>
+<h2 id="install-postgres">Install Postgres<a href="#install-postgres" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>There are a few different methods to installing and starting a Postgres server on your machine, but the easiest route is downloading Postgres.app, a MacOS postgres server interface that comes bundled with the <code>psql</code> CLI. If you&rsquo;re not on Mac, or if you&rsquo;re interested in other installation methods the <a href="https://www.postgresql.org/download/">official Postgres website</a> has installation instructions for every operating system and includes instructions for other installation methods.</p>
+<p>Once you&rsquo;re done you should be able to start your Postgres server and also connect to it using the <code>psql</code> command line interface.</p>
+<h2 id="create-a-database">Create a database<a href="#create-a-database" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Before we can start creating our models and writing data, we need to make sure that we have a database for our application. To do this, connect to <code>psql</code> using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U postgres
+</span></span></code></pre></div><p>This will connect us to the Postgres server with the default user <code>postgres</code>. If it prompts  you for a password, it should be the default password, <code>postgres</code>.</p>
+<p>Once you&rsquo;re connected you should see a prompt that ends with <code>#</code> and we can issue the following SQL command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">postgres</span><span class="o">=#</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">Quidditch</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>Since this database is for my Quidditch app, I&rsquo;ll name it <code>Quidditch</code>, just replace this with whatever name makes sense for your application.</p>
+<h2 id="connect-to-your-database">Connect to your database<a href="#connect-to-your-database" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>With a database set up, it can be connected to our .NET application using Entity Framework, an object-relational mapper for the .NET ecosystem. EF will automate reading and writing data on our database, and handle table creation and modifications through the development process.</p>
+<p>To get started with EF for Postgres, install two NuGet packages by running the following commands from a terminal in your .NET project:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dotnet add package Microsoft.EntityFrameworkCore.PostgreSQL
+</span></span><span class="line"><span class="cl">dotnet add package Microsoft.EntityFrameworkCore.Design
+</span></span></code></pre></div><p>To interact with a database we have to create a database context to allow us to interface with the database, configure the context object to use the proper connection string, set up models and create a migration using EF that will scaffold our database.</p>
+<h2 id="1-database-context">1. Database Context<a href="#1-database-context" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To create a database context, create a class that inherits from EF&rsquo;s DbContext class, like so:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">QuidditchContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">QuidditchContext</span><span class="p">(</span><span class="n">DbConextOptions</span><span class="p">&lt;</span><span class="n">QuidditchContext</span><span class="p">&gt;</span> <span class="n">options</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Then wire it into your <code>Program.cs</code> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// in Program.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">&#34;[Your connection string]&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">QuidditchContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span> <span class="n">options</span><span class="p">.</span><span class="n">UseNpgsql</span><span class="p">(</span><span class="n">connectionString</span><span class="p">));</span>
+</span></span></code></pre></div><p>This way of setting a connection string isn&rsquo;t secure, and should only be used for testing. Make sure that you load these in via a config file!</p>
+<p>And with these two small additions, Entity Framework can access your database server.</p>
+<h2 id="2-set-up-models">2. Set up models<a href="#2-set-up-models" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The next step in configuration is defining the models that we want to persist. For my Quidditch game, since it&rsquo;s a simple score tracker, I really only need to capture two data models: games and teams. Instead of creating two database tables for these and setting up their columns, I can just create the model in my C# code and EF will reason out the structure of the database!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Team</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">TeamKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">Score</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsActive</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">DateTime</span> <span class="n">CreatedDateTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int?</span> <span class="n">GameKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">	[JsonIgnore]</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Game</span> <span class="n">Game</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Game</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">GameKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DateTime</span> <span class="n">GameStartDateTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">GameEndDateTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsActive</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsFinished</span> <span class="p">=&gt;</span> <span class="n">GameEndDateTime</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Team</span><span class="p">&gt;</span> <span class="n">Teams</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Team</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>A couple of things to point out here. First, I&rsquo;m using the terminology <code>[Entity]Key</code> to define my primary keys. This is <em>not</em> automatically picked up by EF. They would prefer that you use <code>[Entity]Id</code> instead. Unfortunately, I am stubborn and would have been mistyping &ldquo;Key&rdquo; instead of &ldquo;Id&rdquo; of for the whole project, so I took the extra couple of steps to define my keys and relationships.</p>
+<p>When I add these models to my database context in the next step, EF will use these models to set up tables and columns based on them. Not everything will be one for one though. There are two special properties here. The <code>Team.Game</code> property and the <code>Game.Teams</code> properties are called <em>Navigations</em>.</p>
+<p>A Navigation property models a relationship between two tables. They work by associating related models using primary and foreign keys on the models and are kept in sync by EF.</p>
+<p>Before these will behave as expected, we need to register these models in our <code>DbContext</code> with <code>DbSet</code> properties. This can be done as easily as adding properties to any other class, but set the type to <code>DbSet&lt;[Entity]&gt;</code> where <code>[Entity]</code> is the model that you want to register.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// QuidditchContext</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">QuidditchContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">QuidditchContext</span><span class="p">(</span><span class="n">DbConextOptions</span><span class="p">&lt;</span><span class="n">QuidditchContext</span><span class="p">&gt;</span> <span class="n">options</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Team</span><span class="p">&gt;</span> <span class="n">Teams</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;</span> <span class="n">Games</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>The <code>DbSet&lt;&gt;</code> class comes from Entity Framework and inherits from <code>IEnumerable&lt;T&gt;</code>, which allows us to use LINQ (and some Entity Framework specific versions of LINQ) to access our models.</p>
+<p>Since I decided to use a different convention for my primary and foreign keys, I have another configuring step to define the relationships between my tables. To manually define table and column relationships, override the <code>OnModelCreating</code> method in <code>DbContext</code>. The relationships that I used are below.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">QuidditchContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span> <span class="n">modelBuilder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// .HasKey tell EF what the name of the primary key should be</span>
+</span></span><span class="line"><span class="cl">        <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">Team</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">HasKey</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">TeamKey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">HasKey</span><span class="p">(</span><span class="n">g</span> <span class="p">=&gt;</span> <span class="n">g</span><span class="p">.</span><span class="n">GameKey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// These methods define the one-to-many relationship in</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// what looks like plain language. </span>
+</span></span><span class="line"><span class="cl">        <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">Team</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">e</span><span class="p">.</span><span class="n">Game</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">WithMany</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">e</span><span class="p">.</span><span class="n">Teams</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">HasForeignKey</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">GameKey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">SetNull</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// .OnDelete can set what happens to related tables</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// when the record they reference is deleted.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// I don&#39;t want a table to be created for this model.</span>
+</span></span><span class="line"><span class="cl">        <span class="n">modelBuilder</span><span class="p">.</span><span class="n">Ignore</span><span class="p">&lt;</span><span class="n">LeaderboardEntry</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>	
+</span></span></code></pre></div><p>Even if you&rsquo;re not using custom naming for your properties, it is probably a good idea to override this method so that your complex relationships are explicitly set by you. This will help mitigate unexpected behavior and has the added benefit of providing some in-code documentation.</p>
+<p>Now that configuration is done, it&rsquo;s time to create a database through a process called migration.</p>
+<h2 id="3-create-a-migration">3. Create a migration<a href="#3-create-a-migration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>As you work on a project, inevitably the shape of your data will change here and there. Instead of manually updating your database tables, Entity Framework handles this through <em>migrations.</em></p>
+<p>Since the models are already defined in the code, Entity Framework can scaffold and re-scaffold database, throughout the lifecycle of the application. A migration can be created using the <code>dotnet</code> CLI with the following command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dotnet ef migrations add InitialCreate
+</span></span></code></pre></div><p>With <code>dotnet ef</code> the Entity Framework-specific tools are specified, and then using the <code>migrations add</code> command a migration is created called <code>InitialCreate</code>. A migration can have any name, but it&rsquo;s a good idea to give it a descriptive title for when you need to roll your changes back.</p>
+<p>To finalize the changes on our database (or &ldquo;creation of&rdquo; in this instance) we still have to run one more command. EF separates this process of updating the database into two steps. In the first step, a few things happen:</p>
+<ul>
+<li>a <code>Migrations</code> directory is created in the root of your project if not already there</li>
+<li>a <code>[TIMESTAMP]_InitialCreate.cs</code> file is generated, containing the steps to implement the changes to your context, and steps to walk it back if needed.</li>
+<li>a <code>[TIMESTAMP]_InitialCreate.Designer.cs</code> file is generated with metadata for EF to use.</li>
+<li>a <code>MyContextModelSnapshot.cs</code> file containing a current snapshot of your context model is created.</li>
+</ul>
+<p>The syntax in these files is fairly easy to interpret, so it&rsquo;s a good idea to do a once-over of the <code>Up</code> method in the <code>[TIMESTAMP]_InitialCreate.cs</code> method so that you aren&rsquo;t surprised by any changes!</p>
+<p>Now to finalize those changes and apply them to the database run the following command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dotnet ef database update
+</span></span></code></pre></div><p>This will updates the database to the most recent migration. Be careful as you do this, there is potential for data loss when running this command! Now, the database and it&rsquo;s tables are set up and ready for you to start querying!</p>
+<h2 id="using-linq-to-access-your-data">Using LINQ to access your data<a href="#using-linq-to-access-your-data" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To illustrate how to query a database using Entity Framework, take a look at one of the service methods that I created for my application:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;&gt;</span> <span class="n">GetGameByKey</span><span class="p">(</span><span class="kt">int</span> <span class="n">gameKey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">game</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_context</span><span class="p">.</span><span class="n">Games</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">g</span> <span class="p">=&gt;</span> <span class="n">g</span><span class="p">.</span><span class="n">Teams</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">SingleAsync</span><span class="p">(</span><span class="n">g</span> <span class="p">=&gt;</span> <span class="n">g</span><span class="p">.</span><span class="n">GameKey</span> <span class="p">==</span> <span class="n">gameKey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">game</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;.</span><span class="n">Failure</span><span class="p">(</span><span class="s">&#34;...&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;.</span><span class="n">Success</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If you&rsquo;re familiar with LINQ syntax, then this should be familiar.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;&gt;</span> <span class="n">GetGameByKey</span><span class="p">(</span><span class="kt">int</span> <span class="n">gameKey</span><span class="p">)</span>
+</span></span></code></pre></div><p>First, I&rsquo;m declaring a method called <code>GetGameByKey</code>, that returns a custom response object with the generic type <code>Game</code>. I just created a response class with a generic <code>Payload</code> property so that I can send back metadata along with the requested models if needed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">game</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_context</span><span class="p">.</span><span class="n">Games</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">g</span> <span class="p">=&gt;</span> <span class="n">g</span><span class="p">.</span><span class="n">Teams</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">SingleAsync</span><span class="p">(</span><span class="n">g</span> <span class="p">=&gt;</span> <span class="n">g</span><span class="p">.</span><span class="n">GameKey</span> <span class="p">==</span> <span class="n">gameKey</span><span class="p">);</span>
+</span></span></code></pre></div><p>This line queries the database, translating the database record into a usable model and assigning it to a variable that we can return from the method! By default, navigation properties are not included, but using <code>.Include()</code> and specifying the navigation property includes the related navigation in the query.</p>
+<p>Query execution is signaled by the <code>.SingleAsync()</code> method, which works the same way as <code>.Single()</code> in LINQ. So this query, will return a only a single record where the <code>GameKey</code> column&rsquo;s value is equal to the <code>gameKey</code> argument passed in when this method is called.</p>
+<p>Here&rsquo;s another method example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;&gt;</span> <span class="n">SetGameInactive</span><span class="p">(</span><span class="kt">int</span> <span class="n">gameKey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">gameResponse</span> <span class="p">=</span> <span class="k">await</span> <span class="n">GetGameByKey</span><span class="p">(</span><span class="n">gameKey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(!</span><span class="n">gameResponse</span><span class="p">.</span><span class="n">WasSuccessful</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">gameResponse</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">game</span> <span class="p">=</span> <span class="n">gameResponse</span><span class="p">.</span><span class="n">Payload</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">game</span><span class="p">.</span><span class="n">IsActive</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">_context</span><span class="p">.</span><span class="n">Games</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">changedRows</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">changedRows</span> <span class="p">&lt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;.</span><span class="n">Failure</span><span class="p">(</span><span class="s">&#34;Failed.&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">ServiceResponse</span><span class="p">&lt;</span><span class="n">Game</span><span class="p">&gt;.</span><span class="n">Success</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>There&rsquo;s a little more logic going on in this method. The goal is to find the <code>Game</code> with the matching <code>GameKey</code> and then set its <code>IsActive</code> property to <code>false</code>. The <code>Game</code> is retrieved in the same way as the first method we looked at. Once it&rsquo;s been accessed, then it&rsquo;s properties can be updated like any other class instance in C#.</p>
+<p>The <code>_context.Games.Update()</code> method prepares EF to send the command to the database. Unlike the first query, the execution is started by <code>SaveChangesAsync()</code>, which returns the number of affected rows. This is the EF pattern for modifying existing data. The changes are made in the code, and <code>SaveChanges()</code> or <code>SaveChangesAsync()</code> must be called.</p>
+<p>I hope that this shows just how simple it can be to access the data from a database using familiar C# list patterns. For a full list of methods available to Entity Framework, <a href="https://learn.microsoft.com/en-us/ef/core/querying/">check out their documentation</a>.</p>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>If you made it this far, thank you for reading! I hope that you found it helpful and I wish you the best of luck in implementing EF Core into your own C# applications.</p>
+<p>This was a unique challenge for me. I primarily write in C# for my job, but we use a custom data access library that requires mapping our models manually. While Entity Framework has some nice quality-of-life features, I found that lose some of the flexibility gained by writing your own SQL.</p>
+<p>This was a very simple project, but even still, it felt like I didn&rsquo;t save much time by using an ORM. Rather than save time on having to write SQL, I traded that time for configuring my database and tables in C#.</p>
+<p>In my day job, I rely on libraries that have been provided for me, so I&rsquo;m looking forward to learning how to implement database connections on my own. I don&rsquo;t know that I would choose to use Entity Framework again. I liked how easy it was to set up my models and navigations made implementing business logic very nice, but the configuration of relationships just wasn&rsquo;t as straightforward as it is in SQL.</p>
+<p>Regardless, it is always good to take some time to learn new technologies.</p>
+<p>Thanks again for reading!</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://nolanmiller.me/posts/the-perfect-programming-environment/" class="button inline prev">
+        &lt; [<span class="button__text">The Perfect Programming Environment</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/" class="button inline next">
+         [<span class="button__text">Intro to .NET APIs for a JavaScript Developer</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

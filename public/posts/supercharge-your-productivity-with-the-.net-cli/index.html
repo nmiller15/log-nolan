@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Supercharge Your Productivity with the .NET CLI :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Speed up your .NET development" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Supercharge Your Productivity with the .NET CLI">
+<meta property="og:description" content="Speed up your .NET development" />
+<meta property="og:url" content="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-01-28 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/">Supercharge Your Productivity with the .NET CLI</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-01-28</time><span class="post-reading-time">7 min read (1401 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/dotnet/">dotnet</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/learning/">learning</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/commandline/">commandline</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/microsoft/">microsoft</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>I figured a good place to start <a href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/">my ASP.NET journey</a> was the .NET CLI. The tool isn&rsquo;t ASP.NET specific, rather it is an essential development and automation tool for the entire .NET landscape.</p>
+<h2 id="what-is-the-net-cli">What is the .NET CLI?<a href="#what-is-the-net-cli" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The <code>dotnet</code> command-line interface (CLI) is a Microsoft tool that&rsquo;s part of the .NET SDK. It is a series of commands that can be executed from your computer&rsquo;s terminal, or shell. The commands included in the CLI help developers run tests, run build servers, package apps for production, generate templated code snippets and more.</p>
+<h2 id="why-would-i-use-the-net-cli">Why would I use the .NET CLI?<a href="#why-would-i-use-the-net-cli" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>When I started developing in C#, I asked, <strong>&ldquo;Why would I use the command line interface when my IDE handles all of this for me?&rdquo;</strong> I hope that if you have the same question, that I can answer it for you today.</p>
+<h3 id="develop-faster">Develop faster<a href="#develop-faster" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>First, typing the command into your terminal can <em>save you time</em>. Rather than going through menus to look for a command, you can type <!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted --> + <!-- raw HTML omitted -->`<!-- raw HTML omitted --> in your IDE, type three words and hit enter. The code snippet will appear, tests will run, whatever you need to happen. This may take a bit of time to get used to, but the accumulation of these small bits of time will add up over hours, days, and weeks.</p>
+<h3 id="break-free-from-your-ide">Break free from your IDE<a href="#break-free-from-your-ide" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>A better reason to learn this CLI is to break your dependence upon your development environment. Visual Studio is an incredibly powerful and time-saving tool, but that doesn&rsquo;t mean have to rely on it.</p>
+<p>Developing using .NET has dependencies, Visual Studio isn&rsquo;t one of them.</p>
+<p>With the CLI, you have access to all the tools that the SDK offers in development <em>and</em> production environments. This allows you to make quick additions, run tests, or a quick build in environments that don&rsquo;t have Visual Studio involved. Knowing the CLI well can also assist in creating automation for CI/CD processes.</p>
+<p>As a side note, since Microsoft discontinued Visual Studio for Mac, the CLI has become almost necessary on Mac OS.</p>
+<h3 id="whats-the-real-reason">What&rsquo;s the real reason&hellip;<a href="#whats-the-real-reason" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Okay, you caught me. It&rsquo;s way cooler to type something into your terminal and watch the outcome. Don&rsquo;t you just feel like you&rsquo;re a hacker in a movie? Making your development process more fun is a good thing!</p>
+<h2 id="installing-net-cli">Installing .NET CLI<a href="#installing-net-cli" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Alright, have I convinced you? Let&rsquo;s get started by installing what we need.</p>
+<p>If you have the .NET SDK installed on your computer already, then that&rsquo;s it, you should have access already.</p>
+<p>If not, you&rsquo;ll have to <a href="https://dotnet.microsoft.com/en-us/download">download the SDK of your choice</a> from Microsoft.</p>
+<p>Once it&rsquo;s installed for you, you can check to make sure that you have the CLI by opening a terminal, and typing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="p">-</span><span class="n">-version</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">#Output</span>
+</span></span><span class="line"><span class="cl"><span class="mf">9.0</span><span class="p">.</span><span class="py">100</span>
+</span></span></code></pre></div><p>This should give you a version number output, and you know you&rsquo;re ready to get started.</p>
+<h2 id="best-uses-for-the-net-cli">Best Uses for the .NET CLI<a href="#best-uses-for-the-net-cli" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Here are the most valuable commands that I&rsquo;ve discovered and <em>actually use</em>. Take some time to try them out on your own and work to incorporate them into your own development environment.</p>
+<h3 id="setup">Setup<a href="#setup" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Before we start, create a folder that we can play in. I&rsquo;m calling mine <code>dotnet-sandbox</code> but you can call yours whatever you want. The following commands will work on Mac, Windows and Linux.</p>
+<p>Open your terminal and make note of the directory you are in (this is typically your User directory). If you&rsquo;re not in your user directory, you can quickly navigate there with the command <code>cd ~</code>. Then create a folder and change directories into it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="nb">dotnet-sandbox</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd dotnet-sandbox</span>
+</span></span></code></pre></div><h3 id="getting-help">Getting help<a href="#getting-help" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>The first and perhaps <em>most useful</em> command of the .NET cli is the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="p">-?</span>
+</span></span><span class="line"><span class="cl"><span class="c"># or</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="p">-</span><span class="n">-help</span>
+</span></span></code></pre></div><p>This outputs a list of the possible commands with a brief description of what they do. So, when you forget a command, just run this.</p>
+<p>The flag, <code>-?</code> or <code>--help</code> can be run after any of the following <code>dotnet</code> commands to get more information about them right in your terminal!</p>
+<h3 id="creating-apps-from-net-templates">Creating apps from .NET templates<a href="#creating-apps-from-net-templates" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Visual Studio, lets you start a projects by selecting a template to build off of, but the GUI in isn&rsquo;t the only way to generate these templates.</p>
+<p>Run this command to create a console application template</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">console</span>
+</span></span></code></pre></div><p>You can create any of the provided templates with this command, provided that you have the short name of the template. Until you know the names of all of the templates that you&rsquo;ll use, you can use this command to list all of the possible short names.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">list</span>
+</span></span></code></pre></div><h4 id="give-your-projects-a-name">Give your projects a name<a href="#give-your-projects-a-name" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I hardly ever use the <code>dotnet new</code> command without the <code>-n</code> flag. Follow this flag with a string and you can give a name to your project. This name will be used for the namespace, the class name or the directory of your project, depending on the template that you use.</p>
+<p>I recommend always giving a name to these templates. Adding the <code>-n</code> flag results in project templates being created inside their own directory. Without the flag, the CLI dumps all of the template files into your current working directory, which has burned me before.</p>
+<p>To illustrate the power of the <code>-n</code> flag, here&rsquo;s an example of two command sequences that do the exact same thing.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="n">MyConsoleApp</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="p">\</span><span class="n">MyConsoleApp</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">console</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">console</span> <span class="n">-n</span> <span class="n">MyConsoleApp</span>
+</span></span></code></pre></div><p>One of these is much quicker to type if you get in the habit of it.</p>
+<h3 id="use-net-snippets">Use .NET snippets<a href="#use-net-snippets" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>If you&rsquo;ve been following along in your own terminal, you saw how many options were available when you ran <code>dotnet new list</code>. The <code>dotnet new</code> command can be used for more than creating new project templates.  It will also insert snippets, smaller templates designed to be used within projects!</p>
+<p>For example, in your <code>dotnet-sandbox</code> directory, create a new MVC app and <code>cd</code> into it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">mvc</span> <span class="n">-n</span> <span class="n">SampleMVC</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">SampleMVC</span>
+</span></span></code></pre></div><p>You&rsquo;ll have a working MVC app. But, now we can extend it easily using <code>dotnet new</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">Controllers</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">new</span> <span class="n">mvccontroller</span> <span class="n">-n</span> <span class="s2">&#34;NewController&#34;</span>
+</span></span></code></pre></div><p>And we will get the following file in the Controllers directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// NewController.cs</span>
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">MyApp.Namespace</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">class</span> <span class="nc">NewController</span> <span class="p">:</span> <span class="n">Controller</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// GET: NewController</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">ActionResult</span> <span class="n">Index</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">View</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>You can use the same process to create Razor Views, Razor Pages, ViewImports file, ViewStart file, .gitignore and others.</p>
+<h3 id="test-your-apps">Test your apps<a href="#test-your-apps" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>If you&rsquo;re running your tests with the VSTest framework you can run&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">test</span>
+</span></span></code></pre></div><p>&hellip;to run your entire test suite! It&rsquo;s faster than launching your Test Explorer if you&rsquo;re doing a quick check before a commit!</p>
+<p>You can also use your <code>dotnet new</code> command to create test projects and items!</p>
+<h3 id="add-packages-to-your-app">Add packages to your app<a href="#add-packages-to-your-app" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Yes, yes, the Nuget package manager is very nice, but we&rsquo;re optimizing for speed! Do you already know the name of the package that you&rsquo;re trying to install?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">EntityFramework</span>
+</span></span></code></pre></div><p>You can do this on the PM Console as well, but if you&rsquo;re already using your Developer Console, then you might as well not switch!</p>
+<h3 id="bonus-commands">BONUS commands!<a href="#bonus-commands" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>A few other commands that I&rsquo;ve liked using!</p>
+<ul>
+<li><code>dotnet format whitespace</code> - Avoid a &ldquo;blank line&rdquo; comment on your next code review by running this command!</li>
+<li><code>dotnet build</code> - Verify that your project builds without touching your mouse!</li>
+<li><code>dotnet pack</code> - With a few other configurations, turn your project into a NuGet package.</li>
+<li><code>dotnet remove</code> - Specify a package that you accidentally added to get rid of it!</li>
+<li><code>dotnet watch</code> - Specify a file to enable hot reloads on file changes! Make your frontend work way less tedious!</li>
+<li><code>dotnet publish</code> - Bundle your project for distribution! Outputs to the <code>/bin</code> directory.</li>
+</ul>
+<h2 id="have-i-convinced-you-yet">Have I convinced you yet?<a href="#have-i-convinced-you-yet" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The .NET CLI is quite powerful (and has the potential to make you feel like a 10X dev wizard). Take a few of these commands with you the next time you&rsquo;re working on a project. It will probably take some time and intentionality to start using them regularly, but if you do, you&rsquo;ll be free of your mouse in no time. 😉</p>
+<p>This lesson is part of my long-term effort to learn ASP.NET. If you want to see the resources that I&rsquo;m using, check out my post, <a href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/">Learn ASP.NET From Scratch</a>.</p>
+<p>Consider getting these posts straight to your inbox using the form or clicking the link below!</p>
+<p><a href="https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi">Get these blog posts in your email inbox!</a></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://nolanmiller.me/posts/this-engineer-uses-llms/" class="button inline prev">
+        &lt; [<span class="button__text">This engineer uses LLMs</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/" class="button inline next">
+         [<span class="button__text">Learn ASP.NET from Scratch</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

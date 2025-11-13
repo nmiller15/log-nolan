@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>This engineer uses LLMs :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="via Sean Goedecke" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/this-engineer-uses-llms/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="This engineer uses LLMs">
+<meta property="og:description" content="via Sean Goedecke" />
+<meta property="og:url" content="https://nolanmiller.me/posts/this-engineer-uses-llms/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-02-05 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/this-engineer-uses-llms/">This engineer uses LLMs</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-02-05</time><span class="post-reading-time">2 min read (405 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/via/">via</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/ai/">ai</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/llm/">llm</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Quotes courtesy of Sean Goedecke, from his article, <a href="https://www.seangoedecke.com/how-i-use-llms/"><em>How I Use LLMs as a Staff Engineer</em></a></p>
+<p>Since starting my job, I&rsquo;ve debated how appropriate it is to use LLMs for certain tasks. Sean has some good guidance for those in similar positions.</p>
+<blockquote>
+<p>Personally, I feel like I get a lot of value from AI. I think many of the people who don’t feel this way are “holding it wrong”: i.e. they’re not using language models in the most helpful ways. In this post, I’m going to list a bunch of ways I regularly use AI in my day-to-day as a staff engineer.</p></blockquote>
+<p>AI has many good uses:</p>
+<blockquote>
+<p>I use Copilot completions every time I write code<a href="https://www.seangoedecke.com/how-i-use-llms/?utm_source=pocket_shared#fn-1">1</a>. Almost all the completions I accept are complete boilerplate (filling out function arguments or types, for instance).</p></blockquote>
+<blockquote>
+<p>LLMs excel at writing code that works that doesn’t have to be maintained. Non-production code that’s only run once (e.g. for research) is a perfect fit for this. I would say that my use of LLMs here meant I got this done 2x-4x faster than if I’d been unassisted.</p></blockquote>
+<blockquote>
+<p>The magic of learning with LLMs is that you can <em>ask questions</em>: not just “how does X work”, but follow-up questions like “how does X relate to Y”. Even more usefully, you can ask “is this right” questions.</p></blockquote>
+<p>But, Sean also warns against trusting the LLM generations completely. As engineers, you should know your tools so well that you are more confident in your own work than an LLM.</p>
+<blockquote>
+<p>It’s rare that I let Copilot produce business logic for me, but it does occasionally happen. In my areas of expertise (Ruby on Rails, for instance), I’m confident I can do better work than the LLM. It’s just a (very good) autocomplete.</p></blockquote>
+<p>But, we&rsquo;re not always using our most comfortable tools.</p>
+<blockquote>
+<p>I frequently find myself making small tactical changes in less-familiar areas (for instance, a Golang service or a C library). I know the syntax and have written personal projects in these languages, but I’m less confident about what’s idiomatic. In these cases, I rely on Copilot more. Typically I’ll use Copilot chat with the o1 model enabled, paste in my code, and ask directly “is this idiomatic C?”</p>
+<p>Relying more on the LLM like this is risky, because I don’t know what I’m missing.</p></blockquote>
+<p>Using new tools is part of growing as an engineer, but the tool shouldn&rsquo;t make you a worse engineer.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://nolanmiller.me/posts/start-automating-easy-tasks/" class="button inline prev">
+        &lt; [<span class="button__text">Start Automating Easy Tasks</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/" class="button inline next">
+         [<span class="button__text">Supercharge Your Productivity with the .NET CLI</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

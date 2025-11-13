@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Llm on Breaking Changes | Nolan Miller</title>
+    <link>https://nolanmiller.me/tags/llm/</link>
+    <description>Recent content in Llm on Breaking Changes | Nolan Miller</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://nolanmiller.me/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>This engineer uses LLMs</title>
+      <link>https://nolanmiller.me/posts/this-engineer-uses-llms/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/this-engineer-uses-llms/</guid>
+      <description>via Sean Goedecke</description>
+    </item>
+  </channel>
+</rss>

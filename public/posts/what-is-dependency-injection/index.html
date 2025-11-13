@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Interviewers Will Ask You About This: Dependency Injection Made Simple :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The simple guide to getting started with DI." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/what-is-dependency-injection/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Interviewers Will Ask You About This: Dependency Injection Made Simple">
+<meta property="og:description" content="The simple guide to getting started with DI." />
+<meta property="og:url" content="https://nolanmiller.me/posts/what-is-dependency-injection/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-02-24 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/what-is-dependency-injection/">Interviewers Will Ask You About This: Dependency Injection Made Simple</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-02-24</time><span class="post-reading-time">16 min read (3196 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/dotnet/">dotnet</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/csharp/">csharp</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/oop/">oop</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/learning/">learning</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>My heart rate was elevated and my hands were clenching the plush armrests of a very comfortable chair in a board room. <em>He knew.</em></p>
+<p>After thinking about it way too long, I&rsquo;d just called a singleton a factory method in a code example that was broadcast onto one of the two flat screens on the far wall.</p>
+<p>&ldquo;So, what do you know about dependency injection?&rdquo;</p>
+<p><em>Strike 2.</em> I remembered reading something about this when I was panic studying for this interview, but I didn&rsquo;t really understand it. &ldquo;I&rsquo;ve&hellip; um&hellip; never used it before, but I think I understand the concept&hellip;&rdquo;</p>
+<p><em>Sigh. This is over isn&rsquo;t it.</em></p>
+<p>Since I started teaching myself to code, one of the things that&rsquo;s frustrated me the most about this space, is how big all the freaking words are. Dependency Injection? What is that? What does it mean to have a dependency? What the heck is injecting it?</p>
+<p>I struggled through figuring this out so that you don&rsquo;t have to. The concept is not as hard as it might seem, and it can dramatically increase your code quality. If you&rsquo;re self-taught, this is a concept that <em>will</em> come up in job interviews, because in any project of a reasonable size, it is probably being used.</p>
+<p>Let&rsquo;s dive in, so that your interview doesn&rsquo;t go how mine did.</p>
+<h2 id="what-is-a-dependency">What is a dependency?<a href="#what-is-a-dependency" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>In short, a dependency is a piece of code that is <em>depended upon</em> for functionality.</p>
+<p>When we talk about dependencies, we will talk about <em>clients</em> and <em>services</em>. The client is the class that <em>depends</em> on something else, the class that takes the injection. The service is what is injected, it is the <em>dependency</em>.</p>
+<p>It&rsquo;s not always this clean though. Often services will also have a long list of dependencies, creating a chain of interrelated classes. But, to keep things simple for now, we&rsquo;ll just focus on the relationship between one client and one service.</p>
+<h3 id="real-world-dependencies">Real World Dependencies<a href="#real-world-dependencies" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Dependencies don&rsquo;t only exist in your IDE. This pattern is modeled after the real world, as many concepts in object oriented programming are.</p>
+<p>If you live some distance from your workplace, it is likely that you are dependent upon a car. You are the client, and the service is your car! A dependency relationship.</p>
+<p>Let&rsquo;s quickly create a program that reflects this relationship. First let&rsquo;s create a person and give it some properties.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Descriptors that are related to a person</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">string</span> <span class="n">Workplace</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// A constructor for our class.</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Me</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Age</span> <span class="p">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// An instance of Person with my information</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">nolan</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&#34;Nolan&#34;</span><span class="p">,</span> <span class="m">27</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">nolan</span><span class="p">.</span><span class="n">Workplace</span> <span class="p">=</span> <span class="s">&#34;Certified Angus Beef&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now, lets create a car, and use it to get to work!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ... Properties</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">Drive</span><span class="p">(</span><span class="kt">string</span> <span class="n">destination</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Arrived at {destination}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ... Properties and things</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="k">void</span> <span class="n">GoToWork</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// Becuase this class needs instantiated</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// for this behavior to work, it is a </span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// service that Person depends on.</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Car</span> <span class="n">car</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">hasArrived</span> <span class="p">=</span> <span class="n">car</span><span class="p">.</span><span class="n">Drive</span><span class="p">(</span><span class="n">Workplace</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">hasArrived</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Made it to work!&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is all a dependency is. Try looking at some of your own real world relationships and identifying the dependencies that you have. What people do you rely on? What possessions? etc.</p>
+<p>There&rsquo;s nothing wrong with relying on other people or things to accomplish goals and tasks, but it <em>does</em> become a problem when these things we rely on are the <em>only</em> way we know how to accomplish those goals.</p>
+<p>In this example, the only way that the <code>Person</code> class knows how to <code>GoToWork</code> is by using a <code>Car</code>. We have to use this implementation of <code>Car</code> no matter what. What if <code>Car</code> breaks? We can&rsquo;t borrow a car, or get a rental? We need to introduce more flexibility into this class.</p>
+<h2 id="create-flexibility-with-interfaces">Create flexibility with interfaces<a href="#create-flexibility-with-interfaces" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><em>I thought this was an article on dependency injection.</em></p>
+<p>Yes. It is. But, the concept of interfaces is tightly coupled with dependency injection&hellip; 😉</p>
+<p>To solve our problem of rigidity in <code>GoToWork</code>, let&rsquo;s say that at minimum we need a vehicle to get to work. I don&rsquo;t care what kind it is, how many wheels it has or what kind of gas it takes, I just need it to be able to drive.</p>
+<p>We can create an interface for that:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IVehicle</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">Drive</span><span class="p">(</span><span class="kt">string</span> <span class="n">destination</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now, with one tweak to our <code>GoToWork</code> method, we begin to decrease our reliance on <code>Car</code> specifically.</p>
+<p>For the sake of illustration, let&rsquo;s say that my <code>Car</code> has broken down, I still need to get to work. So, instead I&rsquo;ll use my wife&rsquo;s SUV to get there!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SUV</span> <span class="p">:</span> <span class="n">IVehicle</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">Drive</span><span class="p">(</span><span class="kt">string</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ... Properties and things</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="k">void</span> <span class="n">GoToWork</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// Using the interface we created,</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// we can add any implementation </span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// of a vehicle here now.</span>
+</span></span><span class="line"><span class="cl">		<span class="n">IVehicle</span> <span class="n">vehicle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SUV</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">hasArrived</span> <span class="p">=</span> <span class="n">vehicle</span><span class="p">.</span><span class="n">Drive</span><span class="p">(</span><span class="n">Workplace</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">hasArrived</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Made it to work!&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now that we&rsquo;ve achieved some flexibility, we need to address another issue. If we were to translate this <code>GoToWork</code> method back to real life, we&rsquo;d notice something strange.</p>
+<p>Every time this person tries to go to work, they&rsquo;re building a vehicle (and taking it back apart once they get there).</p>
+<p>Not very smart is it?</p>
+<p><em>But, who cares, this isn&rsquo;t real life.</em></p>
+<p>Well, no, but there are two programming-related reasons that we don&rsquo;t want to build our dependency inside our method. Single-responsibility, and efficiency.</p>
+<p>The way our code is built right now violates the single-responsibility principle. This feature of object-oriented design states that the components of our application should have <em>one</em> responsibility. <code>GoToWork</code>, despite the name, doesn&rsquo;t just <code>GoToWork</code>. It creates an outside class instance <em>and</em> goes to work.</p>
+<p>What if I want to create a <code>GoToSchool</code> method? Or a <code>GoToTheStore</code> method? I&rsquo;d have to duplicate my code in every one of the methods (violating the DRY principle). Now imagine that my <code>Car</code> breaks again, and I need to use the <code>SUV</code> class! I need to change it in every place I create that class.</p>
+<p>It&rsquo;s also less efficient. Every time I need to use the <code>Drive</code> method, I need to create a new class instance. With a small class like this, there may not be much performance overhead, but as classes get bigger and code gets more complex, this becomes an issue. What if I wanted to track the mileage on the car? Or know how many trips it took? This becomes far more complex if every time I&rsquo;m using the <code>Car</code> I create a new one.</p>
+<p>We can solve this though. You might think that we can just move the implementation into a property and instantiate it there, but we can take this one step further, by removing the creation of the instance outside of the class entirely.</p>
+<h2 id="injecting-your-first-dependency">Injecting your first dependency<a href="#injecting-your-first-dependency" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Let&rsquo;s start by adjusting our <code>Person</code> class to make sure that we have somewhere to store the dependency. We don&rsquo;t want our class methods to be able to adjust it, and we don&rsquo;t want it to be accessible outside of our class either, so we&rsquo;ll use a <code>private readonly</code> field.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="k">readonly</span> <span class="n">IVehicle</span> <span class="n">_vehicle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Other properties and things</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now&hellip; we inject.</p>
+<p>We&rsquo;re going to create a constructor that has <code>IVehicle</code> as a parameter, then we assign this parameter to our new field.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="k">readonly</span> <span class="n">IVehicle</span> <span class="n">_vehicle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Other properties and things</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Inject the IVehicle through this</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// constructor</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Person</span><span class="p">(</span><span class="n">IVehicle</span> <span class="n">vehicle</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">_vehicle</span> <span class="p">=</span> <span class="n">vehicle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now take a look at how this simplifies our <code>GoToWork</code> method:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="k">readonly</span> <span class="n">IVehicle</span> <span class="n">_vehicle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Other properties and things</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Person</span><span class="p">(</span><span class="n">IVehicle</span> <span class="n">vehicle</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">_vehicle</span> <span class="p">=</span> <span class="n">vehicle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="k">void</span> <span class="n">GoToWork</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// This will now work with any implementation</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// of IVehicle!</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">hasArrived</span> <span class="p">=</span> <span class="n">_vehicle</span><span class="p">.</span><span class="n">Drive</span><span class="p">(</span><span class="n">Workplace</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">hasArrived</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Made it to work!&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>The reason the <code>GoToWork</code> method is simplified is because it is no longer responsible for <em>choosing an implementation</em> or <em>creating an instance</em> of <code>IVehicle</code>. That now takes place outside of the <code>Person</code> class entirely!</p>
+<p>Take a look at how we might call the <code>GoToWork</code> method.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// Pick and instantiate an IVehicle</span>
+</span></span><span class="line"><span class="cl">		<span class="n">IVehicle</span> <span class="n">car</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">nolan</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">nolan</span><span class="p">.</span><span class="n">Workplace</span> <span class="p">=</span> <span class="s">&#34;Certified Angus Beef&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">nolan</span><span class="p">.</span><span class="n">GoToWork</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is the basic concept of dependency injection. Notice that our <code>Main</code> method actually got a bit more complex. While the design pattern has its advantages, like testability, separation of concerns and single-responsibility, one of the tradeoffs is that we have made our code a bit more complex to work with.</p>
+<p>Luckily for us, we can take advantage of all the benefits of this pattern and sidestep some of this complexity by letting a DI framework do the work of injecting the instances for us.</p>
+<h2 id="inversion-of-control-with-di-containers">Inversion of control with DI containers<a href="#inversion-of-control-with-di-containers" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>There are many DI frameworks, but the one we&rsquo;ll go over today is the DI container that&rsquo;s built into ASP.NET. No matter the framework that you&rsquo;re using, the goal is the same: automatically provide services to clients that are generated by your framework. Put simply, to inject your dependencies.</p>
+<p>The concept is called <em>Inversion of Control</em>. Instead of the client controlling the dependencies that it has, the control structure is flipped. The framework is given control over the dependencies and the client is allowed to use it.</p>
+<blockquote>
+<p><strong>All these &ldquo;i&rdquo; terms&hellip;</strong></p>
+<p>*It is important to make a distinction between the terms <strong>interface</strong>, <strong>implementation</strong>, and <strong>instance</strong>. Naturally&hellip; they all had to start with &ldquo;i&rdquo;.</p>
+<p>An <strong>interface</strong> is a set of specifications for class definitions. A contract.
+An <strong>implementation</strong> is a definition of a class that adheres to that interface or contract.
+An <strong>instance</strong>, is the usable object with property values and behavior that represents a real-world object. The class definition in actual use somewhere.*</p>
+<p><em>Just remember: Create <strong>instances</strong> from <strong>implementations</strong> of <strong>interfaces</strong>.</em></p></blockquote>
+<p>When we&rsquo;re using a DI container, we have to bind (either manually or automatically) our interface requests to an instance that implements it. When you define a relationship between an interface and an implementation to the DI container, it will fulfill any request for the interface with the bound implementation.</p>
+<p>You can also explicitly attach implementations without an interface. When this is done, the framework will respond directly to requests for that implementation with the implementation.</p>
+<p>In the following example, we will look at how to bind interfaces and implementations as this is the most common pattern that you will see.</p>
+<h2 id="bind-services-to-your-di-container">Bind services to your DI container<a href="#bind-services-to-your-di-container" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To illustrate how to bind services to your DI container, we will start in the context of an ASP.NET MVC application. The main method of this creates a web app builder. Taking advantage of boilerplate middleware, the controllers and views are collected and instantiated by the framework.</p>
+<p>Let&rsquo;s take simple web application that displays facts. It has a <code>FactsController</code> with a few routes and related Views. Let&rsquo;s create this controller now.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">FactsController</span> <span class="p">:</span> <span class="n">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">FactsController</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">IActionResult</span> <span class="n">Index</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">View</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>We will take for granted that we have a view for <code>Index</code> and that we have a <code>FactsViewModel</code> that will hold a <code>Fact</code> string that we can display.</p>
+<p>Now, we want to generate random facts. We could put all of that logic here in a private method, or in one of our action methods, but that would violate the single responsibility principle and make our project much harder to maintain.</p>
+<p>So, let&rsquo;s inject a service to do that for us!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">FactsController</span> <span class="p">:</span> <span class="n">Controller</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">readonly</span> <span class="n">IFactGenerator</span> <span class="n">_factGenerator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">FactsController</span><span class="p">(</span><span class="n">IFactGenerator</span> <span class="n">factGenerator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">_factGenerator</span> <span class="p">=</span> <span class="n">factGenerator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">IActionResult</span> <span class="n">Index</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FactsViewModel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// The Generate method takes an enum value that lets</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//   us choose the category of fact that is generated.</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// The Fact property of our FactsViewModel is then displayed</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//   in the Fact.cshtml view.</span>
+</span></span><span class="line"><span class="cl">	<span class="n">viewModel</span><span class="p">.</span><span class="n">Fact</span> <span class="p">=</span> <span class="n">_factGenerator</span><span class="p">.</span><span class="n">Generate</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Animal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">View</span><span class="p">(</span><span class="n">viewModel</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This looks very similar to what we did above with our manual dependency injection. We defined a field <code>_factGenerator</code>, injected the interface through the constructor, and then we accessed the method of our service from within our client: the <code>.Generate(FactTypes)</code> method.</p>
+<p>However, this <em>won&rsquo;t</em> work yet.</p>
+<p>We still need to bind our service within our DI container. We do this by adding a service to the service collection on our <code>WebApplicationBuilder</code>. So head over to <code>Program.cs</code> and add the following line.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// AddSingleton&lt;TInterface, TImplmentation&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// This line creates a singleton instance of a service.</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Whenever this interface is called, the instance created by</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// the builder will be delivered.</span>
+</span></span><span class="line"><span class="cl">	<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">&lt;</span><span class="n">IFactGenerator</span><span class="p">,</span> <span class="n">FactGenerator</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// This is added by the template</span>
+</span></span><span class="line"><span class="cl">	<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddControllersWithViews</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now, if we boot up our application and navigate to <code>/Facts</code> we should see the output of the <code>FactGenerator</code>. Using the <code>.AddSingleton</code> method, we have told the DI container that wraps our application, &ldquo;Whenever a class that you build requests an <code>IFactGenerator</code>, give them the instance of <code>FactGenerator</code> that you&rsquo;ve created.&rdquo;</p>
+<h2 id="deciding-what-instance-to-be-delivered-using-binding">Deciding what instance to be delivered using binding<a href="#deciding-what-instance-to-be-delivered-using-binding" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>In addition to the <code>.AddSingleton()</code> method, we can also make decisions about which <em>instance</em> of our implementation is injected by our DI container.</p>
+<p>We can use singletons, transients, or we can scope our instances. Here&rsquo;s how each of these behave:</p>
+<ul>
+<li><code>.AddSingleton()</code> - Only one instance of this type will be created. Every request for an implementation will be fulfilled with the same instance.</li>
+<li><code>.AddTransient()</code> - For every request for a service, a new instance will be created to fulfil it.</li>
+<li><code>.AddScoped()</code> - For every request made of the application (not the DI container) a new instance will be created. The same instance will be used for the duration of the request.</li>
+</ul>
+<p>To illustrate how this works, I&rsquo;ve adjusted the <code>FactGenerator</code> and the <code>FactController</code> to show off the differences between the binding types.</p>
+<p>In my <code>FactGenerator</code>, I&rsquo;ve made it so that each instance can only generate one unique fact. After the <code>.GetFact</code> method has been used, it will return the initially generated fact. This will give us a very clear look at the instance lifetimes.</p>
+<p>In <code>FactController</code>, I&rsquo;ve created Action Methods for <code>Singleton</code>, <code>Transient</code> and <code>Scoped</code>. These correspond to more or less identical views that all use the <code>FactsViewModel</code>.</p>
+<p>To get the facts for these views, I&rsquo;ve bound and injected 6 different fact generators, two of each binding type. With two of each, we can explore the differences in lifetime between transients, singletons, and scoped.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">FactsController</span> <span class="p">:</span> <span class="n">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">TransientRandomFactGenerator</span> <span class="n">_transientRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">TransientRandomFactGenerator</span> <span class="n">_transientRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">SingletonRandomFactGenerator</span> <span class="n">_singletonRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">SingletonRandomFactGenerator</span> <span class="n">_singletonRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ScopedRandomFactGenerator</span> <span class="n">_scopedRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ScopedRandomFactGenerator</span> <span class="n">_scopedRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">FactsController</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TransientRandomFactGenerator</span> <span class="n">transientRandomFactGenerator1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TransientRandomFactGenerator</span> <span class="n">transientRandomFactGenerator2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SingletonRandomFactGenerator</span> <span class="n">singletonRandomFactGenerator1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SingletonRandomFactGenerator</span> <span class="n">singletonRandomFactGenerator2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ScopedRandomFactGenerator</span> <span class="n">scopedRandomFactGenerator1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ScopedRandomFactGenerator</span> <span class="n">scopedRandomFactGenerator2</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_transientRandomFactGenerator1</span> <span class="p">=</span> <span class="n">transientRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_transientRandomFactGenerator2</span> <span class="p">=</span> <span class="n">transientRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_singletonRandomFactGenerator1</span> <span class="p">=</span> <span class="n">singletonRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_singletonRandomFactGenerator2</span> <span class="p">=</span> <span class="n">singletonRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_scopedRandomFactGenerator1</span> <span class="p">=</span> <span class="n">scopedRandomFactGenerator1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_scopedRandomFactGenerator2</span> <span class="p">=</span> <span class="n">scopedRandomFactGenerator2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Let&rsquo;s take a look at how we can call these generators from our action methods.</p>
+<h3 id="singleton-binding">Singleton binding<a href="#singleton-binding" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Program.cs</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">&lt;</span><span class="n">SingletonRandomFactGenerator</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// FactsController.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">IActionResult</span> <span class="n">Singleton</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FactsViewModel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	    <span class="kt">var</span> <span class="n">fact1</span> <span class="p">=</span> <span class="n">_singletonRandomFactGenerator1</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Space</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	    <span class="kt">var</span> <span class="n">fact2</span> <span class="p">=</span> <span class="n">_singletonRandomFactGenerator2</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Animal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact</span> <span class="p">=</span> <span class="n">fact1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact2</span> <span class="p">=</span> <span class="n">fact2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">ViewData</span><span class="p">[</span><span class="s">&#34;Title&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;Singleton&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="k">return</span> <span class="n">View</span><span class="p">(</span><span class="n">viewModel</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span></code></pre></div><p>When we bind our <code>SingletonRandomFactGenerator</code> and inject it twice, once for each fact. What do you think the output will be?</p>
+<p><img src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts.png" alt="Singleton Facts"></p>
+<p>We got the same fact back! Why is this?</p>
+<p>When we bound the SingletonRandomFactGenerator implementation to our builder <em>as</em> a singleton, only one instance is created. We called for an injection twice in our controller and the same instance was delivered to both references. So, it didn&rsquo;t matter that we called the <code>GetFact</code> method again on our second reference, we still got the same fact back since the <code>GetFact</code> method only returns one unique fact.</p>
+<p>Let&rsquo;s see how this is different with a transient binding.</p>
+<h3 id="transient-binding">Transient binding<a href="#transient-binding" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Program.cs</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">TransientRandomFactGenerator</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// FactsController.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">IActionResult</span> <span class="n">Transient</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FactsViewModel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">fact1</span> <span class="p">=</span> <span class="n">_transientRandomFactGenerator1</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Space</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">fact2</span> <span class="p">=</span> <span class="n">_transientRandomFactGenerator2</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Animal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact</span> <span class="p">=</span> <span class="n">fact1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact2</span> <span class="p">=</span> <span class="n">fact2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ViewData</span><span class="p">[</span><span class="s">&#34;Title&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;Transient&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">View</span><span class="p">(</span><span class="n">viewModel</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>In this example, we are calling for two injections of <code>TransientRandomFactGenerator</code>, just as we did with <code>SingletonRandomFactGenerator</code>. And this is the output that we get:</p>
+<p><img src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Transient&#43;Facts.png" alt="Transient Facts"></p>
+<p>Two different facts!</p>
+<p>Since we used <code>AddTransient</code>, when we call for two different injections of the same implementation, two <em>separate instances</em> are injected. So when we call <code>GetFact</code> on the first, it doesn&rsquo;t affect the second!</p>
+<p>Now that we understand the difference between transient and singleton, let tackle scoped, which is a little more subtle.</p>
+<h3 id="scoped-binding">Scoped binding<a href="#scoped-binding" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Program.cs</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">ScopedRandomFactGenerator</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// FactController.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">IActionResult</span> <span class="n">Scoped</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FactsViewModel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">fact1</span> <span class="p">=</span> <span class="n">_scopedRandomFactGenerator1</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Space</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">fact2</span> <span class="p">=</span> <span class="n">_scopedRandomFactGenerator2</span><span class="p">.</span><span class="n">GetFact</span><span class="p">(</span><span class="n">FactTypes</span><span class="p">.</span><span class="n">Animal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact</span> <span class="p">=</span> <span class="n">fact1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">Fact2</span> <span class="p">=</span> <span class="n">fact2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ViewData</span><span class="p">[</span><span class="s">&#34;Title&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;Scoped&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">View</span><span class="p">(</span><span class="n">viewModel</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>With this action method set up the same as the other two, what do you expect will happen?</p>
+<p><img src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts.png" alt="Scoped Facts"></p>
+<p>Hm&hellip; the same fact? <em>So&hellip; it&rsquo;s a singleton?</em></p>
+<p>It is. But, only for a while.</p>
+<p>When we called for two injections of the generator here, it built them upon request. Since the calls for both of the injections happened on the same request, we got the same instance injected for both, just like a singleton.</p>
+<p>We can create a second request by refreshing the page.</p>
+<p><img src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Scoped&#43;Facts&#43;Refreshed.png" alt="Scoped Facts Refreshed"></p>
+<p>After our refresh, we get a new fact! This is due to the fact that once we entered a new request, a new instance was generated and injected.</p>
+<p><em>This still seems like it&rsquo;s just a singleton.</em></p>
+<p>Yep, I get it. They&rsquo;re very similar. But, watch what happens if I click back over the the singleton.</p>
+<p><img src="https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/Singleton&#43;Facts&#43;Refreshed.png" alt="Singleton Facts Refreshed"></p>
+<p>The same fact as the first time we loaded the page!</p>
+<p>The singleton binding doesn&rsquo;t care that we&rsquo;ve made a separate request. It is still delivering that exact same instance to our controller no matter what.</p>
+<p>If I click back over to see the scoped binding, we will get yet another random fact!</p>
+<h2 id="wrapping-up">Wrapping up<a href="#wrapping-up" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Now you don&rsquo;t have to be nervous like me in your next interview. If you&rsquo;ve never worked with dependency injection before, take an afternoon and create a small project like this one to get a handle on some of the concepts.</p>
+<p>I would suspect that a great majority of codebases use dependency injection in some form or another, and if you&rsquo;re self-taught it&rsquo;s a topic that doesn&rsquo;t seem to come up in the learning paths online.</p>
+<p>Thanks for taking your time to read this, and it is my sincere hope that it makes your life and coding journey a bit easier than mine was!</p>
+<p>If you found value in this, share it with a friend who wants to learn about dependency injection!</p>
+<hr>
+<p>Interested in getting these blog posts direct to your inbox?</p>
+<p><a href="https://d782b8fa.sibforms.com/serve/MUIFAK2keDpq4jw-krst9Ki0T2Asllq4pHVH7YEaci2JN2o3H1rLOXm-4H3G3lc31swK7WFMNYjoSJqaBleHxcV0vc8EEBLLxb3HK0U59_fRRDFUaj96lZyvOSE2NiYQSi1jC_0L0Tq8wj2_OcG8PFuNsL5SH65CQh_GpSOXqV3FqTJosq6tSRV2e2mw9MSXcAx7-2c_3fY-abRi">Click here to sign up!</a></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/" class="button inline prev">
+        &lt; [<span class="button__text">Learn Application Configuration in ASP.NET</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://nolanmiller.me/posts/cure-depression-with-software-development/" class="button inline next">
+         [<span class="button__text">Cure Depression with Software Development</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
