@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Career on Breaking Changes | Nolan Miller</title>
-    <link>https://nolanmiller.me/tags/career/</link>
+    <link>http://localhost:1313/tags/career/</link>
     <description>Recent content in Career on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nolanmiller.me/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/career/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Do The Work That Needs Done</title>
-      <link>https://nolanmiller.me/posts/do-the-work-that-needs-done/</link>
+      <link>http://localhost:1313/posts/do-the-work-that-needs-done/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/do-the-work-that-needs-done/</guid>
+      <guid>http://localhost:1313/posts/do-the-work-that-needs-done/</guid>
       <description>via BrainBun</description>
     </item>
     <item>
       <title>What I&#39;d Like to Learn in 2025</title>
-      <link>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</link>
+      <link>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</guid>
+      <guid>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</guid>
       <description>A list of topics I may or may not learn.</description>
     </item>
     <item>
       <title>Self-Taught is Still Possible In 2025</title>
-      <link>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</link>
+      <link>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</guid>
+      <guid>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</guid>
       <description>AI won&amp;rsquo;t get rid of us, keep going.</description>
     </item>
     <item>
       <title>Why &#39;Screw Optimization&#39; Is My New Mantra</title>
-      <link>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</link>
+      <link>http://localhost:1313/posts/why-screw-optimization-is-my-new-mantra/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/why-screw-optimization-is-my-new-mantra/</guid>
+      <guid>http://localhost:1313/posts/why-screw-optimization-is-my-new-mantra/</guid>
       <description>Done is better than perfect.</description>
     </item>
   </channel>

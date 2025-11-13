@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Commandline on Breaking Changes | Nolan Miller</title>
-    <link>https://nolanmiller.me/tags/commandline/</link>
+    <link>http://localhost:1313/tags/commandline/</link>
     <description>Recent content in Commandline on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nolanmiller.me/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Supercharge Your Productivity with the .NET CLI</title>
-      <link>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</link>
+      <link>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
+      <guid>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
       <description>Speed up your .NET development</description>
     </item>
   </channel>

@@ -2,241 +2,241 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Breaking Changes | Nolan Miller</title>
-    <link>https://nolanmiller.me/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nolanmiller.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Database</title>
-      <link>https://nolanmiller.me/tags/database/</link>
+      <link>http://localhost:1313/tags/database/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/database/</guid>
+      <guid>http://localhost:1313/tags/database/</guid>
       <description></description>
     </item>
     <item>
       <title>Dotnet</title>
-      <link>https://nolanmiller.me/tags/dotnet/</link>
+      <link>http://localhost:1313/tags/dotnet/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/dotnet/</guid>
+      <guid>http://localhost:1313/tags/dotnet/</guid>
       <description></description>
     </item>
     <item>
       <title>Learning</title>
-      <link>https://nolanmiller.me/tags/learning/</link>
+      <link>http://localhost:1313/tags/learning/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/learning/</guid>
+      <guid>http://localhost:1313/tags/learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Webdev</title>
-      <link>https://nolanmiller.me/tags/webdev/</link>
+      <link>http://localhost:1313/tags/webdev/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/webdev/</guid>
+      <guid>http://localhost:1313/tags/webdev/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>https://nolanmiller.me/tags/automation/</link>
+      <link>http://localhost:1313/tags/automation/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/automation/</guid>
+      <guid>http://localhost:1313/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://nolanmiller.me/tags/bash/</link>
+      <link>http://localhost:1313/tags/bash/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/bash/</guid>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Tooling</title>
-      <link>https://nolanmiller.me/tags/tooling/</link>
+      <link>http://localhost:1313/tags/tooling/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/tooling/</guid>
+      <guid>http://localhost:1313/tags/tooling/</guid>
       <description></description>
     </item>
     <item>
       <title>Asp</title>
-      <link>https://nolanmiller.me/tags/asp/</link>
+      <link>http://localhost:1313/tags/asp/</link>
       <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/asp/</guid>
+      <guid>http://localhost:1313/tags/asp/</guid>
       <description></description>
     </item>
     <item>
       <title>Postgres</title>
-      <link>https://nolanmiller.me/tags/postgres/</link>
+      <link>http://localhost:1313/tags/postgres/</link>
       <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/postgres/</guid>
+      <guid>http://localhost:1313/tags/postgres/</guid>
       <description></description>
     </item>
     <item>
       <title>Api</title>
-      <link>https://nolanmiller.me/tags/api/</link>
+      <link>http://localhost:1313/tags/api/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/api/</guid>
+      <guid>http://localhost:1313/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>https://nolanmiller.me/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Configuration</title>
-      <link>https://nolanmiller.me/tags/configuration/</link>
+      <link>http://localhost:1313/tags/configuration/</link>
       <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/configuration/</guid>
+      <guid>http://localhost:1313/tags/configuration/</guid>
       <description></description>
     </item>
     <item>
       <title>Csharp</title>
-      <link>https://nolanmiller.me/tags/csharp/</link>
+      <link>http://localhost:1313/tags/csharp/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/csharp/</guid>
+      <guid>http://localhost:1313/tags/csharp/</guid>
       <description></description>
     </item>
     <item>
       <title>Oop</title>
-      <link>https://nolanmiller.me/tags/oop/</link>
+      <link>http://localhost:1313/tags/oop/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/oop/</guid>
+      <guid>http://localhost:1313/tags/oop/</guid>
       <description></description>
     </item>
     <item>
       <title>Via</title>
-      <link>https://nolanmiller.me/tags/via/</link>
+      <link>http://localhost:1313/tags/via/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/via/</guid>
+      <guid>http://localhost:1313/tags/via/</guid>
       <description></description>
     </item>
     <item>
       <title>Career</title>
-      <link>https://nolanmiller.me/tags/career/</link>
+      <link>http://localhost:1313/tags/career/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/career/</guid>
+      <guid>http://localhost:1313/tags/career/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>https://nolanmiller.me/tags/productivity/</link>
+      <link>http://localhost:1313/tags/productivity/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/productivity/</guid>
+      <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Startup</title>
-      <link>https://nolanmiller.me/tags/startup/</link>
+      <link>http://localhost:1313/tags/startup/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/startup/</guid>
+      <guid>http://localhost:1313/tags/startup/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>https://nolanmiller.me/tags/ai/</link>
+      <link>http://localhost:1313/tags/ai/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/ai/</guid>
+      <guid>http://localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Mvp</title>
-      <link>https://nolanmiller.me/tags/mvp/</link>
+      <link>http://localhost:1313/tags/mvp/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/mvp/</guid>
+      <guid>http://localhost:1313/tags/mvp/</guid>
       <description></description>
     </item>
     <item>
       <title>Product</title>
-      <link>https://nolanmiller.me/tags/product/</link>
+      <link>http://localhost:1313/tags/product/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/product/</guid>
+      <guid>http://localhost:1313/tags/product/</guid>
       <description></description>
     </item>
     <item>
       <title>Beginners</title>
-      <link>https://nolanmiller.me/tags/beginners/</link>
+      <link>http://localhost:1313/tags/beginners/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/beginners/</guid>
+      <guid>http://localhost:1313/tags/beginners/</guid>
       <description></description>
     </item>
     <item>
       <title>Mvc</title>
-      <link>https://nolanmiller.me/tags/mvc/</link>
+      <link>http://localhost:1313/tags/mvc/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/mvc/</guid>
+      <guid>http://localhost:1313/tags/mvc/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>https://nolanmiller.me/tags/llm/</link>
+      <link>http://localhost:1313/tags/llm/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/llm/</guid>
+      <guid>http://localhost:1313/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Commandline</title>
-      <link>https://nolanmiller.me/tags/commandline/</link>
+      <link>http://localhost:1313/tags/commandline/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/commandline/</guid>
+      <guid>http://localhost:1313/tags/commandline/</guid>
       <description></description>
     </item>
     <item>
       <title>Microsoft</title>
-      <link>https://nolanmiller.me/tags/microsoft/</link>
+      <link>http://localhost:1313/tags/microsoft/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/microsoft/</guid>
+      <guid>http://localhost:1313/tags/microsoft/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://nolanmiller.me/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Codenewbie</title>
-      <link>https://nolanmiller.me/tags/codenewbie/</link>
+      <link>http://localhost:1313/tags/codenewbie/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/codenewbie/</guid>
+      <guid>http://localhost:1313/tags/codenewbie/</guid>
       <description></description>
     </item>
     <item>
       <title>Aws</title>
-      <link>https://nolanmiller.me/tags/aws/</link>
+      <link>http://localhost:1313/tags/aws/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/aws/</guid>
+      <guid>http://localhost:1313/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Node</title>
-      <link>https://nolanmiller.me/tags/node/</link>
+      <link>http://localhost:1313/tags/node/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/node/</guid>
+      <guid>http://localhost:1313/tags/node/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>https://nolanmiller.me/tags/react/</link>
+      <link>http://localhost:1313/tags/react/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/react/</guid>
+      <guid>http://localhost:1313/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding</title>
-      <link>https://nolanmiller.me/tags/coding/</link>
+      <link>http://localhost:1313/tags/coding/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/coding/</guid>
+      <guid>http://localhost:1313/tags/coding/</guid>
       <description></description>
     </item>
     <item>
       <title>Story</title>
-      <link>https://nolanmiller.me/tags/story/</link>
+      <link>http://localhost:1313/tags/story/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/story/</guid>
+      <guid>http://localhost:1313/tags/story/</guid>
       <description></description>
     </item>
   </channel>
