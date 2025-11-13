@@ -280,22 +280,22 @@
 <script type="text/javascript" src="/bundle.min.js"></script>
 
 
-<form style="display: flex; flex-direction: column; align-items: center;" id="emailForm">
-    <label for="email" style="text-align: center;">Automatically receive <br />breaking changes in your inbox.</label>
-    <input type="email" placeholder="Email" id="email" style="margin-top: 25px;" />
-    <input type="submit" id="submit" value="Subscribe" style="margin-top: 25px;" />
+<form style="display: flex; flex-direction: column; align-items: center" id="emailForm">
+    <label for="email" style="text-align: center">Automatically receive <br />breaking changes in your inbox.</label>
+    <input type="email" placeholder="Email" id="email" style="margin-top: 25px" />
+    <input type="submit" id="submit" value="Subscribe" style="margin-top: 25px" />
 </form>
 
 <script>
     async function addToNewsletter(email) {
-        const url = 'https://api.nolanmiller.me/newsletter';
+        const url = "https://api.nolanmiller.me/newsletter";
         const options = {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({email: email})
-        }
+            body: JSON.stringify({email: email}),
+        };
         try {
             const response = await fetch(url, options);
             if (response.ok) {
@@ -307,15 +307,15 @@
         }
     }
 
-    var form = document.getElementById('emailForm');
+    var form = document.getElementById("emailForm");
 
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        var email = document.getElementById('email').value;
+        var email = document.getElementById("email").value;
 
         if (!email) {
-            alert('Please enter a valid email address.');
+            alert("Please enter a valid email address.");
             return;
         }
 
@@ -323,9 +323,11 @@
 
         
         form.style.display = "none";
-        document.body.insertAdjacentHTML('beforeend', `<p style="text-align: center; margin-top: 25px;">${response.message}</p>`);
+        document.body.insertAdjacentHTML(
+            "beforeend",
+            `<p style="display: flex; flex-direction: column; align-items: center">${response.message}</p>`
+        );
     });
-
 </script>
 
 
