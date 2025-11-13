@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microsoft on Breaking Changes | Nolan Miller</title>
-    <link>http://localhost:1313/tags/microsoft/</link>
+    <link>https://nolanmiller.me/tags/microsoft/</link>
     <description>Recent content in Microsoft on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Supercharge Your Productivity with the .NET CLI</title>
-      <link>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</link>
+      <link>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
+      <guid>https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/</guid>
       <description>Speed up your .NET development</description>
     </item>
     <item>
       <title>Learn ASP.NET from Scratch</title>
-      <link>http://localhost:1313/posts/learn-asp.net-core-from-scratch/</link>
+      <link>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/learn-asp.net-core-from-scratch/</guid>
+      <guid>https://nolanmiller.me/posts/learn-asp.net-core-from-scratch/</guid>
       <description>A learning roadmap for ASP.NET Core</description>
     </item>
   </channel>

@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Via on Breaking Changes | Nolan Miller</title>
-    <link>http://localhost:1313/tags/via/</link>
+    <link>https://nolanmiller.me/tags/via/</link>
     <description>Recent content in Via on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/via/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/tags/via/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cure Depression with Software Development</title>
-      <link>http://localhost:1313/posts/cure-depression-with-software-development/</link>
+      <link>https://nolanmiller.me/posts/cure-depression-with-software-development/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cure-depression-with-software-development/</guid>
+      <guid>https://nolanmiller.me/posts/cure-depression-with-software-development/</guid>
       <description>via Liam Galvin</description>
     </item>
     <item>
       <title>Do The Work That Needs Done</title>
-      <link>http://localhost:1313/posts/do-the-work-that-needs-done/</link>
+      <link>https://nolanmiller.me/posts/do-the-work-that-needs-done/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/do-the-work-that-needs-done/</guid>
+      <guid>https://nolanmiller.me/posts/do-the-work-that-needs-done/</guid>
       <description>via BrainBun</description>
     </item>
     <item>
       <title>Can we add AI to that?</title>
-      <link>http://localhost:1313/posts/can-we-add-ai-to-that/</link>
+      <link>https://nolanmiller.me/posts/can-we-add-ai-to-that/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/can-we-add-ai-to-that/</guid>
+      <guid>https://nolanmiller.me/posts/can-we-add-ai-to-that/</guid>
       <description>via Lawrence Jones</description>
     </item>
     <item>
       <title>Tips for Junior Devs</title>
-      <link>http://localhost:1313/posts/tips-for-junior-devs/</link>
+      <link>https://nolanmiller.me/posts/tips-for-junior-devs/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tips-for-junior-devs/</guid>
+      <guid>https://nolanmiller.me/posts/tips-for-junior-devs/</guid>
       <description>via qntm</description>
     </item>
     <item>
       <title>Start Automating Easy Tasks</title>
-      <link>http://localhost:1313/posts/start-automating-easy-tasks/</link>
+      <link>https://nolanmiller.me/posts/start-automating-easy-tasks/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/start-automating-easy-tasks/</guid>
+      <guid>https://nolanmiller.me/posts/start-automating-easy-tasks/</guid>
       <description>via Alex Tiniuc</description>
     </item>
     <item>
       <title>This engineer uses LLMs</title>
-      <link>http://localhost:1313/posts/this-engineer-uses-llms/</link>
+      <link>https://nolanmiller.me/posts/this-engineer-uses-llms/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/this-engineer-uses-llms/</guid>
+      <guid>https://nolanmiller.me/posts/this-engineer-uses-llms/</guid>
       <description>via Sean Goedecke</description>
     </item>
   </channel>

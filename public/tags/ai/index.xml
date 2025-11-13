@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Breaking Changes | Nolan Miller</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://nolanmiller.me/tags/ai/</link>
     <description>Recent content in Ai on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Can we add AI to that?</title>
-      <link>http://localhost:1313/posts/can-we-add-ai-to-that/</link>
+      <link>https://nolanmiller.me/posts/can-we-add-ai-to-that/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/can-we-add-ai-to-that/</guid>
+      <guid>https://nolanmiller.me/posts/can-we-add-ai-to-that/</guid>
       <description>via Lawrence Jones</description>
     </item>
     <item>
       <title>This engineer uses LLMs</title>
-      <link>http://localhost:1313/posts/this-engineer-uses-llms/</link>
+      <link>https://nolanmiller.me/posts/this-engineer-uses-llms/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/this-engineer-uses-llms/</guid>
+      <guid>https://nolanmiller.me/posts/this-engineer-uses-llms/</guid>
       <description>via Sean Goedecke</description>
     </item>
     <item>
       <title>What I&#39;d Like to Learn in 2025</title>
-      <link>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</link>
+      <link>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-id-like-to-learn-in-2025/</guid>
+      <guid>https://nolanmiller.me/posts/what-id-like-to-learn-in-2025/</guid>
       <description>A list of topics I may or may not learn.</description>
     </item>
     <item>
       <title>Self-Taught is Still Possible In 2025</title>
-      <link>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</link>
+      <link>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/self-taught-is-still-possible-in-2025/</guid>
+      <guid>https://nolanmiller.me/posts/self-taught-is-still-possible-in-2025/</guid>
       <description>AI won&amp;rsquo;t get rid of us, keep going.</description>
     </item>
   </channel>
