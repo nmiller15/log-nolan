@@ -406,15 +406,19 @@
 <script type="text/javascript" src="/bundle.min.js"></script>
 
 
-<form style="display: flex; flex-direction: column; align-items: center" id="emailForm">
-    <label for="email" style="text-align: center">Automatically receive <br />breaking changes in your inbox.</label>
-    <input type="email" placeholder="Email" id="email" style="margin-top: 25px" />
-    <input type="submit" id="submit" value="Subscribe" style="margin-top: 25px" />
-</form>
+<div id="form-container">
+    <form style="display: flex; flex-direction: column; align-items: center" id="emailForm">
+        <label for="email" style="text-align: center">Automatically receive <br />breaking changes in your
+            inbox.</label>
+        <input type="email" placeholder="Email" id="email" style="margin-top: 25px" />
+        <input type="submit" id="submit" value="Subscribe" style="margin-top: 25px" />
+    </form>
+</div>
 
 <script>
     async function addToNewsletter(email) {
-        const url = "https://api.nolanmiller.me/newsletter";
+        
+        const url = "http://localhost:5001/newsletter";
         const options = {
             method: "POST",
             headers: {
@@ -449,10 +453,12 @@
 
         
         form.style.display = "none";
-        document.body.insertAdjacentHTML(
-            "beforeend",
-            `<p style="display: flex; flex-direction: column; align-items: center">${response.message}</p>`
-        );
+        document
+            .querySelector("#form-container")
+            .insertAdjacentHTML(
+                "beforeend",
+                `<p style="display: flex; flex-direction: column; align-items: center">${response.message}</p>`
+            );
     });
 </script>
 
