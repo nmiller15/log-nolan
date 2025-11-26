@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>How to Build an API with Controllers :: Breaking Changes | Nolan Miller</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A basic walkthrough of the Controller-Based API pattern in .NET" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-729248V2CZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-729248V2CZ');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://nolanmiller.me/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://nolanmiller.me/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="https://nolanmiller.me/favicon.png">
+<link rel="apple-touch-icon" href="https://nolanmiller.me/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Build an API with Controllers">
+<meta property="og:description" content="A basic walkthrough of the Controller-Based API pattern in .NET" />
+<meta property="og:url" content="https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/" />
+<meta property="og:site_name" content="Breaking Changes | Nolan Miller" />
+
+  <meta property="og:image" content="https://nolanmiller.me/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-11-17 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    breaking changes | nolan miller
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ai-policy">ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15">github</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ai-policy" >ai policy</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nmiller15" >github</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/">How to Build an API with Controllers</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-11-17</time><span class="post-reading-time">10 min read (1937 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://nolanmiller.me/tags/dotnet/">dotnet</a>&nbsp;
+      
+      #<a href="https://nolanmiller.me/tags/csharp/">csharp</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>I starting working in ASP.NET after minimal APIs had already been released and reached popularity. My first professional project involved moving endpoints from a .NET controller-based API to the new minimal syntex. Unfortunately for me, that meant I was not going to be able to avoid the controller-based API even though I wasn&rsquo;t particularly comfortable with the paradigm&hellip; or C# for that matter.</p>
+<p>To save you the headache, I will walk through the very basics of creating a controller-based API and explain what I spent hours staring at code to figure out (after all, 20 hours of reading code can save you 20 minutes of reading documentation). We will create endpoints, accept parameters and document the routes all in the controller-based syntax.</p>
+<h2 id="what-is-a-controller-based-api">What is a controller-based API?<a href="#what-is-a-controller-based-api" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The controller-based API, is&hellip; well, an API whose endpoints are is organized with controllers, as opposed to the <a href="https://nolanmiller.me/posts/intro-to-.net-apis-for-a-javascript-developer/">minimal API</a>, whose endpoints are registered directly on the <code>WebApplication</code> using extension like <code>MapGet</code> and <code>MapPost</code>. The pattern is actually just the MVC (model-view-controller) architecture, but with the &ldquo;V&rdquo; left out. Since an API doesn&rsquo;t typically return formatted views, it doesn&rsquo;t need to worry about that. But, the routing and model construction all work the same way as it would in an MVC application. Instead of a view, our controllers will return data wrapped in HTTP responses that can be used by any other application that can make HTTP requests.</p>
+<h2 id="configuring-an-api-for-controllers">Configuring an API for controllers<a href="#configuring-an-api-for-controllers" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>That&rsquo;s enough background, let&rsquo;s get started by bootstrapping an application using the <a href="https://nolanmiller.me/posts/supercharge-your-productivity-with-the-.net-cli/"><code>dotnet</code> cli</a>. In a new terminal window, run the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dotnet new webapi -n <span class="s2">&#34;TodoApi&#34;</span>
+</span></span></code></pre></div><p>Once this runs, we&rsquo;ll have a working API, but if you&rsquo;ll open up <code>Program.cs</code>, you&rsquo;ll notice that we already have a minimal API endpoint registered here. With a little extra work, we&rsquo;ll have this converted into a controller-based API.</p>
+<p>First, <strong>DELETE</strong> the following lines of code from <code>Program.cs</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">summaries</span> <span class="p">=</span> <span class="k">new</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Freezing&#34;</span><span class="p">,</span> <span class="s">&#34;Bracing&#34;</span><span class="p">,</span> <span class="s">&#34;Chilly&#34;</span><span class="p">,</span> <span class="s">&#34;Cool&#34;</span><span class="p">,</span> <span class="s">&#34;Mild&#34;</span><span class="p">,</span> <span class="s">&#34;Warm&#34;</span><span class="p">,</span> <span class="s">&#34;Balmy&#34;</span><span class="p">,</span> <span class="s">&#34;Hot&#34;</span><span class="p">,</span> <span class="s">&#34;Sweltering&#34;</span><span class="p">,</span> <span class="s">&#34;Scorching&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">&#34;/weatherforecast&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">forecast</span> <span class="p">=</span>  <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">5</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">index</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">WeatherForecast</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DateOnly</span><span class="p">.</span><span class="n">FromDateTime</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="n">index</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Random</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Next</span><span class="p">(-</span><span class="m">20</span><span class="p">,</span> <span class="m">55</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">summaries</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">summaries</span><span class="p">.</span><span class="n">Length</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">forecast</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">WithName</span><span class="p">(</span><span class="s">&#34;GetWeatherForecast&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// leave in app.Run();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">summaries</span> <span class="p">=</span> <span class="k">new</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Freezing&#34;</span><span class="p">,</span> <span class="s">&#34;Bracing&#34;</span><span class="p">,</span> <span class="s">&#34;Chilly&#34;</span><span class="p">,</span> <span class="s">&#34;Cool&#34;</span><span class="p">,</span> <span class="s">&#34;Mild&#34;</span><span class="p">,</span> <span class="s">&#34;Warm&#34;</span><span class="p">,</span> <span class="s">&#34;Balmy&#34;</span><span class="p">,</span> <span class="s">&#34;Hot&#34;</span><span class="p">,</span> <span class="s">&#34;Sweltering&#34;</span><span class="p">,</span> <span class="s">&#34;Scorching&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">&#34;/weatherforecast&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">forecast</span> <span class="p">=</span>  <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">5</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">index</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">WeatherForecast</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DateOnly</span><span class="p">.</span><span class="n">FromDateTime</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="n">index</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Random</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Next</span><span class="p">(-</span><span class="m">20</span><span class="p">,</span> <span class="m">55</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">summaries</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Shared</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">summaries</span><span class="p">.</span><span class="n">Length</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">forecast</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">WithName</span><span class="p">(</span><span class="s">&#34;GetWeatherForecast&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cs">///////////////////////////</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// do not delete app.Run();</span>
+</span></span><span class="line"><span class="cl"><span class="cs">///////////////////////////</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">record</span> <span class="nc">WeatherForecast</span><span class="p">(</span><span class="n">DateOnly</span> <span class="n">Date</span><span class="p">,</span> <span class="kt">int</span> <span class="n">TemperatureC</span><span class="p">,</span> <span class="kt">string?</span> <span class="n">Summary</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">TemperatureF</span> <span class="p">=&gt;</span> <span class="m">32</span> <span class="p">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">TemperatureC</span> <span class="p">/</span> <span class="m">0.5556</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now, replace <code>var app = builder.Build()</code>, with the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddControllers</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">app</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">MapControllers</span><span class="p">();</span>
+</span></span></code></pre></div><p>This small bit of code here enables the use of controllers in our web app. With the <code>AddControllers()</code> extension method, we&rsquo;re registering <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addcontrollers?view=aspnetcore-9.0">all the services</a> that we might need for API development in ASP.NET. Once the services are registered and the app is built, instead of manually configuring all of our endpoints, <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.controllerendpointroutebuilderextensions.mapcontrollers?view=aspnetcore-9.0"><code>.MapControllers()</code></a> goes to look at all of our Controllers and turn the action methods into route endpoints!</p>
+<h2 id="creating-routes-from-actions">Creating routes from actions<a href="#creating-routes-from-actions" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Now that our <code>Program.cs</code> file expects to search our app for controllers, we should go and make one. To support the quintessential &ldquo;todo&rdquo; app with our API, in the root of the project, create a folder called <code>Controllers</code>. Inside that folder, make a new file called <code>TodoController.cs</code> and add the following code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Http</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">TodoApi.Controllers</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">	[Route(&#34;api/[controller]</span><span class="s">&#34;)]
+</span></span></span><span class="line"><span class="cl"><span class="s"></span><span class="na">	[ApiController]</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="k">class</span> <span class="nc">TodoController</span> <span class="p">:</span> <span class="n">ControllerBase</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is the controller that we will use to create endpoints for our API. This controller is just a C# class that inherits from the <code>ControllerBase</code> class that is provided by the <code>Microsoft.AspNetCore.Mvc</code> package. That base class gives us access to some helper methods that we will use later. We also have to include the <code>[ApiController]</code> attribute to tell the framework that we are creating a controller.</p>
+<p>If we started our application now, the controller would be registered, but no routes would be added because we haven&rsquo;t added any action methods. So, let&rsquo;s do that right now. In order to add the endpoint, create a method on the controller that returns an <code>ActionResult</code>. Add the following method to the <code>TodoController</code> class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// in TodoController</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">ActionResult</span> <span class="n">Health</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">Ok</span><span class="p">(</span><span class="s">&#34;Healthy&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is called an <em>action method</em>. It returns a controller action using the <code>Ok()</code> helper method provided by <code>ControllerBase</code> which returns an <code>ActionResult</code> that has a <code>200</code> status code and contains the string passed to it. If we build and run our application now, we have a new endpoint! Now let&rsquo;s talk about where we can find it when we&rsquo;re trying to call the API.</p>
+<h2 id="url-routing-in-controllers">URL Routing in Controllers<a href="#url-routing-in-controllers" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>ASP.NET does most of the routing for us when we are using controller-based syntax. If you&rsquo;re familiar with the MVC pattern, then you already know how this will work. Each endpoint is created using the name of the controller class, the name of the action method and optional input parameters.</p>
+<p>The action method that we just created was inside of the <code>TodoController</code> and it&rsquo;s method name is <code>Health</code>. By default, to hit this endpoint, we have to send a <code>GET</code> request to <code>/Todo/Health</code>.</p>
+<ul>
+<li><code>TodoController</code> → <code>Todo</code></li>
+<li><code>ActionResult Health()</code> → <code>Health</code></li>
+</ul>
+<p>Seems simple enough, but if you try this on your API now, you&rsquo;ll notice that you get back a <code>404</code>. Sorry! I tricked you.</p>
+<p>This controller <em>isn&rsquo;t</em> using the default routing scheme. If you&rsquo;ve been following along with the code I&rsquo;ve told you to put in, then you might have noticed, that we added:</p>
+<p><code>[Route(&quot;/api/[controller]&quot;)]</code></p>
+<p>&hellip; to the top of the controller.</p>
+<p>This is an attribute that we can assign to a class or action method to tell the framework what pattern we want it to use when assigning an endpoint. The pattern syntax is dead simple, it will:</p>
+<ol>
+<li>match any string that you pass literally,</li>
+<li>statically replace wildcards passed between <code>[]</code>, and</li>
+<li>pass named parameters to action methods between <code>{}</code>.</li>
+</ol>
+<p>The default pattern for a controller in ASP.NET is <code>&quot;/[controller]&quot;</code>, where the wildcard <code>controller</code> is replaced by the name of the controller class with the word &ldquo;Controller&rdquo; stripped out.</p>
+<p>With our custom <code>Route</code> attribute, we&rsquo;re using <code>&quot;/api/[controller]&quot;</code>. So, to hit our controller endpoints, we would just have to use the base <code>/api/Todo</code>.</p>
+<p>We didn&rsquo;t add a custom <code>Route</code> parameter to our Action method, so it will route using the default pattern <code>&quot;/[action]&quot;</code>, where the wildcard <code>action</code> will be replaced with the name of the action method. If you&rsquo;re following from above, that makes the full pattern for our endpoint <code>&quot;/api/[controller]/[action]&quot;</code>. So, to check the health of our API, get a <code>GET</code> request to <code>/api/Todo/Health</code>.</p>
+<p>With the <code>Route</code> parameter, we can change the routes to whatever we would like. Let&rsquo;s illustrate this by adding another endpoint to this API.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Route(&#34;/api/[controller]</span><span class="s">&#34;)]
+</span></span></span><span class="line"><span class="cl"><span class="s"></span><span class="kd">public</span> <span class="k">class</span> <span class="nc">TodoController</span> <span class="p">:</span> <span class="n">ControllerBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">ActionResult</span> <span class="n">GetTodo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">Ok</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Since we didn&rsquo;t add a <code>Route</code> parameter to this action method, we have inherited the default. So, to hit this endpoint in it&rsquo;s current state we would send a <code>GET</code> request to <code>/api/Todo/GetTodo/23</code>. This would return an action result that would presumably return a Todo that had the ID of 23. So, how is this 23 passed into the <code>id</code> parameter of the action method?</p>
+<p>There is one more section of the default route pattern for ASP.NET.</p>
+<p><code>/[controller]/[action]/[id]</code></p>
+<p>That means that without adding a custom attribute, we have access to an <code>id</code> input parameter that can be submitted as a URL parameter by a user. In order to accept it all we have to do is add the parameter to the action method with the name <code>id</code>.</p>
+<p>This method seems like a good candidate for customization though. Sending a <code>GET</code> request to an endpoint containing <code>GetTodo</code> seems redundant and sloppy. So, let&rsquo;s use the <code>Route</code> attribute to create our own pattern. While we&rsquo;re at it, our users likely know that they&rsquo;re hitting an API, and we don&rsquo;t have anything else hosted at this address, so we can adjust that too.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Route(&#34;todos&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">TodosController</span> <span class="p">:</span> <span class="n">ControllerBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">	[Route(&#34;{id}&#34;)]</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">ActionResult</span> <span class="n">GetTodo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>By combining these two <code>Route</code> attributes, we&rsquo;ve created a new pattern: <code>/todos/{id}</code>. To make the same request as earlier, we would send a <code>GET</code> request to <code>/todos/23</code>. Using <code>Route</code>, we kept the user from having to type out the name of our implementation method, while still leaving it intact for our developer to use. I&rsquo;ll also note that we switched the pattern to the curly brace syntax to better identify that <code>id</code> is a route parameter that will be passed in the action method parameter named <code>id</code>.</p>
+<p>Now that we&rsquo;ve got the request side of things figured out, let&rsquo;s take a look at how to handle getting information back to the user.</p>
+<h3 id="constructing-responses">Constructing responses<a href="#constructing-responses" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>So far, all we&rsquo;ve returned is <code>Ok()</code>. ASP.NET also provides us  methods like <code>NotFound()</code> and <code>StatusCode()</code> that return different status codes. Along with these three, we have access to <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase?view=aspnetcore-2.2#methods">a long list of helper methods</a> through the <code>ControllerBase</code> class to send responses to the user. Feel free to peruse them in your own time, but today, I&rsquo;ll just look at four.</p>
+<ul>
+<li><code>Ok()</code> - Returns a 200 status code. Pass any model into it as a parameter to send this back as serialized JSON.</li>
+<li><code>Created()</code> - Returns a 201 status code, indicating a successful model creation or update.</li>
+<li><code>NotFound()</code> - Returns a 404 status code. This is useful if you have a &ldquo;get one&rdquo; route that is passed a failed id.</li>
+<li><code>StatusCode()</code> - If you don&rsquo;t have time to look up the built-in method, or you find they don&rsquo;t have a method that satisfies your needs, you can just pass the status code as a parameter to this method to return a response with that code.</li>
+</ul>
+<p>Let&rsquo;s use a couple of them. Here&rsquo;s a <code>SaveTodo</code> method that uses <code>Created</code> and <code>NotFound</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">    [Route(&#34;{id}/Save&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [HttpPost]</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [ProducesResponseType(201)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [ProducesResponseType(404)]</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ActionResult</span> <span class="n">SaveTodo</span><span class="p">([</span><span class="n">FromBody</span><span class="p">]</span> <span class="n">Todo</span> <span class="n">todo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">success</span> <span class="p">=</span> <span class="n">_todoService</span><span class="p">.</span><span class="n">SaveTodo</span><span class="p">(</span><span class="n">todo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">Created</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">NotFound</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>In this example, notice the decorations. We have an <code>[HttpPost]</code> and  two <code>[ProducesResponseType]</code> attributes.</p>
+<p>The <code>SaveTodo</code> method takes in a <code>Todo</code> class instance. With what we&rsquo;ve seen so far this wouldn&rsquo;t be possible without creating a horribly-long URL that took in all string parameters. Not a great interface selection. So why couldn&rsquo;t we pass objects with our request before? By default, action methods will represent <code>GET</code> request endpoints. In order to pass a body to our method, we&rsquo;d send a <code>POST</code> request and our endpoint wouldn&rsquo;t match anymore.</p>
+<p>Luckily, making this change is as simple as including the attribute <code>[HttpPost]</code> before the method as shown in the example.</p>
+<p>What about the <code>[ProducesResponseType]</code> attribute, though? While not vital, it serves two purposes. If you use OpenAPI to generate your documentation, then these attributes can be used to add helpful details about your route. And even if you don&rsquo;t use OpenAPI, they&rsquo;re a way to provide some in-code documentation for future developers. In a simple method like this, that may seem silly, but as controller methods and their logic grow, it can certainly be nice to know at a glance what the success/failure results for your endpoint are.</p>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>If you&rsquo;ve only had exposure to the newer minimal API syntax, then I hope that this makes the controller-based API pattern a bit more approachable. As with many things in &ldquo;approaching-legacy-status&rdquo; .NET, it is fairly verbose to get to a working API, but in my next few posts, I&rsquo;ll be exploring some features that you&rsquo;ll need a controller-based API to take advantage of and <em>hopefully</em> give you a reason to actually use them!</p>
+<p>Until then!</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/" class="button inline next">
+         [<span class="button__text">Build a Database Connection Framework In 133 Lines Of Code</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+<div id="form-container">
+    <form style="display: flex; flex-direction: column; align-items: center" id="emailForm">
+        <label for="email" style="text-align: center">Automatically receive <br />breaking changes in your
+            inbox.</label>
+        <input type="email" placeholder="Email" id="email" style="margin-top: 25px" />
+        <input type="submit" id="submit" value="Subscribe" style="margin-top: 25px" />
+    </form>
+</div>
+
+<script>
+    async function addToNewsletter(email) {
+        const url = "https://api.nolanmiller.me/newsletter";
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({email: email}),
+        };
+        try {
+            const response = await fetch(url, options);
+            if (response.ok) {
+                return response.json();
+            }
+            return {message: "There was an error. Please try again later."};
+        } catch (_) {
+            return {message: "There was an error. Please try again later."};
+        }
+    }
+
+    var form = document.getElementById("emailForm");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        var email = document.getElementById("email").value;
+
+        if (!email) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        var response = await addToNewsletter(email);
+
+        
+        form.style.display = "none";
+        document
+            .querySelector("#form-container")
+            .insertAdjacentHTML(
+                "beforeend",
+                `<p style="display: flex; flex-direction: column; align-items: center">${response.message}</p>`
+            );
+    });
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

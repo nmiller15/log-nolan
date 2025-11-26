@@ -6,20 +6,27 @@
     <description>Recent content in Tags on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Database</title>
-      <link>https://nolanmiller.me/tags/database/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/database/</guid>
+      <title>Csharp</title>
+      <link>https://nolanmiller.me/tags/csharp/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/tags/csharp/</guid>
       <description></description>
     </item>
     <item>
       <title>Dotnet</title>
       <link>https://nolanmiller.me/tags/dotnet/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://nolanmiller.me/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>https://nolanmiller.me/tags/database/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/tags/database/</guid>
       <description></description>
     </item>
     <item>
@@ -90,13 +97,6 @@
       <link>https://nolanmiller.me/tags/configuration/</link>
       <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://nolanmiller.me/tags/configuration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Csharp</title>
-      <link>https://nolanmiller.me/tags/csharp/</link>
-      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/tags/csharp/</guid>
       <description></description>
     </item>
     <item>

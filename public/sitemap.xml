@@ -5,7 +5,19 @@
     <loc>https://nolanmiller.me/</loc>
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nolanmiller.me/tags/csharp/</loc>
+    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/dotnet/</loc>
+    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/</loc>
+    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/</loc>
@@ -14,13 +26,7 @@
     <loc>https://nolanmiller.me/tags/database/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nolanmiller.me/tags/dotnet/</loc>
-    <lastmod>2025-10-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nolanmiller.me/tags/learning/</loc>
-    <lastmod>2025-10-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/webdev/</loc>
@@ -61,9 +67,6 @@
   </url><url>
     <loc>https://nolanmiller.me/posts/learn-application-configuration-in-asp.net/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/csharp/</loc>
-    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/what-is-dependency-injection/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>

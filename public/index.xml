@@ -6,8 +6,15 @@
     <description>Recent content on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nolanmiller.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Build an API with Controllers</title>
+      <link>https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/</guid>
+      <description>A basic walkthrough of the Controller-Based API pattern in .NET</description>
+    </item>
     <item>
       <title>Build a Database Connection Framework In 133 Lines Of Code</title>
       <link>https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/</link>
