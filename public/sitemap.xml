@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nolanmiller.me/</loc>
-    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/career/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/discuss/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/tags/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nolanmiller.me/posts/thoughts-after-a-year-of-software-development/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/tags/csharp/</loc>
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
@@ -12,12 +27,6 @@
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/how-to-build-an-api-with-controllers/</loc>
-    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/posts/</loc>
-    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/</loc>
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/</loc>
@@ -79,9 +88,6 @@
   </url><url>
     <loc>https://nolanmiller.me/tags/via/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nolanmiller.me/tags/career/</loc>
-    <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nolanmiller.me/posts/do-the-work-that-needs-done/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>

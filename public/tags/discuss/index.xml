@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Discuss on Breaking Changes | Nolan Miller</title>
+    <link>https://nolanmiller.me/tags/discuss/</link>
+    <description>Recent content in Discuss on Breaking Changes | Nolan Miller</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://nolanmiller.me/tags/discuss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts After a Year of Software Development</title>
+      <link>https://nolanmiller.me/posts/thoughts-after-a-year-of-software-development/</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://nolanmiller.me/posts/thoughts-after-a-year-of-software-development/</guid>
+      <description>Lessons and musings after my first year in development</description>
+    </item>
+  </channel>
+</rss>

@@ -1,8 +1,8 @@
 ---
 title: How to Build an API with Controllers
 date: 2025-11-17
-summary: "A basic walkthrough of the Controller-Based API pattern in .NET"
-description: "A basic walkthrough of the Controller-Based API pattern in .NET"
+summary: A basic walkthrough of the Controller-Based API pattern in .NET
+description: A basic walkthrough of the Controller-Based API pattern in .NET
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["dotnet", "csharp"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 3062081
 ---
-
 I starting working in ASP.NET after minimal APIs had already been released and reached popularity. My first professional project involved moving endpoints from a .NET controller-based API to the new minimal syntex. Unfortunately for me, that meant I was not going to be able to avoid the controller-based API even though I wasn't particularly comfortable with the paradigm... or C# for that matter.
 
 To save you the headache, I will walk through the very basics of creating a controller-based API and explain what I spent hours staring at code to figure out (after all, 20 hours of reading code can save you 20 minutes of reading documentation). We will create endpoints, accept parameters and document the routes all in the controller-based syntax. 
@@ -229,4 +229,4 @@ What about the `[ProducesResponseType]` attribute, though? While not vital, it s
 
 If you've only had exposure to the newer minimal API syntax, then I hope that this makes the controller-based API pattern a bit more approachable. As with many things in "approaching-legacy-status" .NET, it is fairly verbose to get to a working API, but in my next few posts, I'll be exploring some features that you'll need a controller-based API to take advantage of and *hopefully* give you a reason to actually use them! 
 
-Until then! 
+Until then!
