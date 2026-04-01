@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mvc on Breaking Changes | Nolan Miller</title>
-    <link>https://nolanmiller.me/tags/mvc/</link>
+    <link>http://localhost:1313/tags/mvc/</link>
     <description>Recent content in Mvc on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nolanmiller.me/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anatomy of an ASP.NET MVC Template</title>
-      <link>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</link>
+      <link>http://localhost:1313/posts/anatomy-of-an-asp.net-mvc-template/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://nolanmiller.me/posts/anatomy-of-an-asp.net-mvc-template/</guid>
+      <guid>http://localhost:1313/posts/anatomy-of-an-asp.net-mvc-template/</guid>
       <description>What are these folders and files?</description>
     </item>
   </channel>
