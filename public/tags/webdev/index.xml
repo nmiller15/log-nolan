@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webdev on Breaking Changes | Nolan Miller</title>
-    <link>http://localhost:1313/tags/webdev/</link>
+    <link>https://nolanmiller.me/tags/webdev/</link>
     <description>Recent content in Webdev on Breaking Changes | Nolan Miller</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nolanmiller.me/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build a Database Connection Framework In 133 Lines Of Code</title>
-      <link>http://localhost:1313/posts/build-your-own-database-connection-in-133-lines-of-code/</link>
+      <link>https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/build-your-own-database-connection-in-133-lines-of-code/</guid>
+      <guid>https://nolanmiller.me/posts/build-your-own-database-connection-in-133-lines-of-code/</guid>
       <description>Build a Database Connection Framework In 133 Lines Of Code</description>
     </item>
   </channel>
