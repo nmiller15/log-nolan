@@ -55,7 +55,10 @@ jobs:
           ssh-keyscan -H ${{ secrets.EC2_PUBLIC_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy to EC2
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH }}
         run: |
+          echo "$EC2_SSH_KEY" > private_key.pem
           chmod 600 private_key.pem
           rsync -avz0 --no-perms -e "ssh -i private_key.pem -o StrictHostChecking=no" ./dist/ ubuntu@${{ secrets.EC2_Public_IP }}:/srv/log-nolanv2
 
