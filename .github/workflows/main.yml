@@ -60,7 +60,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > private_key.pem
           chmod 600 private_key.pem
-          rsync -avz --no-perms -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_Public_IP }}:/srv/log-nolanv2
+          rsync -rlvz --delete --no-perms --no-times -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_Public_IP }}:/srv/log-nolanv2
 
       - name: Reload Caddy
         run: |
