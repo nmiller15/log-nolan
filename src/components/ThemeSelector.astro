@@ -1,0 +1,182 @@
+---
+/**
+ * ThemeSelector.astro
+ * Dropdown component for switching between developer color schemes
+ */
+
+const themes = [
+  { id: 'gruvbox', name: 'Gruvbox', color: '#83a598' },
+  { id: 'github', name: 'GitHub', color: '#58a6ff' },
+  { id: 'dracula', name: 'Dracula', color: '#bd93f9' },
+  { id: 'one-dark', name: 'One Dark', color: '#61afef' },
+  { id: 'monokai', name: 'Monokai', color: '#66d9ef' },
+  { id: 'nord', name: 'Nord', color: '#88c0d0' },
+  { id: 'solarized', name: 'Solarized', color: '#268bd2' },
+  { id: 'tokyo', name: 'Tokyo Night', color: '#7aa2f7' },
+];
+---
+
+<div class="theme-selector" id="theme-selector">
+  <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Change theme" aria-expanded="false">
+    <span class="theme-icon">◐</span>
+    <span class="theme-name" id="current-theme-name">Gruvbox</span>
+    <span class="theme-chevron">▾</span>
+  </button>
+  
+  <div class="theme-dropdown" id="theme-dropdown" role="menu">
+    {themes.map((theme) => (
+      <div class="theme-group" data-theme-group={theme.id}>
+        <button 
+          class="theme-option" 
+          data-theme={theme.id} 
+          data-mode="dark"
+          role="menuitem"
+        >
+          <span class="theme-color-dot" style={`background-color: ${theme.color}`}></span>
+          {theme.name} Dark
+        </button>
+        <button 
+          class="theme-option" 
+          data-theme={theme.id} 
+          data-mode="light"
+          role="menuitem"
+        >
+          <span class="theme-color-dot" style={`background-color: ${theme.color}`}></span>
+          {theme.name} Light
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    // Theme names mapping for display
+    var themeNames = {
+      'gruvbox': 'Gruvbox',
+      'github': 'GitHub',
+      'dracula': 'Dracula',
+      'one-dark': 'One Dark',
+      'monokai': 'Monokai',
+      'nord': 'Nord',
+      'solarized': 'Solarized',
+      'tokyo': 'Tokyo Night',
+    };
+
+    // Get stored theme or default
+    function getStoredTheme() {
+      try {
+        var stored = localStorage.getItem('blog-theme');
+        if (stored) {
+          return JSON.parse(stored);
+        }
+      } catch (e) {
+        // localStorage not available or invalid JSON
+      }
+      
+      // Default: system preference for mode, gruvbox for theme
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return { theme: 'gruvbox', mode: prefersDark ? 'dark' : 'light' };
+    }
+
+    // Apply theme to document
+    function applyTheme(theme, mode) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-mode', mode);
+      
+      // Update button text
+      var themeName = document.getElementById('current-theme-name');
+      if (themeName) {
+        var displayName = themeNames[theme] || theme;
+        themeName.textContent = displayName + ' ' + mode.charAt(0).toUpperCase() + mode.slice(1);
+      }
+      
+      // Update active states
+      document.querySelectorAll('.theme-option').forEach(function(btn) {
+        var btnTheme = btn.getAttribute('data-theme');
+        var btnMode = btn.getAttribute('data-mode');
+        btn.classList.toggle('active', btnTheme === theme && btnMode === mode);
+      });
+    }
+
+    // Save theme to localStorage
+    function saveTheme(theme, mode) {
+      try {
+        localStorage.setItem('blog-theme', JSON.stringify({ theme: theme, mode: mode }));
+      } catch (e) {
+        // localStorage not available
+      }
+    }
+
+    // Toggle dropdown
+    function toggleDropdown(open) {
+      var selector = document.getElementById('theme-selector');
+      var btn = document.getElementById('theme-toggle-btn');
+      
+      if (selector && btn) {
+        var isOpen = open !== undefined ? open : !selector.classList.contains('open');
+        selector.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+      }
+    }
+
+    // Close dropdown when clicking outside
+    function handleClickOutside(e) {
+      var selector = document.getElementById('theme-selector');
+      if (selector && !selector.contains(e.target)) {
+        toggleDropdown(false);
+      }
+    }
+
+    // Set up event listeners
+    function setupListeners() {
+      // Toggle button
+      var toggleBtn = document.getElementById('theme-toggle-btn');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleDropdown();
+        });
+      }
+      
+      // Theme options
+      document.querySelectorAll('.theme-option').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var theme = btn.getAttribute('data-theme');
+          var mode = btn.getAttribute('data-mode');
+          
+          if (theme && mode) {
+            applyTheme(theme, mode);
+            saveTheme(theme, mode);
+            toggleDropdown(false);
+          }
+        });
+      });
+      
+      // Close on outside click
+      document.addEventListener('click', handleClickOutside);
+      
+      // Close on escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          toggleDropdown(false);
+        }
+      });
+    }
+
+    // Initialize
+    function init() {
+      var stored = getStoredTheme();
+      applyTheme(stored.theme, stored.mode);
+      setupListeners();
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

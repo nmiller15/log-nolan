@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getReadingTime } from '../utils/reading-time';
+
+interface Props {
+  title: string;
+  date: Date;
+  description?: string;
+  tags?: string[];
+  showTags?: boolean;
+  readTime?: boolean;
+  content: string;
+}
+
+const { title, date, description, tags = [], showTags = true, readTime = true, content } = Astro.props;
+
+const readingTime = getReadingTime(content);
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
+      <div class="post-meta">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        {readTime && <span class="reading-time">· {readingTime} min read</span>}
+      </div>
+      {showTags && tags.length > 0 && (
+        <div class="post-tags">
+          {tags.map((tag) => (
+            <a href={`/tags/${tag.toLowerCase()}`} class="tag">{tag}</a>
+          ))}
+        </div>
+      )}
+    </header>
+    
+    <div class="post-content">
+      <slot />
+    </div>
+    
+    <footer class="post-footer">
+      <a href="/" class="back-link">Back to all posts</a>
+    </footer>
+  </article>
+</BaseLayout>

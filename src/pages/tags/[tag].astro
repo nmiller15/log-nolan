@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { getReadingTime } from '../../utils/reading-time';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+  
+  // Get all unique tags
+  const tags = new Set<string>();
+  posts.forEach((post) => {
+    post.data.tags?.forEach((tag) => tags.add(tag.toLowerCase()));
+  });
+  
+  return Array.from(tags).map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts.filter((post) =>
+        post.data.tags?.some((t) => t.toLowerCase() === tag)
+      ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+interface Props {
+  tag: string;
+  posts: any[];
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout title={`Posts tagged #${tag}`}>
+  <section class="tag-page">
+    <h1>{tag}</h1>
+    <p class="tag-intro">{posts.length} post{posts.length === 1 ? '' : 's'} tagged with #{tag}</p>
+    
+    <a href="/tags" class="back-link">All tags</a>
+    
+    <div class="posts-list">
+      {posts.map((post) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          description={post.data.summary || post.data.description}
+          slug={post.slug}
+          readingTime={getReadingTime(post.body)}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
