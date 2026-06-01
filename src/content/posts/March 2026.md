@@ -1,8 +1,8 @@
 ---
 title: March 2026
 date: 2026-03-27
-summary: "endings, database migrations, golfing"
-description: "endings, database migrations, golfing"
+summary: endings, database migrations, golfing
+description: endings, database migrations, golfing
 toc: false
 readTime: true
 autonumber: false
@@ -11,9 +11,9 @@ tags: ["log"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 3441710
 ---
-
 Theme of the month: Endings. My wife and I sold our house in order to move and I wrapped up a big project at work so that I can tackle some accounting integrations.
 
 ## Where My Time Went

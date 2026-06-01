@@ -1,8 +1,8 @@
 ---
 title: Thoughts After a Year of Software Development
 date: 2026-01-06
-summary: "Lessons and musings after my first year in development"
-description: "Lessons and musings after my first year in development"
+summary: Lessons and musings after my first year in development
+description: Lessons and musings after my first year in development
 toc: false
 readTime: true
 autonumber: false
@@ -11,10 +11,9 @@ tags: ["career", "discuss"]
 showTags: true
 hideBackToTop: false
 draft: false
-dev: false
+dev: true
+dev_id: 3169089
 ---
-
-
 After teaching myself to code, I landed a job a year ago in December. In no particular order, here is an assorted collection of thoughts, opinions, and tidbits that I've accumulated over the past year. 
 
 ### Typing speed and accuracy are important
