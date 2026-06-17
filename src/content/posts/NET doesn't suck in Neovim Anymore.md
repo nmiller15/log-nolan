@@ -1,6 +1,6 @@
 ---
 title: .NET Doesn't Suck in Neovim Anymore
-date: 2026-05-17
+date: 2026-06-17
 summary: "roslyn-language-server to the rescue"
 description: "roslyn-language-server to the rescue"
 toc: false
