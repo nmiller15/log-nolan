@@ -37,15 +37,18 @@ param(
 # ============================================================
 # CONFIGURATION - Edit this section to customize
 # ============================================================
-$DefaultVaultPath = "C:\Users\NMiller\Vault\blog-posts"
+$DefaultVaultPath = "C:\Vault\blog-posts"
 # ============================================================
 
 # Determine the vault path to use
-$SourcePath = if ($VaultPath) {
+$SourcePath = if ($VaultPath)
+{
     $VaultPath
-} elseif ($env:OBSIDIAN_VAULT_PATH) {
+} elseif ($env:OBSIDIAN_VAULT_PATH)
+{
     $env:OBSIDIAN_VAULT_PATH
-} else {
+} else
+{
     $DefaultVaultPath
 }
 
@@ -55,10 +58,18 @@ $RepoRoot = Split-Path -Parent $ScriptDir
 $DestPath = Join-Path $RepoRoot "src\content\posts"
 
 # Colors for output
-function Write-Success { param($Message) Write-Host $Message -ForegroundColor Green }
-function Write-Info { param($Message) Write-Host $Message -ForegroundColor Cyan }
-function Write-Warning { param($Message) Write-Host $Message -ForegroundColor Yellow }
-function Write-Error { param($Message) Write-Host $Message -ForegroundColor Red }
+function Write-Success
+{ param($Message) Write-Host $Message -ForegroundColor Green 
+}
+function Write-Info
+{ param($Message) Write-Host $Message -ForegroundColor Cyan 
+}
+function Write-Warning
+{ param($Message) Write-Host $Message -ForegroundColor Yellow 
+}
+function Write-Error
+{ param($Message) Write-Host $Message -ForegroundColor Red 
+}
 
 # Header
 Write-Host ""
@@ -68,7 +79,8 @@ Write-Host "========================================" -ForegroundColor Magenta
 Write-Host ""
 
 # Validate source path
-if (-not (Test-Path $SourcePath)) {
+if (-not (Test-Path $SourcePath))
+{
     Write-Error "Error: Vault path not found: $SourcePath"
     Write-Host ""
     Write-Host "Please either:"
@@ -85,7 +97,8 @@ Write-Host ""
 # Get markdown files from vault
 $VaultFiles = Get-ChildItem -Path $SourcePath -Filter "*.md" -File
 
-if ($VaultFiles.Count -eq 0) {
+if ($VaultFiles.Count -eq 0)
+{
     Write-Warning "No markdown files found in vault."
     exit 0
 }
@@ -97,41 +110,50 @@ Write-Host ""
 $Copied = @()
 $Unchanged = @()
 
-foreach ($File in $VaultFiles) {
+foreach ($File in $VaultFiles)
+{
     $DestFile = Join-Path $DestPath $File.Name
     
     $ShouldCopy = $false
     $Reason = ""
     
-    if (-not (Test-Path $DestFile)) {
+    if (-not (Test-Path $DestFile))
+    {
         $ShouldCopy = $true
         $Reason = "new"
-    } else {
+    } else
+    {
         $SourceHash = (Get-FileHash $File.FullName -Algorithm MD5).Hash
         $DestHash = (Get-FileHash $DestFile -Algorithm MD5).Hash
         
-        if ($SourceHash -ne $DestHash) {
+        if ($SourceHash -ne $DestHash)
+        {
             $ShouldCopy = $true
             $Reason = "modified"
         }
     }
     
-    if ($ShouldCopy) {
-        if ($DryRun) {
+    if ($ShouldCopy)
+    {
+        if ($DryRun)
+        {
             Write-Host "  [DRY RUN] Would copy ($Reason): $($File.Name)" -ForegroundColor Yellow
-        } else {
+        } else
+        {
             Copy-Item -Path $File.FullName -Destination $DestFile -Force
             Write-Success "  Copied ($Reason): $($File.Name)"
         }
         $Copied += $File.Name
-    } else {
+    } else
+    {
         $Unchanged += $File.Name
     }
 }
 
 Write-Host ""
 
-if ($Copied.Count -eq 0) {
+if ($Copied.Count -eq 0)
+{
     Write-Info "No changes to publish."
     exit 0
 }
@@ -139,7 +161,8 @@ if ($Copied.Count -eq 0) {
 Write-Success "$($Copied.Count) file(s) copied, $($Unchanged.Count) unchanged"
 Write-Host ""
 
-if ($DryRun) {
+if ($DryRun)
+{
     Write-Warning "Dry run complete. No changes were made."
     exit 0
 }
@@ -155,23 +178,29 @@ git add "src/content/posts/*.md"
 
 # Create commit message
 $CommitFiles = $Copied -join ", "
-if ($CommitFiles.Length -gt 50) {
+if ($CommitFiles.Length -gt 50)
+{
     $CommitMessage = "Publish: $($Copied.Count) post(s) updated"
-} else {
+} else
+{
     $CommitMessage = "Publish: $CommitFiles"
 }
 
 # Commit
 $CommitResult = git commit -m $CommitMessage 2>&1
 
-if ($LASTEXITCODE -ne 0) {
-    if ($CommitResult -match "nothing to commit") {
+if ($LASTEXITCODE -ne 0)
+{
+    if ($CommitResult -match "nothing to commit")
+    {
         Write-Info "Nothing to commit (files may already be staged)"
-    } else {
+    } else
+    {
         Write-Error "Commit failed: $CommitResult"
         exit 1
     }
-} else {
+} else
+{
     Write-Success "Committed: $CommitMessage"
 }
 
@@ -179,7 +208,8 @@ if ($LASTEXITCODE -ne 0) {
 Write-Info "Pushing to remote..."
 $PushResult = git push 2>&1
 
-if ($LASTEXITCODE -ne 0) {
+if ($LASTEXITCODE -ne 0)
+{
     Write-Error "Push failed: $PushResult"
     exit 1
 }

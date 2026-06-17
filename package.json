@@ -9,10 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.0",
-    "@astrojs/rss": "^4.0.0"
+    "@astrojs/rss": "^4.0.0",
+    "astro": "^4.16.0"
   },
   "devDependencies": {
+    "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3"
   }
 }
