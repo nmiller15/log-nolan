@@ -1,6 +1,6 @@
 ---
 title: Git Worktrees Are Great
-date: 2026-06-26
+date: 2026-07-24
 summary: "Get git worktrees working in under 5 minutes."
 description: "Get git worktrees working in under 5 minutes."
 toc: false
