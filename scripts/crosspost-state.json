@@ -1,27 +1,80 @@
 {
-  "April 2026.md":                                             { "dev_id": 3608810 },
-  "March 2026.md":                                             { "dev_id": 3441710 },
-  "Why Screw Optimization Is My New Mantra.md":                { "dev_id": 2252942 },
-  "What is Dependency Injection.md":                           { "dev_id": 2295707 },
-  "Tips for Junior Devs.md":                                   { "dev_id": 2264655 },
-  "Thoughts After a Year of Software Development.md":          { "dev_id": 3169089 },
-  "This engineer uses LLMs.md":                                { "dev_id": 2260991 },
-  "The Perfect Programming Environment.md":                    { "dev_id": 2775794 },
-  "Supercharge Your Productivity with the .NET CLI.md":        { "dev_id": 2252941 },
-  "Start Automating Easy Tasks.md":                            { "dev_id": 2262995 },
-  "Quidditch - Powered By PostgreSQL and ASP.NET.md":          { "dev_id": 2720828 },
-  "Learn Application Configuration in ASP.NET.md":             { "dev_id": 2353588 },
-  "Intro to .NET APIs for a JavaScript Developer.md":          { "dev_id": 2533486 },
-  "How to Build an API with Controllers.md":                   { "dev_id": 3062081 },
-  "Do The Work That Needs Done.md":                            { "dev_id": 2271555 },
-  "Cure Depression with Software Development.md":              { "dev_id": 2288201 },
-  "Can we add AI to that.md":                                  { "dev_id": 2269873 },
-  "Build your own database Connection in 133 lines of code.md": { "dev_id": 2956390 },
-  "Anatomy of an ASP.NET MVC Template.md":                     { "dev_id": 2266708 },
-  "May 2026.md":                                               { "dev_id": null },
-  "What I'd Like to Learn in 2025.md":                         { "dev_id": null },
-  "Self-Taught is Still Possible In 2025.md":                  { "dev_id": null },
-  "Learn ASP.NET Core from Scratch.md":                        { "dev_id": null },
-  "How I Started My Coding Journey.md":                        { "dev_id": null },
-  "Deploying a Full-Stack PERN App to AWS EC2.md":             { "dev_id": null }
+  "April 2026.md": {
+    "dev_id": 3608810
+  },
+  "March 2026.md": {
+    "dev_id": 3441710
+  },
+  "Why Screw Optimization Is My New Mantra.md": {
+    "dev_id": 2252942
+  },
+  "What is Dependency Injection.md": {
+    "dev_id": 2295707
+  },
+  "Tips for Junior Devs.md": {
+    "dev_id": 2264655
+  },
+  "Thoughts After a Year of Software Development.md": {
+    "dev_id": 3169089
+  },
+  "This engineer uses LLMs.md": {
+    "dev_id": 2260991
+  },
+  "The Perfect Programming Environment.md": {
+    "dev_id": 2775794
+  },
+  "Supercharge Your Productivity with the .NET CLI.md": {
+    "dev_id": 2252941
+  },
+  "Start Automating Easy Tasks.md": {
+    "dev_id": 2262995
+  },
+  "Quidditch - Powered By PostgreSQL and ASP.NET.md": {
+    "dev_id": 2720828
+  },
+  "Learn Application Configuration in ASP.NET.md": {
+    "dev_id": 2353588
+  },
+  "Intro to .NET APIs for a JavaScript Developer.md": {
+    "dev_id": 2533486
+  },
+  "How to Build an API with Controllers.md": {
+    "dev_id": 3062081
+  },
+  "Do The Work That Needs Done.md": {
+    "dev_id": 2271555
+  },
+  "Cure Depression with Software Development.md": {
+    "dev_id": 2288201
+  },
+  "Can we add AI to that.md": {
+    "dev_id": 2269873
+  },
+  "Build your own database Connection in 133 lines of code.md": {
+    "dev_id": 2956390
+  },
+  "Anatomy of an ASP.NET MVC Template.md": {
+    "dev_id": 2266708
+  },
+  "May 2026.md": {
+    "dev_id": null
+  },
+  "What I'd Like to Learn in 2025.md": {
+    "dev_id": null
+  },
+  "Self-Taught is Still Possible In 2025.md": {
+    "dev_id": null
+  },
+  "Learn ASP.NET Core from Scratch.md": {
+    "dev_id": null
+  },
+  "How I Started My Coding Journey.md": {
+    "dev_id": null
+  },
+  "Deploying a Full-Stack PERN App to AWS EC2.md": {
+    "dev_id": null
+  },
+  "Git Worktrees Are Great.md": {
+    "dev_id": 4225843
+  }
 }
