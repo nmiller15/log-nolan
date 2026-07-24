@@ -231,6 +231,17 @@ if ($LASTEXITCODE -ne 0)
     Write-Success "Committed: $CommitMessage"
 }
 
+# Pull remote changes before pushing
+Write-Info "Pulling remote changes..."
+$PullResult = git pull --rebase 2>&1
+
+if ($LASTEXITCODE -ne 0)
+{
+    Write-Error "Pull/rebase failed: $PullResult"
+    Write-Host "Please resolve conflicts manually and push again."
+    exit 1
+}
+
 # Push
 Write-Info "Pushing to remote..."
 $PushResult = git push 2>&1
