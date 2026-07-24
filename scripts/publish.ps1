@@ -109,6 +109,7 @@ Write-Host ""
 # Track changes
 $Copied = @()
 $Unchanged = @()
+$Deleted = @()
 
 foreach ($File in $VaultFiles)
 {
@@ -152,13 +153,35 @@ foreach ($File in $VaultFiles)
 
 Write-Host ""
 
-if ($Copied.Count -eq 0)
+# Delete files in destination that no longer exist in vault
+$DestFiles = Get-ChildItem -Path $DestPath -Filter "*.md" -File
+$VaultFileNames = $VaultFiles | Select-Object -ExpandProperty Name
+
+foreach ($DestFile in $DestFiles)
+{
+    if ($VaultFileNames -notcontains $DestFile.Name)
+    {
+        if ($DryRun)
+        {
+            Write-Host "  [DRY RUN] Would delete (removed from vault): $($DestFile.Name)" -ForegroundColor Yellow
+        } else
+        {
+            Remove-Item -Path $DestFile.FullName -Force
+            Write-Warning "  Deleted (removed from vault): $($DestFile.Name)"
+        }
+        $Deleted += $DestFile.Name
+    }
+}
+
+Write-Host ""
+
+if ($Copied.Count -eq 0 -and $Deleted.Count -eq 0)
 {
     Write-Info "No changes to publish."
     exit 0
 }
 
-Write-Success "$($Copied.Count) file(s) copied, $($Unchanged.Count) unchanged"
+Write-Success "$($Copied.Count) file(s) copied, $($Deleted.Count) deleted, $($Unchanged.Count) unchanged"
 Write-Host ""
 
 if ($DryRun)
@@ -173,14 +196,18 @@ Write-Host ""
 
 Set-Location $RepoRoot
 
-# Stage changes
-git add "src/content/posts/*.md"
+# Stage changes (covers additions, modifications, and deletions)
+git add src/content/posts/
 
 # Create commit message
-$CommitFiles = $Copied -join ", "
+$AllChanged = $Copied + $Deleted
+$CommitFiles = $AllChanged -join ", "
 if ($CommitFiles.Length -gt 50)
 {
-    $CommitMessage = "Publish: $($Copied.Count) post(s) updated"
+    $Parts = @()
+    if ($Copied.Count -gt 0) { $Parts += "$($Copied.Count) added" }
+    if ($Deleted.Count -gt 0) { $Parts += "$($Deleted.Count) deleted" }
+    $CommitMessage = "Publish: $($Parts -join ", ")"
 } else
 {
     $CommitMessage = "Publish: $CommitFiles"

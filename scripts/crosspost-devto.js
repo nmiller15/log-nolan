@@ -2,9 +2,9 @@
  * Cross-post blog articles to dev.to
  *
  * This script reads all posts from the content directory,
- * checks which ones have `dev: false` (or no `dev` field) in their frontmatter,
- * posts them to dev.to, and writes `dev: true` + `dev_id: <id>` back to the
- * source file so subsequent runs skip them.
+ * checks which ones are not yet tracked in crosspost-state.json,
+ * posts them to dev.to, and records the resulting dev_id in the
+ * state file so subsequent runs skip them.
  *
  * Environment variables:
  *   DEVTO_API_KEY - Your dev.to API key (required)
@@ -21,6 +21,7 @@ import { slug as githubSlug } from 'github-slugger';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const POSTS_DIR = path.join(__dirname, '..', 'src', 'content', 'posts');
+const STATE_FILE = path.join(__dirname, 'crosspost-state.json');
 const SITE_URL = 'https://nolanmiller.me';
 const DEVTO_API_URL = 'https://dev.to/api';
 
@@ -30,6 +31,23 @@ const DEVTO_API_KEY = process.env.DEVTO_API_KEY;
 if (!DEVTO_API_KEY) {
   console.error('Error: DEVTO_API_KEY environment variable is not set');
   process.exit(1);
+}
+
+/**
+ * Load the crosspost state from disk. Returns {} if the file doesn't exist.
+ */
+function loadState() {
+  if (!fs.existsSync(STATE_FILE)) {
+    return {};
+  }
+  return JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
+}
+
+/**
+ * Persist the crosspost state to disk.
+ */
+function saveState(state) {
+  fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2) + '\n', 'utf-8');
 }
 
 /**
@@ -62,36 +80,31 @@ function fileToSlug(filename) {
 }
 
 /**
- * Write updated frontmatter fields back to a source .md file.
- * Uses gray-matter stringify to safely regenerate the YAML block.
+ * Read and parse all posts not yet tracked in the state file.
+ * A post is eligible when: its filename is not in the state file AND draft !== true.
  */
-function writeBackFrontmatter(filePath, updates) {
-  const raw = fs.readFileSync(filePath, 'utf-8');
-  const parsed = matter(raw);
-  const newContent = matter.stringify(parsed.content, { ...parsed.data, ...updates });
-  fs.writeFileSync(filePath, newContent, 'utf-8');
-}
-
-/**
- * Read and parse all posts not yet posted to dev.to.
- * A post is eligible when: dev !== true AND draft !== true.
- */
-function getPostsForDevTo() {
+function getPostsForDevTo(state) {
   const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
   const posts = [];
 
   for (const file of files) {
+    // Skip if already tracked in state
+    if (state[file] !== undefined) {
+      continue;
+    }
+
     const filePath = path.join(POSTS_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
     const { data: frontmatter, content: body } = matter(content);
 
-    // Skip posts already published to dev.to or marked as drafts
-    if (frontmatter.dev === true || frontmatter.draft === true) {
+    // Skip drafts
+    if (frontmatter.draft === true) {
       continue;
     }
 
     const slug = fileToSlug(file);
     posts.push({
+      filename: file,
       title: frontmatter.title,
       body_markdown: body,
       published: true,
@@ -116,7 +129,8 @@ async function main() {
   console.log('');
 
   try {
-    const posts = getPostsForDevTo();
+    const state = loadState();
+    const posts = getPostsForDevTo(state);
     console.log(`Found ${posts.length} post(s) to publish to dev.to`);
     console.log('');
 
@@ -140,7 +154,8 @@ async function main() {
           description: post.description,
         });
 
-        writeBackFrontmatter(post.filePath, { dev: true, dev_id: result.id });
+        state[post.filename] = { dev_id: result.id };
+        saveState(state);
         created++;
         console.log(`  Created (ID: ${result.id})`);
       } catch (error) {

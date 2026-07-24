@@ -60,7 +60,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > private_key.pem
           chmod 600 private_key.pem
-          rsync -rlvz --delete --no-perms --no-times -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_Public_IP }}:/srv/log-nolanv2
+          rsync -rlvz --delete --no-perms --no-times -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/srv/log-nolanv2
 
       - name: Reload Caddy
         run: |
@@ -96,6 +96,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/content/posts/
+          git add scripts/crosspost-state.json
           git diff --staged --quiet || git commit -m "chore: update dev.to frontmatter [skip ci]"
           git push
