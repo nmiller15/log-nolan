@@ -10,7 +10,7 @@ math: true
 tags: ["hobbies"]
 showTags: true
 hideBackToTop: false
-draft: true
+draft: false
 dev: false
 ---
 
