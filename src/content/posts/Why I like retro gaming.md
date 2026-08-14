@@ -1,6 +1,6 @@
 ---
 title: Why I like retro gaming
-date: 2026-06-26
+date: 2026-08-14
 summary: "tinkering, nostalgia, intentionality"
 description: "tinkering, nostalgia, intentionality"
 toc: false
